@@ -1,5 +1,11 @@
-extends layout
+include partials/header
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class="quote") "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+
+  div(class="movie-name")
+    div(class="ui input" id="movie-input")
+      input(type="text" name="movie" placeholder="Name that movie")
+    form(class="amIrightbutton" action="")
+      input(type="submit" value="Am I right?" class="ui button")
+      
