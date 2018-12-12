@@ -1,8 +1,26 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  padding: 0px;
 }
 
-a {
-  color: #00B7FF;
+#movie-input {
+  width: 500px;
+}
+
+.quote {
+  font-size: 60pt;
+  line-height: 1em;
+  margin: 1.0em;
+  text-align: left;
+}
+
+.movie-name {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+
+.amIrightbutton {
+  display: inline;
+  margin: 15px;
 }
