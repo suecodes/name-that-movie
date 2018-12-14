@@ -1,26 +1,40 @@
 body {
+  font-family: "Asap", serif;
   margin: 0px;
   padding: 0px;
 }
 
-#movie-input {
-  width: 500px;
+.container {
+  margin: 4.0em 8.0em 0.0em 8.0em;
 }
 
-.quote {
-  font-size: 60pt;
-  line-height: 1em;
-  margin: 1.0em;
+.default-left-grey {
+  color: #4D5656;
   text-align: left;
 }
 
-.movie-name {
+.movie-quote {
+  font-size: 5em;
+  line-height: 1.0em;
+}
+
+.movie-name-year {
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+.movie-user-answer {
+  margin-top: 3em;
   z-index: 1;
   position: relative;
   text-align: center;
 }
 
-.amIrightbutton {
+#movie-input {
+  width: 30em;
+}
+
+.check-user-answer {
   display: inline;
-  margin: 15px;
+  margin: 4px;
 }
