@@ -1,3 +1,10 @@
+/**
+ *  Code for home/landing page 
+ * 
+ *  Contains quiz to allow users to name the movie the quote belongs to
+ */
+
+
 var userMovieInput = document.getElementById("user-guess");
 var userInputBlock = document.getElementById("userinput");
 var answerBlock = document.getElementById("right-answer-block");
@@ -28,4 +35,16 @@ function checkMovieQuote() {
         answerBlock.style.display = "none";
         wrongBlock.style.display = "block";
     }
+}
+
+/** 
+    User requests answer to quote
+
+    - TODO Refactor, repeats code from above. Need to split into sep function and just call that function
+*/
+function displayAnswer() {
+    moviename.style.visibility = "visible";
+    userInputBlock.style.display = "none";
+    answerBlock.style.display = "block";
+    wrongBlock.style.display = "none";
 }

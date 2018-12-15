@@ -29,8 +29,8 @@ block content
       p(id="message") Wrong! Try again or get answer.
       form(class="check-user-answer" action="/")
         input(type="submit" value="Guess Again" class="ui primary button")
-      form(class="check-user-answer" action="/moviequotes")
-        input(type="submit" value="Get Answer" class="ui primary button")
+      form(class="check-user-answer" action="/")
+        button(type="button" onclick="displayAnswer();" class="ui primary button") Get Answer
 
 //- Add js script files  
 script(src="/javascripts/landing.js")
