@@ -1,12 +1,31 @@
 include partials/header
 
 block content
-  div(class='ui container')
-    div(class='ui huge header') Movie Quotes 
-    div(class='ui grid')
+  div(class="ui quote-container")
+    div(class="ui huge header") Movie Quotes 
+    div(class="ui cards")
       each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-        div(class='four wide column') 
-          div(class='ui huge header')
-            h3 "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
-          div
-            p When Harry Met Sally, 1989 - Nora Ephron
+        div(class="card")
+          //- votes section
+          div(class="extra content")
+            span(class="right floated")
+              i(class="check icon") 
+              div(class="icon-next") 121 Votes
+          //- main content i.e. quote, movie, year and writer
+          div(class="content")
+            div(class="ui huge header")
+              h3 "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+            div
+              i(class="video icon")
+              div(class="movie-year icon-next" alt="movie and year") When Harry Met Sally, 1989
+            div
+              i(class="pencil alternate icon") 
+              div(class="icon-next" alt="writer") Nora Ephron
+          //- card footer with likes/favorites
+          div(class="extra content")
+            span(class="left floated like")
+              i(class="like icon") 
+              div(class="icon-next") Like
+            span(class="right floated star")
+              i(class="star icon") 
+              div(class="icon-next")  Favorite 

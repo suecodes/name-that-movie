@@ -4,8 +4,12 @@ body {
   padding: 0px;
 }
 
-.container {
+.landing-container {
   margin: 4.0em 8.0em 0.0em 8.0em;
+}
+
+.quote-container {
+  margin: 4.0em;
 }
 
 .default-left-grey {
@@ -37,4 +41,8 @@ body {
 .check-user-answer {
   display: inline;
   margin: 4px;
+}
+
+.icon-next {
+  display: inline;
 }
