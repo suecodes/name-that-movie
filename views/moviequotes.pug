@@ -1,4 +1,12 @@
 include partials/header
 
 block content
-  h1 Blah blah
+  div(class='ui container')
+    div(class='ui huge header') Movie Quotes 
+    div(class='ui grid')
+      each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+        div(class='four wide column') 
+          div(class='ui huge header')
+            h3 "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+          div
+            p When Harry Met Sally, 1989 - Nora Ephron
