@@ -7,7 +7,7 @@ block content
     div(class="movie-quote default-left-grey") "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
     
     //- Format: Movie name, year made - writer (hidden by default)
-    div(class="movie-name-year default-left-grey" style="visibility:hidden") When Harry Met Sally, 1989 - Nora Ephron
+    div(id="movie-name" class="movie-name-year default-left-grey" style="visibility:hidden") When Harry Met Sally, 1989 - Nora Ephron
 
     //- Receive user input (display by default)
     div(class="movie-user-answer" style="display:block" id="userinput")
@@ -16,7 +16,7 @@ block content
       form(class="check-user-answer" action="/")
         button(type="button" onclick="checkMovieQuote();" class="ui primary button") Am I right?
 
-    //- Display answer and next steps (hidden by default)
+    //- Display right answer block and next steps (hidden by default)
     div(class="movie-user-answer" style="display:none" id="right-answer-block")
       p(id="message") Correct! Guess another movie or view movie quotes?
       form(class="check-user-answer" action="/")
@@ -24,7 +24,8 @@ block content
       form(class="check-user-answer" action="/moviequotes")
         input(type="submit" value="View Movie Quotes" class="ui primary button")
     
-    div(class="wrong-answer" style="display:none" id="wrong-answer-block")
+    //- Display wrong answer block (hidden by default)
+    div(class="movie-user-answer" style="display:none" id="wrong-answer-block")
       p(id="message") Wrong! Try again or get answer.
       form(class="check-user-answer" action="/")
         input(type="submit" value="Guess Again" class="ui primary button")
