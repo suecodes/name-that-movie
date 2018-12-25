@@ -8,7 +8,38 @@ var indexRouter = require('./routes/index');
 var movieQuotesRouter = require("./routes/moviequotes");
 var usersRouter = require('./routes/users');
 
+var mongoose = require("mongoose");
+//var mMovieQuotes = require("./models/moviequotes.js");
+
 var app = express();
+
+// DB setup
+mongoose.connect("mongodb://localhost/namethatmovie", {
+  useNewUrlParser: true
+});
+
+// Schema setup 
+var moviequotesSchema = new mongoose.Schema({
+  moviename: String,
+  moviequote: String
+});
+
+module.exports = mongoose.model("moviequotes", moviequotesSchema);
+
+// create moviequote record
+var MovieQuotes = mongoose.model("MovieQuotes", moviequotesSchema);
+
+MovieQuotes.create({
+  moviename: "When Harry Met Sally",
+  moviequote: "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+}, function (err, moviequote) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("Newly created movie quote");
+    console.log(moviequote);
+  }
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
