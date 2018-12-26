@@ -1,0 +1,13 @@
+include ../partials/header
+include ../partials/menu
+
+div(class="ui main text container segment")
+    div(class="ui huge header") New Movie Quote
+    form(class="ui form" action="/moviequotes" method="POST")
+        div(class="field")
+            label Movie Name 
+            input(type="text" name="moviename" placeholder="Movie Name")
+        div(class="field")
+            label Movie Quote
+            textarea(name="moviequote" required)
+        input(class="ui red basic button" type="submit")
