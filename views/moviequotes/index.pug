@@ -7,7 +7,8 @@ block content
       div(class="icon-next")
         a(href="/moviequotes/new" class="ui red basic button right floated") New Movie Quote
     div(class="ui cards")
-      each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+      //- loop through movie quote collection and display each movie quote as a card
+      each moviequote in moviequotes
         div(class="card")
           //- votes section
           div(class="extra content")
@@ -17,15 +18,18 @@ block content
           //- main content i.e. quote, movie, year and writer
           div(class="content")
             div(class="ui image")
-              img(src="https://m.media-amazon.com/images/M/MV5BMjA0MTc5NDkzOV5BMl5BanBnXkFtZTcwNTU2Mzg3NA@@._V1_.jpg")
+              img(src=moviequote.movieimage)
             div(class="ui huge header")
-              h3 "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+              h3 #{moviequote.moviequote}
             div
               i(class="video icon")
-              div(class="movie-year icon-next" alt="movie and year") When Harry Met Sally, 1989
+              div(class="movie-year icon-next" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
             div
               i(class="pencil alternate icon") 
-              div(class="icon-next" alt="writer") Nora Ephron
+              div(class="icon-next" alt="writer") #{moviequote.screenwriter}
+            div
+              form(class="delete-form" action="/moviequotes/" + moviequote.id + "?_method=DELETE" method="POST")
+                button(class="btn btn-xs btn-danger") Delete
           //- card footer with likes/favorites
           div(class="extra content")
             span(class="left floated like")

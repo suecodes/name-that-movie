@@ -5,9 +5,18 @@ div(class="ui main text container segment")
     div(class="ui huge header") New Movie Quote
     form(class="ui form" action="/moviequotes" method="POST")
         div(class="field")
-            label Movie Name 
-            input(type="text" name="moviename" placeholder="Movie Name")
+            div(class="ui pointing below label") Enter the movie name
+            input(type="text" name="moviename" required)
         div(class="field")
-            label Movie Quote
-            textarea(name="moviequote" required)
+            div(class="ui pointing below label") Enter the year movie was made
+            input(class="ui input" type="text" name="movieyear" required)
+        div(class="field")
+            div(class="ui pointing below label") Enter the movie quote
+            textarea(rows="2" name="moviequote" required)
+        div(class="field")
+            div(class="ui pointing below label") Enter the screenwriters name. If multiple screenwriters, separate each name with a comma
+            input(type="text" name="screenwriter" required)
+        div(class="field")
+            div(class="ui pointing below label") Enter the movie image URL (optional)
+            input(type="text" name="movieimage")
         input(class="ui red basic button" type="submit")
