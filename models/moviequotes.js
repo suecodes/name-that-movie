@@ -5,7 +5,7 @@ var moviequotesSchema = new mongoose.Schema({
     moviequote: String,
     movieimage: String,
     screenwriter: String,
-    year: String,
+    year: String
 });
 
 module.exports = mongoose.model("Moviequotes", moviequotesSchema);

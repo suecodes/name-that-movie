@@ -8,9 +8,7 @@ var indexRouter = require('./routes/index');
 var movieQuotesRouter = require("./routes/moviequotes");
 //var usersRouter = require('./routes/users');
 
-
 var mongoose = require("mongoose");
-//var mMovieQuotes = require("./models/moviequotes.js");
 
 var app = express();
 

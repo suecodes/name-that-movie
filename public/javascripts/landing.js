@@ -4,7 +4,6 @@
  *  Contains quiz to allow users to name the movie the quote belongs to
  */
 
-
 var userMovieInput = document.getElementById("user-guess");
 var userInputBlock = document.getElementById("userinput");
 var answerBlock = document.getElementById("right-answer-block");

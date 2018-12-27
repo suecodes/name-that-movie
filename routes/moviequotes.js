@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
+var methodOverride = require("method-override");
+
+router.use(methodOverride("_method"));
 
 // INDEX - Show collection of movie quotes
 router.get("/", function (req, res, next) {
@@ -54,15 +57,28 @@ router.post("/", function (req, res) {
             console.log(err);
         } else {
             // redirect back to movie quotes collection
-            console.log(newMovie);
             res.redirect("/moviequotes");
+        }
+    });
+});
+
+// SHOW - Show information about one quote
+router.get("/:id", function (req, res) {
+    //Find the movie quote with the provided ID
+    Moviequotes.findById(req.params.id, function (err, foundMoviequote) {
+        if (err) {
+            console.log(err);
+        } else {
+            //Render show template with that movie quote
+            res.render("moviequotes/show", {
+                moviequotes: foundMoviequote
+            });
         }
     });
 });
 
 // DESTROY - Remove movie quote from collection
 router.delete("/:id", function (req, res) {
-    console.log(req.params.id);
     Moviequotes.findByIdAndRemove(req.params.id, function (err) {
         if (err) {
             res.redirect("/moviequotes");
@@ -71,6 +87,5 @@ router.delete("/:id", function (req, res) {
         }
     });
 });
-
 
 module.exports = router;
