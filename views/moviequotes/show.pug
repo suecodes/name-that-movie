@@ -1,0 +1,8 @@
+include ../partials/header
+include ../partials/menu
+
+div(class="ui main text container segment")
+    div(class="ui huge header") #{moviequotes.moviename}
+    div
+        form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
+            button(class="btn btn-xs btn-danger") Delete
