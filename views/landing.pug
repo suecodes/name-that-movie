@@ -3,10 +3,10 @@ include partials/header
 block content
   div(class="ui landing-container")
     //- Quote 
-    div(class="movie-quote default-left-grey") "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+    div(class="movie-quote default-left-grey") #{result.moviequote}
     
     //- Format: Movie name, year made - writer (hidden by default)
-    div(id="movie-name" class="movie-name-year default-left-grey" style="visibility:hidden") When Harry Met Sally, 1989 - Nora Ephron
+    div(id="movie-name" class="movie-name-year default-left-grey" style="visibility:hidden") #{result.moviename}, #{result.year} - #{result.screenwriter}
 
     //- Receive user input (display by default)
     div(class="movie-user-answer" style="display:block" id="userinput")

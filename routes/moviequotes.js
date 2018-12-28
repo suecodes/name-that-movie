@@ -7,14 +7,6 @@ router.use(methodOverride("_method"));
 
 // INDEX - Show collection of movie quotes
 router.get("/", function (req, res, next) {
-
-    // Moviequotes.remove({}, function (err) {
-    //     if (err) {
-    //         console.log(err);
-    //     }
-    //     console.log("Removed movies");
-    // });
-
     Moviequotes.find({}, function (err, allMovieQuotes) {
         if (err) {
             console.log(err);
@@ -26,6 +18,7 @@ router.get("/", function (req, res, next) {
         }
     });
 });
+
 
 // NEW - Show new movie quote form
 router.get('/new', function (req, res, next) {
@@ -65,6 +58,7 @@ router.post("/", function (req, res) {
 // SHOW - Show information about one quote
 router.get("/:id", function (req, res) {
     //Find the movie quote with the provided ID
+
     Moviequotes.findById(req.params.id, function (err, foundMoviequote) {
         if (err) {
             console.log(err);

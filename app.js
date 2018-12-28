@@ -17,6 +17,8 @@ mongoose.connect("mongodb://localhost/namethatmovie", {
   useNewUrlParser: true
 });
 
+//var Moviequotes = require("./models/moviequotes");
+
 // Schema setup 
 //var moviequotesSchema = new mongoose.Schema({
 //  moviename: String,
