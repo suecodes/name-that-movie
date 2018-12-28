@@ -8,11 +8,9 @@ router.get("/", function (req, res, next) {
     // Get a random entry
     var random = Math.floor(Math.random() * count);
 
-    // Again query all users but only fetch one offset by our random #
+    // Query all quotes but only fetch one offset by our random #
     Moviequotes.findOne().skip(random).exec(
       function (err, result) {
-        // Tada! random quote
-        console.log(result._id);
         res.render('landing', {
           title: 'Name That Movie',
           result: result
@@ -30,6 +28,10 @@ router.get("/", function (req, res, next) {
   //   result: result
   // });
 
+});
+
+router.post("/", function (req, res) {
+  console.log(req.params);
 });
 
 module.exports = router;

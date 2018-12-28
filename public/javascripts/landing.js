@@ -1,5 +1,5 @@
 /**
- *  Code for home/landing page 
+ *  Code for home/landing page (client side)
  * 
  *  Contains quiz to allow users to name the movie the quote belongs to
  */
@@ -17,8 +17,10 @@ var moviename = document.getElementById("movie-name");
 
     - TODO Refactor, possibly toggle style using conditional (ternary) operator
 */
-function checkMovieQuote() {
-    if (userMovieInput.value.toLowerCase() === "when harry met sally") {
+function checkMovieQuote(name) {
+    console.log(name.toLowerCase());
+    console.log(userMovieInput.value.toLowerCase());
+    if (userMovieInput.value.toLowerCase() === name.toLowerCase()) {
 
         // right answer
         moviename.style.visibility = "visible";
