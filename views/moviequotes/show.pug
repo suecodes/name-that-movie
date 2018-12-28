@@ -1,8 +1,23 @@
 include ../partials/header
 include ../partials/menu
 
-div(class="ui main text container segment")
-    div(class="ui huge header") #{moviequotes.moviename}
-    div
-        form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
-            button(class="btn btn-xs btn-danger") Delete
+block content
+    div(class="ui main text container segment")
+        div(class="ui huge header") "#{moviequotes.moviequote}"
+        table(class="ui celled table")
+            tbody   
+                tr  
+                    td(class="td-width") Movie Name
+                    td(data-label="moviequote") #{moviequotes.moviename}
+                tr  
+                    td Year
+                    td(data-label="moviequote") #{moviequotes.year}
+                tr  
+                    td Screenwriter
+                    td(data-label="moviequote") #{moviequotes.screenwriter}  
+        div
+            form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
+                a(href="/moviequotes" class="ui grey left floated primary button") Back
+                button(class="ui red right floated primary button") Delete
+                
+                

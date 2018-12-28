@@ -51,3 +51,7 @@ body {
 .icon-next {
   display: inline;
 }
+
+.td-width {
+  width: 20%;
+}
