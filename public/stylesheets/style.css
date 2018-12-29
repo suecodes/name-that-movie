@@ -6,7 +6,7 @@ body {
 
 #ntmlogo {
   margin: 0.3em;
-  color: #ffffff;
+  color: #EAEDED;
 }
 
 .landing-container {
@@ -17,9 +17,8 @@ body {
   margin: 4.0em;
 }
 
-.default-left-grey {
+.default-grey {
   color: #4D5656;
-  text-align: left;
 }
 
 .movie-quote {

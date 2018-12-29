@@ -3,10 +3,10 @@ include ../partials/menu
 
 block content
   div(class="ui container quote-container")
-    div(class="ui huge header") Movie Quotes 
+    div(class="ui huge header grey") Movie Quotes 
       div(class="icon-next")
         a(href="/moviequotes/new" class="ui red basic button right floated") New Movie Quote
-    div(class="ui cards")
+    div(class="ui cards grey")
       //- loop through movie quote collection and display each movie quote as a card
       each moviequote in moviequotes
         div(class="card")
@@ -19,16 +19,16 @@ block content
           div(class="content")
             //- div(class="ui image")
               img(src=moviequote.movieimage)
-            div(class="ui huge header")
+            div(class="ui huge header grey")
               h1 #{moviequote.moviequote}
             div
-              i(class="video icon")
-              div(class="movie-year icon-next" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
+              i(class="video icon grey")
+              div(class="movie-year icon-next ui primary grey" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
             div
-              i(class="pencil alternate icon") 
-              div(class="icon-next" alt="writer") #{moviequote.screenwriter}
+              i(class="pencil alternate icon grey") 
+              div(class="icon-next grey" alt="writer") #{moviequote.screenwriter}
             div
-               a(href="/moviequotes/" + moviequote._id class="btn btn-primary") More Info
+               a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") More Info
           //- card footer with likes/favorites
           div(class="extra content")
             span(class="left floated like")
