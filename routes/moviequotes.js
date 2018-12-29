@@ -6,7 +6,7 @@
  *  NEW     /moviequotes/new        GET     Show new movie quote form
  *  CREATE  /moviequotes            POST    Create (save) new movie quote and redirect back to collection
  *  SHOW    /moviequotes/show       GET     Show info about selected movie quote
- *  EDIT    /moviequotes/:id/edit   GET Show edit form for selected movie quote
+ *  EDIT    /moviequotes/:id/edit   GET     Show edit form for selected movie quote
  *  UPDATE  /moviequotes/:id        PUT     Update selected movie quote
  *  DESTROY /moviequotes/:id        DELETE  Delete selected movie quote
  *  
@@ -81,6 +81,15 @@ router.get("/:id", function (req, res) {
                 moviequotes: foundMoviequote
             });
         }
+    });
+});
+
+// EDIT - Show edit form for selected movie quote
+router.get("/:id/edit", function (req, res) {
+    Moviequotes.findById(req.params.id, function (err, foundMoviequote) {
+        res.render("moviequotes/edit", {
+            moviequotes: foundMoviequote
+        });
     });
 });
 

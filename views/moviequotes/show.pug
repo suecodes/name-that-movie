@@ -16,6 +16,7 @@ block content
                     td Screenwriter
                     td(data-label="moviequote") #{moviequotes.screenwriter}  
         div
+            a(class="edit-form" href="/moviequotes/" + moviequotes.id + "/edit") Edit
             form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
                 a(href="/moviequotes" class="ui grey left floated primary button") Back
                 button(class="ui red right floated primary button") Delete
