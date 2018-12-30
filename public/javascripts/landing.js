@@ -50,13 +50,19 @@ function displayAnswer() {
     wrongBlock.style.display = "none";
 }
 
+/** 
+    Reset, display input field for new guess
+*/
 function guessAgain() {
     userInputBlock.style.display = "block";
     wrongBlock.style.display = "none";
 }
 
+
+/** 
+    TODO Display quote as a typewriter effect (Not in use)
+*/
 var i = 0;
-//var txt = 'Lorem ipsum dummy text blabla.';
 var speed = 50;
 
 function typeWriter(name) {

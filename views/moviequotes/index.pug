@@ -1,11 +1,22 @@
 include ../partials/header
 include ../partials/menu
 
+
 block content
   div(class="ui container quote-container")
     div(class="ui huge header grey") Movie Quotes 
       div(class="icon-next")
         a(href="/moviequotes/new" class="ui red basic button right floated") New Movie Quote
+    //- Grid example 
+    div(class="ui container")
+      //- Loop
+      div(class="ui three column equal height grid")
+        each moviequote in moviequotes
+          div(class="four wide computer sixteen wide mobile sixteen wide tablet column")
+            div(class="ui segment")
+              div(class="ui huge header grey") 
+                h1 #{moviequote.moviequote}
+  //- Cards
     div(class="ui cards grey")
       //- loop through movie quote collection and display each movie quote as a card
       each moviequote in moviequotes
@@ -40,5 +51,5 @@ block content
               div(class="icon-next")  Favorite
           div(class="red ui bottom attached button")
             i(class="add icon") 
-            p(class="icon-next") Add Comment
+            p(class="icon-next") Add Comment//
             
