@@ -3,11 +3,11 @@ include partials/header
 block content
 
   div(class="bg")
-    //- div(class="menu") 
+    div(class="menu") 
       img(src="/images/namethatmovielight.png" width="170" height="49")
     div(class="ui landing-container")
       //- Quote 
-      div(class="movie-quote default-grey") "#{result.moviequote}"
+      div(id="moviequote" class="movie-quote default-grey") "#{result.moviequote}"
       
       //- Format: Movie name, year made - writer (hidden by default)
       div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result.moviename}, #{result.year} - #{result.screenwriter}
@@ -33,21 +33,11 @@ block content
       div(class="movie-user-answer" style="display:none" id="wrong-answer-block")
         p(id="message" class="default-grey") Wrong! Try again or get answer.
         //- form(class="ui form" action="/moviequotes" method="POST")
-        a(href="/" class="ui primary button") Guess Again
-        //- form(class="check-user-answer" action="/" method="POST")
-          input(type="submit" value="Guess Again" class="ui primary button")
+        //- a(href="/" class="ui primary button") Guess Again
+        form(class="check-user-answer")
+          button(type="button" onclick="guessAgain();" class="ui primary button") Guess Again
         form(class="check-user-answer" action="/")
           button(type="button" onclick="displayAnswer();" class="ui primary button") Get Answer
-  
-  div(class="ui landing-container")
-    div(class="footer")
-      div(class="")
-        div(class="")
-          p this is the first line
-        div(class="")
-          p this is the first line
-        div(class="")
-          p this is the first line
           
 //- Add js script files  
 script(src="/javascripts/landing.js")

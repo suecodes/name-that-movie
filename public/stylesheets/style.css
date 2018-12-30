@@ -14,8 +14,8 @@ body {
   z-index: 1;
   position: relative;
   text-align: left;
-  margin-left: 10em;
-  margin-right: 10em;
+  margin-left: 15em;
+  margin-right: 15em;
   padding-top: 20vh;
   color: white;
   text-align: center;
@@ -31,8 +31,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-
   /*background-color: #F9EBEA #F2D7D5 #E6B0AA #D98880 #CD6155 #C0392B #A93226 #922B21 #7B241C #641E16 #E8F6F3 #A2D9CE #45B39D #138D75 #0E6655*/
 }
 

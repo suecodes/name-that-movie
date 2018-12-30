@@ -10,6 +10,7 @@ var answerBlock = document.getElementById("right-answer-block");
 var wrongBlock = document.getElementById("wrong-answer-block");
 var message = document.getElementById("message");
 var moviename = document.getElementById("movie-name");
+var quoteField = document.getElementById("moviequote");
 
 /** 
     Checks if user entered the correct movie name 
@@ -18,8 +19,7 @@ var moviename = document.getElementById("movie-name");
     - TODO Refactor, possibly toggle style using conditional (ternary) operator
 */
 function checkMovieQuote(name) {
-    console.log(name.toLowerCase());
-    console.log(userMovieInput.value.toLowerCase());
+
     if (userMovieInput.value.toLowerCase() === name.toLowerCase()) {
 
         // right answer
@@ -48,4 +48,21 @@ function displayAnswer() {
     userInputBlock.style.display = "none";
     answerBlock.style.display = "block";
     wrongBlock.style.display = "none";
+}
+
+function guessAgain() {
+    userInputBlock.style.display = "block";
+    wrongBlock.style.display = "none";
+}
+
+var i = 0;
+//var txt = 'Lorem ipsum dummy text blabla.';
+var speed = 50;
+
+function typeWriter(name) {
+    if (i < name.length) {
+        document.getElementById("quoteField").innerHTML += name.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
 }
