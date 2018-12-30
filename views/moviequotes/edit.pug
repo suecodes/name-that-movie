@@ -3,21 +3,21 @@ include ../partials/menu
 
 block content
     div(class="ui main text container segment")
-        div(class="ui huge header") Edit Movie Quote
-        form(class="ui form" action="/moviequotes" method="POST")
+        div(class="ui huge header") Edit #{moviequotes.moviename} Quote
+        form(class="ui form" action="/moviequotes/" + moviequotes.id + "?_method=PUT" method="POST")
             div(class="field")
-                div(class="ui pointing below label") Enter the movie name
-                input(type="text" name="moviename" required)
+                div(class="ui pointing below label") Edit the movie name
+                input(type="text" name="moviename" required value=moviequotes.moviename) 
             div(class="field")
-                div(class="ui pointing below label") Enter the year movie was made
-                input(class="ui input" type="text" name="movieyear" required)
+                div(class="ui pointing below label") Edit the year movie was made
+                input(class="ui input" type="text" name="year" required value=moviequotes.year) 
             div(class="field")
-                div(class="ui pointing below label") Enter the movie quote
-                textarea(rows="2" name="moviequote" required)
+                div(class="ui pointing below label") Edit the movie quote
+                textarea(rows="2" name="moviequote" required) #{moviequotes.moviequote}
             div(class="field")
-                div(class="ui pointing below label") Enter the screenwriters name. If multiple screenwriters, separate each name with a comma
-                input(type="text" name="screenwriter" required)
+                div(class="ui pointing below label") Edit the screenwriters name. If multiple screenwriters, separate each name with a comma
+                input(type="text" name="screenwriter" required value=moviequotes.screenwriter) 
             div(class="field")
-                div(class="ui pointing below label") Enter the movie image URL (optional)
+                div(class="ui pointing below label") Edit the movie image URL (optional)
                 input(type="text" name="movieimage")
             input(class="ui red basic button" type="submit")

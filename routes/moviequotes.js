@@ -93,6 +93,17 @@ router.get("/:id/edit", function (req, res) {
     });
 });
 
+// UPDATE - Update selected movie quote
+router.put("/:id", function (req, res) {
+    Moviequotes.findByIdAndUpdate(req.params.id, req.body, function (err, updateMoviequotes) {
+        if (err) {
+            res.redirect("/moviequotes");
+        } else {
+            res.redirect("/moviequotes/" + req.params.id);
+        }
+    });
+});
+
 // DESTROY - Remove movie quote from collection
 router.delete("/:id", function (req, res) {
     Moviequotes.findByIdAndRemove(req.params.id, function (err) {
