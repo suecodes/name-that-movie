@@ -54,6 +54,7 @@ function displayAnswer() {
     Reset, display input field for new guess
 */
 function guessAgain() {
+    debugger;
     userInputBlock.style.display = "block";
     wrongBlock.style.display = "none";
 }

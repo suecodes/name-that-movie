@@ -5,9 +5,9 @@ block content
   div(class="bg")
     div(class="menu") 
       img(src="/images/namethatmovielight.png" width="170" height="49")
-    div(class="ui landing-container")
+    div(class="landing-container")
       //- Quote 
-      div(id="moviequote" class="movie-quote default-grey") "#{result.moviequote}"
+      div(class="moviequote default-grey") "#{result.moviequote}"
       
       //- Format: Movie name, year made - writer (hidden by default)
       div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result.moviename}, #{result.year} - #{result.screenwriter}

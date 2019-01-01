@@ -1,10 +1,24 @@
 body {
-  font-family: "Asap", serif;
   margin: 0;
   padding: 0px;
   height: 100%;
 }
 
+/* Background on landing page */
+.bg {
+  /*background-image: url("https://images.unsplash.com/photo-1505533321630-975218a5f66f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80");
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;*/
+  background-color: #E6B0AA;
+  /*background-color: #4D5656;*/
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-color: #F9EBEA #F2D7D5 #E6B0AA #D98880 #CD6155 #C0392B #A93226 #922B21 #7B241C #641E16 #E8F6F3 #A2D9CE #45B39D #138D75 #0E6655*/
+}
+
+/* Logo */
 #ntmlogo {
   margin: 0.3em;
   color: #EAEDED;
@@ -21,29 +35,32 @@ body {
   text-align: center;
 }
 
-.bg {
-  /*background-image: url("https://images.unsplash.com/photo-1505533321630-975218a5f66f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80");
-  background-color: rgba(255, 255, 255, 0.6);
-  background-blend-mode: lighten;*/
-  background-color: #E6B0AA;
-  /*background-color: #4D5656;*/
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*background-color: #F9EBEA #F2D7D5 #E6B0AA #D98880 #CD6155 #C0392B #A93226 #922B21 #7B241C #641E16 #E8F6F3 #A2D9CE #45B39D #138D75 #0E6655*/
-}
-
 .quote-container {
   margin: 4.0em;
+}
+
+/* Grid */
+.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.quoteitem {
+  border: 1px solid black;
 }
 
 .default-grey {
   color: #4D5656;
 }
 
-.movie-quote {
-  font-size: 5em;
+.moviequote {
+  font: 5em 'Habibi', serif;
+  line-height: 1.0em;
+}
+
+.moviequotecoll {
+  font: 2em 'Habibi', serif;
   line-height: 1.0em;
 }
 

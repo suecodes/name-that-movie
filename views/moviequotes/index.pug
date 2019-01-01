@@ -8,14 +8,11 @@ block content
       div(class="icon-next")
         a(href="/moviequotes/new" class="ui red basic button right floated") New Movie Quote
     //- Grid example 
-    div(class="ui container")
-      //- Loop
-      div(class="ui three column equal height grid")
-        each moviequote in moviequotes
-          div(class="four wide computer sixteen wide mobile sixteen wide tablet column")
-            div(class="ui segment")
-              div(class="ui huge header grey") 
-                h1 #{moviequote.moviequote}
+    div(class="gridcontainer")
+      //- Loop 
+      each moviequote in moviequotes
+        div(class="quoteitem")
+          div(class="moviequotecoll default-grey") "#{moviequote.moviequote}""
   //- Cards
     div(class="ui cards grey")
       //- loop through movie quote collection and display each movie quote as a card
