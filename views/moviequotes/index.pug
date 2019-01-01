@@ -4,7 +4,7 @@ include ../partials/menu
 
 block content
   div(class="ui container quote-container")
-    div(class="ui huge header grey") Movie Quotes 
+    div(class="ui huge header grey") 
       div(class="icon-next")
         a(href="/moviequotes/new" class="ui red basic button right floated") New Movie Quote
     //- Grid example 
@@ -12,7 +12,31 @@ block content
       //- Loop 
       each moviequote in moviequotes
         div(class="quoteitem")
-          div(class="moviequotecoll default-grey") "#{moviequote.moviequote}""
+          div(class="ui attached segment")
+            div(class="commentblock")
+              span(class="right floated")
+                div(class="icon-next") 121 Comments 
+                i(class="comment outline icon")
+            div(class="moviequotecoll default-grey") "#{moviequote.moviequote}"
+            div(class="space")
+              i(class="video icon grey")
+              div(class="movie-year icon-next ui primary grey" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
+            div(class="space")
+              i(class="pencil alternate icon grey") 
+              div(class="icon-next grey" alt="writer") #{moviequote.screenwriter}
+            div
+              a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") More Info
+            div(class="likefavoriteblock")
+              span(class="leftlike")
+                i(class="like icon") 
+                div(class="icon-next") Like
+              span(class="rightfavorite")
+                i(class="star icon") 
+                div(class="icon-next") Favorite
+          div(class="red ui bottom attached button")
+            i(class="add icon") 
+            p(class="icon-next") Add Comment
+
   //- Cards
     div(class="ui cards grey")
       //- loop through movie quote collection and display each movie quote as a card

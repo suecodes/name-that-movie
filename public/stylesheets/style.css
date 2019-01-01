@@ -43,11 +43,29 @@ body {
 .gridcontainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
+  grid-gap: 15px;
 }
 
-.quoteitem {
-  border: 1px solid black;
+.commentblock {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.likefavoriteblock {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.leftlike {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rightfavorite {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .default-grey {
@@ -59,9 +77,14 @@ body {
   line-height: 1.0em;
 }
 
+.space {
+  padding: 3px;
+}
+
 .moviequotecoll {
-  font: 2em 'Habibi', serif;
-  line-height: 1.0em;
+  font: 2.5em 'Habibi', serif;
+  line-height: 1.2em;
+  padding: 5px;
 }
 
 .movie-name-year {
