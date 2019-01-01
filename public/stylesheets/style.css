@@ -1,3 +1,12 @@
+:root {
+  --darkestgrey: #1B2631;
+  --darkgrey: #4D5656;
+  --grey: #717D7E;
+  --lightgrey: #AAB7B8;
+  --lightestgrey: #EAEDED;
+  --softpink: #E6B0AA;
+}
+
 body {
   margin: 0;
   padding: 0px;
@@ -9,7 +18,7 @@ body {
   /*background-image: url("https://images.unsplash.com/photo-1505533321630-975218a5f66f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80");
   background-color: rgba(255, 255, 255, 0.6);
   background-blend-mode: lighten;*/
-  background-color: #E6B0AA;
+  background-color: var(--softpink);
   /*background-color: #4D5656;*/
   height: 100%;
   background-position: center;
@@ -42,8 +51,22 @@ body {
 /* Grid */
 .gridcontainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 15px;
+  grid-auto-flow: dense;
+  place-items: stretch stretch;
+  justify-content: space-between;
+}
+
+.quoteitem {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+  border-radius: 4px;
+  border: 1px solid var(--lightgrey);
+  justify-self: center;
+  align-items: flex-end;
 }
 
 .commentblock {
