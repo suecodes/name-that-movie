@@ -12,21 +12,18 @@ block content
       //- Loop 
       each moviequote in moviequotes
         div(class="quoteitem")
-          div(class="ui attached segment")
-            div(class="commentblock")
-              span(class="right floated")
-                div(class="icon-next") 
-                a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") 121 Comments 
-                  i(class="comment outline icon")
-            div(class="moviequotecoll default-grey") "#{moviequote.moviequote}"
-            div(class="space")
+          div
+            div
+            div(class="spacetop")
               i(class="video icon grey")
               div(class="movie-year icon-next ui primary grey" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
-            div(class="space")
+              div(class="moreinfo")
+                i(class="info circle large icon")
+                  a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") 
+            div(class="spacebottom")
               i(class="pencil alternate icon grey") 
               div(class="icon-next grey" alt="writer") #{moviequote.screenwriter}
-            div
-              a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") More Info
+            div(class="moviequotecoll default-grey") "#{moviequote.moviequote}"
             div(class="likefavoriteblock")
               span(class="leftlike")
                 i(class="like icon") 
@@ -34,9 +31,14 @@ block content
               span(class="rightfavorite")
                 i(class="star icon") 
                 div(class="icon-next") Favorite
-          div(class="red ui bottom attached button")
+            div(class="commentblock")
+              span(class="right floated")
+                div(class="icon-next") 
+                a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") 121 Comments 
+                  i(class="comment outline icon")
+          //- div(class="red ui bottom attached button")
             i(class="add icon") 
-            p(class="icon-next") Add Comment
+            p(class="icon-next") Add Comment //
 
   //- Cards (To be removed)
     div(class="ui cards grey")
