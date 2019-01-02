@@ -4,9 +4,15 @@ include ../partials/menu
 
 block content
   div(class="ui container quote-container")
-    div(class="ui huge header") 
+    div(class="header") 
+      div(class="ui selection dropdown")
+        i(class="dropdown icon")
+        div(class="text") Newest
+        div(class="menu")
+          div(class="item" data-value="0") Newest
+          div(class="item" data-value="1") Movie Name
       div(class="icon-next")
-        a(href="/moviequotes/new" class="ui red basic button right floated") New Movie Quote
+        a(href="/moviequotes/new" class="ui green mini button right floated") New Movie Quote
     //- Grid example 
     div(class="gridcontainer")
       //- Loop 
@@ -41,6 +47,7 @@ block content
           //- div(class="red ui bottom attached button")
             i(class="add icon") 
             p(class="icon-next") Add Comment //
+
 
   //- Cards (To be removed)
     div(class="ui cards grey")

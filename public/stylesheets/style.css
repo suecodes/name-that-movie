@@ -1,5 +1,6 @@
 :root {
   --white: #ffffff;
+  --black: #000000;
   --darkestgrey: #1B2631;
   --darkgrey: #4D5656;
   --grey: #717D7E;
@@ -46,6 +47,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.header {
+  height: 40px;
 }
 
 /* Logo */
@@ -199,5 +204,5 @@ body {
   width: 100%;
   background-color: var(--lightpink);
   color: var(--darkgrey);
-  height: 120px;
+  height: 40px;
 }
