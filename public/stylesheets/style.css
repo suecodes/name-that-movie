@@ -1,4 +1,5 @@
 :root {
+  --white: #ffffff;
   --darkestgrey: #1B2631;
   --darkgrey: #4D5656;
   --grey: #717D7E;
@@ -29,13 +30,18 @@ body {
   height: 100%;
 }
 
+/* link */
+.link {
+  color: var(--darkgreen) !important;
+}
+
 /* Background on landing page */
 .bg {
   /*background-image: url("https://images.unsplash.com/photo-1505533321630-975218a5f66f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80");
   background-color: rgba(255, 255, 255, 0.6);
   background-blend-mode: lighten;*/
   background-color: var(--softpink);
-  /*background-color: #4D5656;*/
+  /*background-color: var(--darkgrey);*/
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,7 +61,7 @@ body {
   margin-left: 15em;
   margin-right: 15em;
   padding-top: 20vh;
-  color: white;
+  color: var(--white);
   text-align: center;
 }
 
@@ -134,7 +140,7 @@ body {
 }
 
 .default-grey {
-  color: #4D5656;
+  color: var(--darkgrey);
 }
 
 .moviequote {
@@ -191,7 +197,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #F2D7D5;
-  color: #4D5656;
+  background-color: var(--lightpink);
+  color: var(--darkgrey);
   height: 120px;
 }

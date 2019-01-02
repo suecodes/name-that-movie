@@ -16,25 +16,27 @@ block content
             div
             div(class="spacetop")
               i(class="video icon grey")
-              div(class="movie-year icon-next ui primary grey" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
+              div(class="movie-year icon-next default-grey" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
               div(class="moreinfo")
-                i(class="info circle large icon")
-                  a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") 
+                a(href="/moviequotes/" + moviequote._id class="link") 
+                  i(class="info circle large icon") 
             div(class="spacebottom")
               i(class="pencil alternate icon grey") 
               div(class="icon-next grey" alt="writer") #{moviequote.screenwriter}
             div(class="moviequotecoll default-grey") "#{moviequote.moviequote}"
             div(class="likefavoriteblock")
               span(class="leftlike")
-                i(class="like icon") 
-                div(class="icon-next") Like
+                a(class="link")
+                  i(class="like icon") 
+                  div(class="icon-next") Like
               span(class="rightfavorite")
-                i(class="star icon") 
-                div(class="icon-next") Favorite
+                a(class="link")
+                  i(class="star icon") 
+                  div(class="icon-next") Favorite
             div(class="commentblock")
               span(class="right floated")
                 div(class="icon-next") 
-                a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") 121 Comments 
+                a(href="/moviequotes/" + moviequote._id class="link") 121 Comments 
                   i(class="comment outline icon")
           //- div(class="red ui bottom attached button")
             i(class="add icon") 
