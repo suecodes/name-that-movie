@@ -54,7 +54,7 @@ function displayAnswer() {
     Reset, display input field for new guess
 */
 function guessAgain() {
-    debugger;
+    userMovieInput.value = "";
     userInputBlock.style.display = "block";
     wrongBlock.style.display = "none";
 }

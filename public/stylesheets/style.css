@@ -58,6 +58,7 @@ body {
   justify-content: space-between;
 }
 
+/* grid items 
 .quoteitem {
   overflow: hidden;
   display: grid;
@@ -67,6 +68,22 @@ body {
   border: 1px solid var(--lightgrey);
   justify-self: center;
   align-items: flex-end;
+}*/
+
+/* mobile layout */
+@media only screen and (max-device-width: 480px) {
+  .gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    grid-gap: 15px;
+    grid-auto-flow: dense;
+    place-items: stretch stretch;
+    justify-content: space-between;
+  }
+
+  .moviequotecoll {
+    font: 5em 'Habibi', serif !important;
+  }
 }
 
 .commentblock {
