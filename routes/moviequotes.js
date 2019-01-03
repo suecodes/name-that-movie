@@ -9,6 +9,7 @@
  *  EDIT    /moviequotes/:id/edit   GET     Show edit form for selected movie quote
  *  UPDATE  /moviequotes/:id        PUT     Update selected movie quote
  *  DESTROY /moviequotes/:id        DELETE  Delete selected movie quote
+ *  SORT    /moviequotes/sort       GET     Display moviequotes by name or year
  *  
  */
 
@@ -31,6 +32,25 @@ router.get("/", function (req, res, next) {
             });
         }
     });
+});
+
+// SORT - Sort by moviename or year
+router.get("/sort", function (req, res, next) {
+    // Get value of SortBy dropdown list
+    var sortBy = {};
+    sortBy[req.query.value] = 1;
+
+    // Get data sorted by selected value and display
+    Moviequotes.find({}, function (err, allMovieQuotes) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("moviequotes/index", {
+                title: "Name That Movie",
+                moviequotes: allMovieQuotes
+            });
+        }
+    }).sort(sortBy);
 });
 
 // NEW - Show new movie quote form
