@@ -10,3 +10,4 @@ Technology used:
 - pug
 - css
 - mongoose
+- semantic-ui

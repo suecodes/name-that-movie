@@ -197,12 +197,15 @@ body {
   width: 20%;
 }
 
-.footer {
-  position: fixed;
+.footerui {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: var(--lightpink);
+  position: relative;
   color: var(--darkgrey);
-  height: 40px;
+  background: var(--palestgreen);
+  -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+  margin: 0;
+  padding: 1em 1em;
 }
