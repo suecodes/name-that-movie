@@ -70,6 +70,24 @@ body {
   text-align: center;
 }
 
+.new-container {
+  z-index: 1;
+  position: relative;
+  text-align: left;
+  margin-left: 15em;
+  margin-right: 15em;
+  padding-top: 10vh;
+  color: var(--white);
+  text-align: left;
+}
+
+.horizontal-line {
+  border-color: var(--darkgrey);
+  border-top-style: solid;
+  border-width: 1px;
+  padding-bottom: 15px;
+}
+
 .quote-container {
   margin: 4.0em;
 }
@@ -87,6 +105,7 @@ body {
 
 /* grid items */
 .quoteitem {
+  border-color: var(--darkgrey);
   border-top-style: solid;
   border-width: 1px;
   /*overflow: hidden;
@@ -99,6 +118,10 @@ body {
 
 .movie-year {
   font-weight: bold;
+}
+
+.yeardropdown {
+  width: 30px;
 }
 
 .moreinfo {
