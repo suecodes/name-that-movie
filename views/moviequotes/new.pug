@@ -5,19 +5,34 @@ block content
     script.
         $(document).ready(function(){
             $('.ui.dropdown') .dropdown();
-        });
-        $('form').form({
-            on: 'blur',
-            fields: {
-                dropdown: {
-                    identifier: 'yeardropdown',
-                    rules: [{
-                        type: 'empty',
-                        prompt: 'Please select a year value'
-                    }]
-                }
+            var resultsArray = [];
+            const min = 1900;
+            const max = 2019;
+            for(i = min; i <= max; i++) {
+                resultsArray.push(i);
             }
+            $.each(resultsArray, function (i, item) {
+                $('.menu').append($('<div>', {
+                    value: item,
+                    text: item,
+                    class: "item"
+                }))
+            });
+           
+            $('form').form({
+            on: 'blur',
+                fields: {
+                    dropdown: {
+                        identifier: 'dropdown',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please select a year value'
+                        }]
+                    }
+                }
+            });
         });
+
     div(class="new-container")
         div(class="ui huge header") New Movie Quote
         div(class="horizontal-line")
@@ -28,12 +43,8 @@ block content
                     input(type="text" name="moviename" required)
                 div(class="field")
                     div(class="ui pointing below label") Enter the year movie was made * 
-                    div(class="ui compact selection dropdown" name="yeardropdown")
-                        input(type="hidden" name="year" required)
-                        i(class="dropdown icon")
-                        div(class="menu")
-                            div(class="item" data-value="1") 1991
-                            div(class="item" data-value="2") 1992
+                    select(class="ui dropdown")
+                       
                     //- input(class="ui input" type="text" name="movieyear" required)
             div(class="field")
                 div(class="ui pointing below label") Enter the movie quote *
