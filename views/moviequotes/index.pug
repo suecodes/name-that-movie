@@ -14,8 +14,6 @@ block content
         div(class="menu")
           a(class="item" href="/moviequotes/sort?value=moviename") Movie Name
           a(class="item" href="/moviequotes/sort?value=year") Movie Year
-          //- div(class="item" data-value="moviename" href="/moviequotes/sort=moviename") Movie Name
-          //- div(class="item" data-value="year" href="/moviequotes/sort=year") Movie Year
       div(class="icon-next")
         a(href="/moviequotes/new" class="ui green mini button right floated") New Movie Quote
     //- Grid example 
@@ -24,17 +22,22 @@ block content
       each moviequote in moviequotes
         div(class="quoteitem")
           div
-            div
             div(class="spacetop")
+              //- Movie & year
               i(class="video icon grey")
               div(class="movie-year icon-next default-grey" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
               div(class="moreinfo")
+                //- More info
                 a(href="/moviequotes/" + moviequote._id class="link") 
-                  i(class="info circle large icon") 
+                  i(class="eye large icon") 
+                  div(class="icon-next") View
             div(class="spacebottom")
+              //- screenwriter
               i(class="pencil alternate icon grey") 
               div(class="icon-next grey" alt="screenwriter") #{moviequote.screenwriter}
+            //- Movie quote
             div(class="moviequotecoll default-grey") "#{moviequote.moviequote}"
+            //- Like / Favorites
             div(class="likefavoriteblock")
               span(class="leftlike")
                 a(class="link")
@@ -44,6 +47,7 @@ block content
                 a(class="link")
                   i(class="star icon") 
                   div(class="icon-next") Favorite
+            //- Comments
             div(class="commentblock")
               span(class="right floated")
                 div(class="icon-next") 

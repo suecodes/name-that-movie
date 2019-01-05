@@ -7,8 +7,10 @@ block content
             
             //- Populate year array with all years btw 1900 and current year
             var resultsArray = [];
-            const min = 1900;
+            const min = 1930;
             const max = new Date().getFullYear();
+            
+            resultsArray.push("Year");
             for(i = min; i <= max; i++) {
                 resultsArray.push(i);
             }
@@ -37,8 +39,8 @@ block content
             });
         });
 
-    div(class="new-container")
-        div(class="ui huge header") New Movie Quote
+    div(class="ui container new-container")
+        div(class="ui large header green") New Movie Quote
         div(class="horizontal-line")
         form(class="ui form" action="/moviequotes" method="POST")
             div(class="two fields")
@@ -55,5 +57,7 @@ block content
             div(class="field")
                 div(class="ui pointing below label") Enter the screenwriters name (separate with comma if multiple) *
                 input(type="text" name="screenwriter" required)
-            input(class="ui red basic button" type="submit")
-        div(class="horizontal-line")
+            a(href="/moviequotes" class="ui green left floated link") 
+                    i(class="hand point left outline large icon") 
+                    div(class="icon-next") Back 
+            input(class="ui green mini button right floated" type="submit")

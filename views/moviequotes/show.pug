@@ -2,9 +2,19 @@ include ../partials/header
 include ../partials/menu
 
 block content
-    div(class="ui main text container segment")
-        div(class="ui huge header") "#{moviequotes.moviequote}"
-        table(class="ui celled table")
+    div(class="ui container new-container")
+        div(class="likefavoriteblock")
+            span(class="leftlike")
+                //- div(class="ui large header green") "#{moviequotes.moviequote}"
+                a(href="/moviequotes" class="ui green left floated link") 
+                    i(class="hand point left outline large icon") 
+                    div(class="icon-next") Back 
+            span(class="rightfavorite")
+                form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
+                    button(class="ui green right floated mini button") Delete
+                    a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
+        div(class="horizontal-line")
+        table(class="ui table")
             tbody   
                 tr  
                     td(class="td-width") Movie Name
@@ -16,9 +26,10 @@ block content
                     td Screenwriter
                     td(data-label="moviequote") #{moviequotes.screenwriter}  
         div
-            a(class="edit-form" href="/moviequotes/" + moviequotes.id + "/edit") Edit
-            form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
-                a(href="/moviequotes" class="ui grey left floated primary button") Back
-                button(class="ui red right floated primary button") Delete
-                
-                
+            //- form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
+                a(href="/moviequotes" class="ui green left floated link") 
+                    i(class="hand point left outline large icon") 
+                    div(class="icon-next") Back 
+                button(class="ui green right floated mini button") Delete
+                a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit //
+            
