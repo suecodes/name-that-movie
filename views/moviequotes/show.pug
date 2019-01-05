@@ -14,18 +14,35 @@ block content
                     button(class="ui green right floated mini button") Delete
                     a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
         div(class="horizontal-line")
-        table(class="ui table")
-            tbody   
-                tr  
-                    td(class="td-width") Movie Name
-                    td(data-label="moviequote") #{moviequotes.moviename}
-                tr  
-                    td Year
-                    td(data-label="moviequote") #{moviequotes.year}
-                tr  
-                    td Screenwriter
-                    td(data-label="moviequote") #{moviequotes.screenwriter}  
-        div
+        //- Main content
+        div(class="test")
+            div(class="item itemMovieQuote") 
+                div(class="moviequotecoll default-grey") "#{moviequotes.moviequote}"
+        div(class="test")
+            div(class="item")
+                div(class="movie-name-year default-grey") #{moviequotes.moviename}, #{moviequotes.year}
+                div(class="movie-name-year default-grey") #{moviequotes.screenwriter}
+        //- div(class="showgridcontainer")
+            //- first col, span 3 rows
+            div(class="item itemMovieQuote") 
+                div(class="moviequotecoll default-grey") "#{moviequotes.moviequote}"
+            div(class="nestcontainer")
+                //- second col 
+                div(class="item nestItem")  
+                    i(class="video icon grey")
+                    div(class="icon-next grey ui") Movie Name
+                div(class="item nestItem") 
+                    div(class="ui") #{moviequotes.moviename}
+                div(class="item nestItem") 
+                    div(class="icon-next grey ui") Movie Year
+                div(class="item") 
+                    div(class="ui") #{moviequotes.year}
+                div(class="item") 
+                    i(class="pencil alternate icon grey") 
+                    div(class="icon-next ui") Screenwriter
+                div(class="item") 
+                    div(class="icon-next grey ui" alt="screenwriter") #{moviequotes.screenwriter}
+        div(class="horizontal-line")
             //- form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
                 a(href="/moviequotes" class="ui green left floated link") 
                     i(class="hand point left outline large icon") 
