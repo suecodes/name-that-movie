@@ -4,21 +4,25 @@ include ../partials/menu
 block content
     script.
         $(document).ready(function(){
-            $('.ui.dropdown') .dropdown();
+            
+            //- Populate year array with all years btw 1900 and current year
             var resultsArray = [];
             const min = 1900;
-            const max = 2019;
+            const max = new Date().getFullYear();
             for(i = min; i <= max; i++) {
                 resultsArray.push(i);
             }
+            // Load year dropdown with year array
             $.each(resultsArray, function (i, item) {
-                $('.menu').append($('<div>', {
+                $('.dropmenu').append($('<option>', {
                     value: item,
                     text: item,
                     class: "item"
                 }))
             });
-           
+            
+            $('.ui.dropdown') .dropdown();
+            
             $('form').form({
             on: 'blur',
                 fields: {
@@ -43,17 +47,13 @@ block content
                     input(type="text" name="moviename" required)
                 div(class="field")
                     div(class="ui pointing below label") Enter the year movie was made * 
-                    select(class="ui dropdown")
-                       
-                    //- input(class="ui input" type="text" name="movieyear" required)
+                    select(class="ui dropdown dropmenu" name="movieyear") 
+                        div(class="default text") Year
             div(class="field")
                 div(class="ui pointing below label") Enter the movie quote *
                 textarea(rows="2" name="moviequote" required)
             div(class="field")
                 div(class="ui pointing below label") Enter the screenwriters name (separate with comma if multiple) *
                 input(type="text" name="screenwriter" required)
-            //- div(class="field")
-                div(class="ui pointing below label") Enter the movie image URL (optional)
-                input(type="text" name="movieimage")
             input(class="ui red basic button" type="submit")
         div(class="horizontal-line")
