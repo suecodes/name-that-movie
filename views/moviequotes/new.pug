@@ -40,7 +40,11 @@ block content
         });
 
     div(class="ui container new-container")
-        div(class="ui large header green") New Movie Quote
+        div(class="header") 
+            a(href="/moviequotes" class="ui green left floated link") 
+                i(class="hand point left outline large icon") 
+                div(class="icon-next") Back 
+            div(class="ui large header green right floated") New Movie Quote
         div(class="horizontal-line")
         form(class="ui form" action="/moviequotes" method="POST")
             div(class="spacetop")
@@ -58,7 +62,6 @@ block content
             div(class="field")
                 div(class="ui pointing below label") Enter the screenwriters name (separate with comma if multiple) *
                 input(type="text" name="screenwriter" required)
-            a(href="/moviequotes" class="ui green left floated link") 
-                    i(class="hand point left outline large icon") 
-                    div(class="icon-next") Back 
             input(class="ui green mini button right floated" type="submit")
+
+include ../partials/footer

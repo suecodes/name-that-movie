@@ -248,26 +248,21 @@ body {
 
 .test {
   display: flex;
-
   height: 100%;
   width: 100%;
   background: var(--palestgreen);
-  -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
-  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
 .footerui {
-  left: 0;
+  position: relative;
   bottom: 0;
   width: 100%;
-  position: relative;
+  margin: 0;
+  clear: both;
+  padding: 1em 1em;
   color: var(--darkgrey);
   background: var(--palestgreen);
-  -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
-  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
-  margin: 0;
-  padding: 1em 1em;
 }
