@@ -135,4 +135,13 @@ router.delete("/:id", function (req, res) {
     });
 });
 
+
+// CREATE - Save to db and redirect back to index
+// router.post("/comments", function (req, res) {
+//     // Get data from the form and add to array
+//     console.log("This a comment");
+//     // Create new movie and save to DB
+//     res.render("this is a post");
+// });
+
 module.exports = router;
