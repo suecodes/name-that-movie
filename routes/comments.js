@@ -32,4 +32,17 @@ router.post("/", function (req, res) {
     });
 });
 
+// DESTROY - Remove movie comment from selected movie quote
+router.delete("/:id", function (req, res) {
+    console.log(req.params.id);
+    res.send("test");
+    // Moviecomments.findByIdAndRemove(req.params.id, function (err) {
+    //     if (err) {
+    //         res.redirect("/moviequotes");
+    //     } else {
+    //         res.redirect("/moviequotes/" + req.body.moviequoteid);
+    //     }
+    // });
+});
+
 module.exports = router;
