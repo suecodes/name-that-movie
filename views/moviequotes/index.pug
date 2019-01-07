@@ -47,52 +47,11 @@ block content
                 a(class="link")
                   i(class="star icon") 
                   div(class="icon-next") Favorite
-            //- Comments
+            //- Comments - get count of comments
             div(class="commentblock")
               span(class="right floated")
                 div(class="icon-next") 
-                a(href="/moviequotes/" + moviequote._id class="link") 121 Comments 
+                a(href="/moviequotes/" + moviequote._id class="link") #{moviequote.comments.length} Comments 
                   i(class="comment outline icon")
-          //- div(class="red ui bottom attached button")
-            i(class="add icon") 
-            p(class="icon-next") Add Comment //
 
   include ../partials/footer
-
-  //- Cards (To be removed)
-    div(class="ui cards grey")
-      //- loop through movie quote collection and display each movie quote as a card
-      each moviequote in moviequotes
-        div(class="card")
-          //- votes section
-          div(class="extra content")
-            span(class="right floated")
-              i(class="comment outline icon") 
-              div(class="icon-next") 121 Comments
-          //- main content i.e. quote, movie, year and writer
-          div(class="content")
-            //- Remove image function
-            //- div(class="ui image")
-              img(src=moviequote.movieimage)
-            div(class="ui huge header grey")
-              h1 #{moviequote.moviequote}
-            div
-              i(class="video icon grey")
-              div(class="movie-year icon-next ui primary grey" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
-            div
-              i(class="pencil alternate icon grey") 
-              div(class="icon-next grey" alt="writer") #{moviequote.screenwriter}
-            div
-               a(href="/moviequotes/" + moviequote._id class="btn btn-primary grey") More Info
-          //- card footer with likes/favorites
-          div(class="extra content")
-            span(class="left floated like")
-              i(class="like icon") 
-              div(class="icon-next") Like
-            span(class="right floated star")
-              i(class="star icon") 
-              div(class="icon-next")  Favorite
-          div(class="red ui bottom attached button")
-            i(class="add icon") 
-            p(class="icon-next") Add Comment//
-            

@@ -25,30 +25,22 @@ block content
                 div(class="movie-name-year default-grey") #{moviequotes.screenwriter}
         div(class="horizontal-line")
         //- Comments]
-    div(class="ui container new-container")
         div(class="ui comments")
             h3(class="ui dividing header") Comments
-            div(class="comment")
-                div(class="content")
-                    a(class="author") Jonathan
-                    div(class="metadata")
-                        span(class="date") Today at 5:42PM
-                    div(class="text") I love this quote. I've watched this movie every Christmas since I was 5 years old. 
-                    div(class="actions")
-                        a(class="reply") Add Comment
-            div(class="comment")
-                div(class="content")
-                    a(class="author") Suzanne
-                    div(class="metadata")
-                        span(class="date") Today at 6:12PM
-                    div(class="text") This was my favorite movie and I used to dress up as Dorothy for Halloween. I loved those ruby red shoes.
-                    div(class="actions")
-                        a(class="reply") Add Comment
+            each comment in moviequotes.comments
+                div(class="comment")
+                    div(class="content")
+                        a(class="author") #{comment.author}
+                        div(class="metadata")
+                            span(class="date") #{comment.dateCreated}
+                        div(class="text") #{comment.commenttext}
+                        div(class="actions")
+                            a(class="reply") Add Comment
             form(class="ui reply form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")
                 div(class="field")
                     input(type="hidden" name="moviequoteid" value=moviequotes._id)
                     textarea(name="moviecomment")
                 //- div(class="ui green right floated mini button") Add Comment
-                input(class="ui green mini button right floated" type="submit")
+                input(class="ui green mini button right floated" type="submit" value="Add Comment")
 
 include ../partials/footer
