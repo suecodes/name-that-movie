@@ -16,11 +16,41 @@ router.get("/", function (req, res, next) {
           result: result
         });
       });
+    // load page
+    // res.render('landing', {
+    //   title: 'Name That Movie',
+    //   result: result
+    // });
   });
+
+  // get random sample
+  // var result = Moviequotes.aggregate([{
+  //   $sample: {
+  //     size: 2
+  //   }
+  // }]);
+  // console.log(result.toObject({
+  //   getters: true
+  // }));
+
+  // Moviequotes.aggregate([{
+  //   $sample: {
+  //     size: 2
+  //   }
+  // }]).exec(function (err, result) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     result.prototype.toObject({
+  //       getters: true
+  //     });
+  //     console.log(result);
+  //   }
+  // });
 
   // var result = Moviequotes.aggregate([{
   //   $sample: {
-  //     size: 1
+  //     size: 5
   //   }
   // }]);
   // res.render('landing', {
@@ -29,9 +59,5 @@ router.get("/", function (req, res, next) {
   // });
 
 });
-
-//router.post("/", function (req, res) {
-//  console.log(req.params);
-//});
 
 module.exports = router;

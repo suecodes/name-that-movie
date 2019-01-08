@@ -16,6 +16,7 @@
 var express = require('express');
 var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
+var Moviecomments = require("../models/comments");
 var methodOverride = require("method-override");
 
 router.use(methodOverride("_method"));
@@ -135,6 +136,18 @@ router.delete("/:id", function (req, res) {
     });
 });
 
+// DESTROY - Remove movie comment from selected movie quote
+router.delete("/:id/comments/:commentid", function (req, res) {
+    //console.log(req.params.commentid);
+    //console.log(req.params.id);
+    Moviecomments.findByIdAndRemove(req.params.commentid, function (err) {
+        if (err) {
+            res.redirect("/moviequotes");
+        } else {
+            res.redirect("/moviequotes/" + req.params.id);
+        }
+    });
+});
 
 // CREATE - Save to db and redirect back to index
 // router.post("/comments", function (req, res) {

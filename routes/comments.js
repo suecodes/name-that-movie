@@ -6,7 +6,7 @@ var methodOverride = require("method-override");
 
 router.use(methodOverride("_method"));
 
-// CREATE - Save comments against the movie quote ID record
+// CREATE - Save comments against the current movie quote ID record
 router.post("/", function (req, res) {
     Moviequotes.findById(req.body.moviequoteid, function (err, moviequotes) {
         if (err) {
@@ -24,7 +24,7 @@ router.post("/", function (req, res) {
                     comment.save();
                     moviequotes.comments.push(comment);
                     moviequotes.save();
-                    // req.flash("success", "Successfully added comment");
+                    // Refresh page with new comment
                     res.redirect("/moviequotes/" + req.body.moviequoteid);
                 }
             });
@@ -32,17 +32,18 @@ router.post("/", function (req, res) {
     });
 });
 
-// DESTROY - Remove movie comment from selected movie quote
-router.delete("/:id", function (req, res) {
-    console.log(req.params.id);
-    res.send("test");
-    // Moviecomments.findByIdAndRemove(req.params.id, function (err) {
-    //     if (err) {
-    //         res.redirect("/moviequotes");
-    //     } else {
-    //         res.redirect("/moviequotes/" + req.body.moviequoteid);
-    //     }
-    // });
-});
+// // DESTROY - Remove movie comment from selected movie quote
+// router.delete("/:id/comments/:commentid", function (req, res) {
+//     console.log(req.params.commentid);
+//     console.log(req.params.id);
+//     //res.redirect("/moviequotes/" + req.params.id);
+//     // Moviecomments.findByIdAndRemove(req.params.id, function (err) {
+//     //     if (err) {
+//     //         res.redirect("/moviequotes");
+//     //     } else {
+//     //         res.redirect("/moviequotes/" + req.body.moviequoteid);
+//     //     }
+//     // });
+// });
 
 module.exports = router;

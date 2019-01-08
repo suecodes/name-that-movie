@@ -39,7 +39,6 @@ block content
                             form(class="delete-form" action="/moviequotes/" + moviequotes.id + "/comments/" + comment.id + "?_method=DELETE" method="POST")
                                 input(class="ui green button mini" type="submit" value="Delete Comment")
                                 //- button(class="ui reply link") Delete Comment
-                            
             form(class="ui reply form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")
                 div(class="field")
                     input(type="hidden" name="moviequoteid" value=moviequotes._id)
