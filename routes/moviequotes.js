@@ -18,6 +18,7 @@ var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
 var Moviecomments = require("../models/comments");
 var methodOverride = require("method-override");
+var mongoose = require('mongoose')
 
 router.use(methodOverride("_method"));
 
@@ -138,13 +139,40 @@ router.delete("/:id", function (req, res) {
 
 // DESTROY - Remove movie comment from selected movie quote
 router.delete("/:id/comments/:commentid", function (req, res) {
-    //console.log(req.params.commentid);
-    //console.log(req.params.id);
+    // Delete comments
     Moviecomments.findByIdAndRemove(req.params.commentid, function (err) {
         if (err) {
             res.redirect("/moviequotes");
         } else {
-            res.redirect("/moviequotes/" + req.params.id);
+            // Remove comment ID from Moviequotes collection
+            // Moviequotes.findOneAndUpdate(req.params.id, {
+            //     $pull: {
+            //         comments: mongoose.Types.ObjectId(req.params.commentid)
+            //     }
+            // }, function (err, data) {
+            //     if (err) {
+            //         return res.send('error in deleting comment');
+            //     }
+            //     res.send(data);
+            // });
+
+            Moviequotes.findOne(req.param.id, function (err, movie) {
+                if (err) {
+                    res.redirect("/moviequotes");
+                } else {
+                    console.log("Find one");
+                    console.log(req.params.commentid);
+                    Moviequotes.findOneAndUpdate({
+                        _id: req.params.id
+                    }, {
+                        $pull: {
+                            "comments": mongoose.Types.ObjectId(req.params.commentid)
+                        }
+                    });
+                    res.redirect("/moviequotes/" + req.params.id);
+                }
+            });
+
         }
     });
 });
