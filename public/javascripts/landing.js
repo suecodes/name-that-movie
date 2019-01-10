@@ -12,6 +12,43 @@ var message = document.getElementById("message");
 var moviename = document.getElementById("movie-name");
 var quoteField = document.getElementById("moviequote");
 
+// Get movie name buttons
+var movieanswer = document.querySelectorAll(".moviename");
+
+init();
+
+function init() {
+    setupAnswers();
+}
+
+function setupAnswers() {
+    for (var i = 0; i < movieanswer.length; i++) {
+        // add click event 
+        movieanswer[i].addEventListener("click", function () {
+            // get color of clicked button and change to green
+            console.log(this.textContent);
+            console.log("answer = " + userMovieInput.value);
+            if (this.textContent.toLowerCase() === userMovieInput.value.toLowerCase()) {
+                // right answer
+                this.style.backgroundColor = "#138D75";
+
+                moviename.style.visibility = "visible";
+                userInputBlock.style.display = "none";
+                answerBlock.style.display = "block";
+                wrongBlock.style.display = "none";
+            } else {
+                // wrong answer
+                this.style.backgroundColor = "#7B241C";
+
+                moviename.style.visibility = "hidden";
+                userInputBlock.style.display = "none";
+                answerBlock.style.display = "none";
+                wrongBlock.style.display = "block";
+            }
+        });
+    }
+}
+
 /** 
     Checks if user entered the correct movie name 
     - is not case sensitive

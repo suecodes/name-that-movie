@@ -18,7 +18,7 @@ var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
 var Moviecomments = require("../models/comments");
 var methodOverride = require("method-override");
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
 
 router.use(methodOverride("_method"));
 
