@@ -14,13 +14,16 @@ block content
 
       input(id="user-guess" type="hidden" value=result[quiz].moviename)
 
-      //- Display 4 possible answers
+      
+        //- Display 4 possible answers
+      div(class="movie-user-answer" style="display:block")
+      
       div(class="movie-user-answer" style="display:block" id="userinput")
-      form(class="check-user-answer" action="/")
-        div(class="moviename ui primary button") #{result[0].moviename}
-        div(class="moviename ui primary button") #{result[1].moviename}
-        div(class="moviename ui primary button") #{result[2].moviename}
-        div(class="moviename ui primary button") #{result[3].moviename}
+        form(class="check-user-answer" action="/")
+          div(class="moviename ui primary button") #{result[0].moviename}
+          div(class="moviename ui primary button") #{result[1].moviename}
+          div(class="moviename ui primary button") #{result[2].moviename}
+          div(class="moviename ui primary button") #{result[3].moviename}
           
           //- div 
           //-   button(type="button" onclick="checkMovieQuote('" + result[0].moviename + "');" class="ui primary button") #{result[0].moviename}

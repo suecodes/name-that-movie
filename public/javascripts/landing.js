@@ -11,37 +11,50 @@ var wrongBlock = document.getElementById("wrong-answer-block");
 var message = document.getElementById("message");
 var moviename = document.getElementById("movie-name");
 var quoteField = document.getElementById("moviequote");
-
-// Get movie name buttons
 var movieanswer = document.querySelectorAll(".moviename");
 
+// Initialize
 init();
 
+// Initialise form
 function init() {
     setupAnswers();
 }
 
+/** 
+    Checks if user entered the correct movie name 
+    - attach click event
+    - check answer and respond appropriately
+    - is not case sensitive
+
+    - TODO Refactor, possibly toggle style using conditional (ternary) operator
+*/
 function setupAnswers() {
+
+    // TOD) - Fix issue with function being declared within loops referencing an outer scopede variable !!
     for (var i = 0; i < movieanswer.length; i++) {
         // add click event 
         movieanswer[i].addEventListener("click", function () {
-            // get color of clicked button and change to green
-            console.log(this.textContent);
-            console.log("answer = " + userMovieInput.value);
-            if (this.textContent.toLowerCase() === userMovieInput.value.toLowerCase()) {
-                // right answer
-                this.style.backgroundColor = "#138D75";
 
+            console.log("User clicked ", this.textContent.toLowerCase());
+            console.log("Answer is ", userMovieInput.value.toLowerCase());
+
+            // Check if user clicked the correct answer
+            if (this.textContent.toLowerCase() === userMovieInput.value.toLowerCase()) {
+
+                // right answer - change to green
+                this.style.backgroundColor = "#138D75";
                 moviename.style.visibility = "visible";
                 userInputBlock.style.display = "none";
                 answerBlock.style.display = "block";
                 wrongBlock.style.display = "none";
+
             } else {
+
                 // wrong answer
                 this.style.backgroundColor = "#7B241C";
-
                 moviename.style.visibility = "hidden";
-                userInputBlock.style.display = "none";
+                userInputBlock.style.display = "block";
                 answerBlock.style.display = "none";
                 wrongBlock.style.display = "block";
             }
@@ -49,31 +62,25 @@ function setupAnswers() {
     }
 }
 
-/** 
-    Checks if user entered the correct movie name 
-    - is not case sensitive
+// function checkMovieQuote(name) {
 
-    - TODO Refactor, possibly toggle style using conditional (ternary) operator
-*/
-function checkMovieQuote(name) {
+//     if (userMovieInput.value.toLowerCase() === name.toLowerCase()) {
 
-    if (userMovieInput.value.toLowerCase() === name.toLowerCase()) {
+//         // right answer
+//         moviename.style.visibility = "visible";
+//         userInputBlock.style.display = "none";
+//         answerBlock.style.display = "block";z
+//         wrongBlock.style.display = "none";
 
-        // right answer
-        moviename.style.visibility = "visible";
-        userInputBlock.style.display = "none";
-        answerBlock.style.display = "block";
-        wrongBlock.style.display = "none";
+//     } else {
 
-    } else {
-
-        // wrong answer
-        moviename.style.visibility = "hidden";
-        userInputBlock.style.display = "none";
-        answerBlock.style.display = "none";
-        wrongBlock.style.display = "block";
-    }
-}
+//         // wrong answer
+//         moviename.style.visibility = "hidden";
+//         userInputBlock.style.display = "none";
+//         answerBlock.style.display = "none";
+//         wrongBlock.style.display = "block";
+//     }
+// }
 
 /** 
     User requests answer to quote
@@ -91,11 +98,10 @@ function displayAnswer() {
     Reset, display input field for new guess
 */
 function guessAgain() {
-    userMovieInput.value = "";
+    //userMovieInput.value = "";
     userInputBlock.style.display = "block";
     wrongBlock.style.display = "none";
 }
-
 
 /** 
     TODO Display quote as a typewriter effect (Not in use)
