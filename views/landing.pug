@@ -10,35 +10,19 @@ block content
       div(class="moviequote default-grey") "#{result[quiz].moviequote}"
       
       //- Format: Movie name, year made - writer (hidden by default)
+      i(class="hand point right icon red" id="incorrectanswer" style="visibility:hidden") 
+      i(class="thumbs up right icon green" id="rightanswer" style="visibility:hidden") 
       div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result[quiz].moviename}, #{result.year} - #{result[quiz].screenwriter}
 
       input(id="user-guess" type="hidden" value=result[quiz].moviename)
-
       
-        //- Display 4 possible answers
-      div(class="movie-user-answer" style="display:block")
-      
+      //- Display 4 possible answers (displayed by default)
       div(class="movie-user-answer" style="display:block" id="userinput")
         form(class="check-user-answer" action="/")
           div(class="moviename ui primary button") #{result[0].moviename}
           div(class="moviename ui primary button") #{result[1].moviename}
           div(class="moviename ui primary button") #{result[2].moviename}
           div(class="moviename ui primary button") #{result[3].moviename}
-          
-          //- div 
-          //-   button(type="button" onclick="checkMovieQuote('" + result[0].moviename + "');" class="ui primary button") #{result[0].moviename}
-          //-   button(type="button" onclick="checkMovieQuote('" + result[1].moviename + "');"  class="ui primary button") #{result[1].moviename}
-          //- div
-          //-   button(type="button" onclick="checkMovieQuote('" + result[2].moviename + "');" class="ui primary button") #{result[2].moviename}
-          //-   button(type="button" onclick="checkMovieQuote('" + result[3].moviename + "');" class="ui primary button") #{result[3].moviename}
-
-
-      //- Receive user input (display by default)
-      //- div(class="movie-user-answer" style="display:block" id="userinput")
-      //-   div(class="ui input" id="movie-input")
-      //-     input(id="user-guess" type="text" name="movie" placeholder="Name that movie")
-      //-   form(class="check-user-answer" action="/")
-      //-     button(type="button" onclick="checkMovieQuote('" + result[0].moviename + "');" class="ui primary button") Am I right?
 
       //- Display right answer block and next steps (hidden by default)
       div(class="movie-user-answer" style="display:none" id="right-answer-block")

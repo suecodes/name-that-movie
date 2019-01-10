@@ -12,6 +12,8 @@ var message = document.getElementById("message");
 var moviename = document.getElementById("movie-name");
 var quoteField = document.getElementById("moviequote");
 var movieanswer = document.querySelectorAll(".moviename");
+var wronganswer = document.getElementById("incorrectanswer");
+var rightanswer = document.getElementById("rightanswer");
 
 // Initialize
 init();
@@ -31,32 +33,35 @@ function init() {
 */
 function setupAnswers() {
 
-    // TOD) - Fix issue with function being declared within loops referencing an outer scopede variable !!
+    // TODO - Fix issue with function being declared within loops referencing an outer scopede variable !!
     for (var i = 0; i < movieanswer.length; i++) {
         // add click event 
         movieanswer[i].addEventListener("click", function () {
 
-            console.log("User clicked ", this.textContent.toLowerCase());
-            console.log("Answer is ", userMovieInput.value.toLowerCase());
-
             // Check if user clicked the correct answer
             if (this.textContent.toLowerCase() === userMovieInput.value.toLowerCase()) {
 
-                // right answer - change to green
-                this.style.backgroundColor = "#138D75";
+                // right answer
+                // this.style.backgroundColor = "#138D75";
+                moviename.style.color = "#138D75";
                 moviename.style.visibility = "visible";
                 userInputBlock.style.display = "none";
                 answerBlock.style.display = "block";
                 wrongBlock.style.display = "none";
+                //rightanswer.style.visibility = "visible";
+                //wronganswer.style.visibility = "hidden";
 
             } else {
 
                 // wrong answer
-                this.style.backgroundColor = "#7B241C";
+                this.style.backgroundColor = "#4D5656";
+                moviename.style.color = "#7B241C";
                 moviename.style.visibility = "hidden";
                 userInputBlock.style.display = "block";
                 answerBlock.style.display = "none";
                 wrongBlock.style.display = "block";
+                //rightanswer.style.visibility = "hidden";
+                //wronganswer.style.visibility = "visible";
             }
         });
     }
