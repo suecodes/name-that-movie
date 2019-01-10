@@ -17,7 +17,8 @@ router.get("/", function (req, res, next) {
       // Render page and return result
       res.render('landing', {
         title: 'Name That Movie',
-        result: result
+        result: result,
+        quiz: Math.floor(Math.random() * 5)
       });
     }
   });

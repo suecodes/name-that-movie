@@ -1,24 +1,21 @@
 include partials/header
 
 block content
-  script.
-    // 
 
   div(class="bg")
     div(class="menu") 
       img(src="/images/namethatmovielight.png" width="170" height="49")
     div(class="landing-container")
       //- Quote 
-      div(class="moviequote default-grey") "#{result[0].moviequote}"
+      div(class="moviequote default-grey") "#{result[quiz].moviequote}"
       
       //- Format: Movie name, year made - writer (hidden by default)
-      div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result[0].moviename}, #{result.year} - #{result[0].screenwriter}
+      div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result[quiz].moviename}, #{result.year} - #{result[quiz].screenwriter}
 
-      input(id="user-guess" type="hidden" value=result[0].moviename)
+      input(id="user-guess" type="hidden" value=result[quiz].moviename)
 
       //- Display 4 possible answers
       div(class="movie-user-answer" style="display:block" id="userinput")
-        
       form(class="check-user-answer" action="/")
         div(class="moviename ui primary button") #{result[0].moviename}
         div(class="moviename ui primary button") #{result[1].moviename}
