@@ -14,6 +14,7 @@ var quoteField = document.getElementById("moviequote");
 var movieanswer = document.querySelectorAll(".moviename");
 var wronganswer = document.getElementById("incorrectanswer");
 var rightanswer = document.getElementById("rightanswer");
+var commentCreatedDate = document.getElementById("createdDate");
 
 // Initialize
 init();
@@ -54,7 +55,7 @@ function setupAnswers() {
             } else {
 
                 // wrong answer
-                this.style.backgroundColor = "#4D5656";
+                this.style.backgroundColor = "#AAB7B8";
                 moviename.style.color = "#7B241C";
                 moviename.style.visibility = "hidden";
                 userInputBlock.style.display = "block";

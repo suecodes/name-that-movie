@@ -19,6 +19,7 @@ var Moviequotes = require("../models/moviequotes");
 var Moviecomments = require("../models/comments");
 var methodOverride = require("method-override");
 var mongoose = require('mongoose');
+var formatDate = require("../formatDate");
 
 router.use(methodOverride("_method"));
 
@@ -100,7 +101,8 @@ router.get("/:id", function (req, res) {
         } else {
             //Render show template with that movie quote
             res.render("moviequotes/show", {
-                moviequotes: foundMovieQuote
+                moviequotes: foundMovieQuote,
+                formatDate: formatDate
             });
         }
     });

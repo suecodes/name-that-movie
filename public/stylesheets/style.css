@@ -63,9 +63,9 @@ body {
   z-index: 1;
   position: relative;
   text-align: left;
-  margin-left: 15em;
-  margin-right: 15em;
-  padding-top: 20vh;
+  margin-left: 10em;
+  margin-right: 10em;
+  padding-top: 10vh;
   color: var(--white);
   text-align: center;
 }
@@ -211,14 +211,20 @@ body {
 }
 
 .moviequotecoll {
-  font: 2.5em 'Habibi', serif;
+  font: 2.9em 'Habibi', serif;
   line-height: 1.2em;
   padding: 5px;
 }
 
 .movie-name-year {
-  margin-top: 1em;
-  font-size: 2em;
+  margin-top: 10px;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.movie-screenwriter {
+  margin-top: 10px;
+  font-size: 1em;
   line-height: 1.2em;
 }
 
@@ -250,7 +256,7 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
-  background: var(--palestgreen);
+  margin: 10px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -265,4 +271,8 @@ body {
   padding: 1em 1em;
   color: var(--darkgrey);
   background: var(--palestgreen);
+}
+
+.spacer {
+  margin: 100px;
 }

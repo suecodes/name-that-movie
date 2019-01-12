@@ -9,11 +9,11 @@ var movieQuotesRouter = require("./routes/moviequotes");
 var movieCommentsRouter = require("./routes/comments");
 //var usersRouter = require('./routes/users');
 
-var mongoose = require("mongoose");
-
 var app = express();
 
 // DB setup
+var mongoose = require("mongoose");
+
 mongoose.connect("mongodb://localhost/namethatmovie", {
   useNewUrlParser: true
 });

@@ -2,6 +2,7 @@ include ../partials/header
 include ../partials/menu
 
 block content
+    
     div(class="ui container new-container")
         //- back/delete/edit buttons
         div(class="likefavoriteblock")
@@ -17,12 +18,14 @@ block content
         div(class="horizontal-line")
         //- Main content
         div(class="test")
-            div(class="item itemMovieQuote") 
+            div(class="itemMovieQuote") 
                 div(class="moviequotecoll default-grey") "#{moviequotes.moviequote}"
         div(class="test")
-            div(class="item")
-                div(class="movie-name-year default-grey") #{moviequotes.moviename}, #{moviequotes.year}
-                div(class="movie-name-year default-grey") #{moviequotes.screenwriter}
+            i(class="video icon grey")
+            div(class="icon-next movie-name-year default-grey") #{moviequotes.moviename}, #{moviequotes.year}
+        div(class="test")
+            i(class="pencil alternate icon grey") 
+            div(class="icon-next movie-screenwriter default-grey") #{moviequotes.screenwriter}
         div(class="horizontal-line")
         //- Comments]
         div(class="ui comments")
@@ -32,7 +35,7 @@ block content
                     div(class="content")
                         a(class="author") #{comment.author}
                         div(class="metadata")
-                            span(class="date") #{comment.dateCreated}
+                            span(class="date" id="createdDate") #{formatDate(comment.dateCreated)}
                         div(class="text") #{comment.commenttext}
                         div(class="actions")
                             a(class="reply") Add Comment
