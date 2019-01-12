@@ -192,6 +192,10 @@ body {
   justify-content: flex-end;
 }
 
+.authenticate {
+  display: inline;
+}
+
 .default-grey {
   color: var(--darkgrey);
 }

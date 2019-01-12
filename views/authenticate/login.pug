@@ -1,0 +1,15 @@
+include ../partials/header
+
+block content
+  div(class="bg")
+    div(class="menu") 
+      img(src="/images/namethatmovielight.png" width="170" height="49")
+    div(class="authenticate")
+      a(href="/" class="ui green mini right floated button") Sign up
+      a(href="/" class="ui green mini right floated button") Log in
+    div(class="landing-container")
+        h1 Log in
+        form(action="/login" method="POST")
+            input(type="text" name="username" placeholder="username")
+            input(type="password" name="password" placeholder="password")
+            button Log in
