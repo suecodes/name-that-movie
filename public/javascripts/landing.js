@@ -34,6 +34,7 @@ function init() {
 */
 function setupAnswers() {
 
+
     // TODO - Fix issue with function being declared within loops referencing an outer scopede variable !!
     for (var i = 0; i < movieanswer.length; i++) {
         // add click event 
@@ -65,6 +66,7 @@ function setupAnswers() {
                 //wronganswer.style.visibility = "visible";
             }
         });
+
     }
 }
 

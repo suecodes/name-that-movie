@@ -25,7 +25,7 @@ block content
             div(class="spacetop")
               //- Movie & year
               i(class="video icon grey")
-              div(class="movie-year icon-next default-grey" alt="movie and year") #{moviequote.moviename}, #{moviequote.year}
+              div(class="movie-year icon-next default-grey") #{moviequote.moviename}, #{moviequote.year}
               div(class="moreinfo")
                 //- More info
                 a(href="/moviequotes/" + moviequote._id class="link") 
@@ -34,7 +34,7 @@ block content
             div(class="spacebottom")
               //- screenwriter
               i(class="pencil alternate icon grey") 
-              div(class="icon-next grey" alt="screenwriter") #{moviequote.screenwriter}
+              div(class="icon-next grey") #{moviequote.screenwriter}
             //- Movie quote
             div(class="moviequotecoll default-grey") "#{moviequote.moviequote}"
             //- Like / Favorites

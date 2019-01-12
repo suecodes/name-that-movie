@@ -24,29 +24,28 @@ block content
             i(class="video icon grey")
             div(class="icon-next movie-name-year default-grey") #{moviequotes.moviename}, #{moviequotes.year}
         div(class="test")
-            i(class="pencil alternate icon grey") 
+            i(class="pencil alternate icon default-grey") 
             div(class="icon-next movie-screenwriter default-grey") #{moviequotes.screenwriter}
         div(class="horizontal-line")
         //- Comments]
         div(class="ui comments")
-            h3(class="ui dividing header") Comments
+            h3(class="ui dividing default-grey") Comments
             each comment in moviequotes.comments
                 div(class="comment")
                     div(class="content")
-                        a(class="author") #{comment.author}
+                        a(class="author default-grey link") #{comment.author}
                         div(class="metadata")
                             span(class="date" id="createdDate") #{formatDate(comment.dateCreated)}
                         div(class="text") #{comment.commenttext}
-                        div(class="actions")
-                            a(class="reply") Add Comment
+                        div(class="field")
                             form(class="delete-form" action="/moviequotes/" + moviequotes.id + "/comments/" + comment.id + "?_method=DELETE" method="POST")
-                                input(class="ui green button mini" type="submit" value="Delete Comment")
-                                //- button(class="ui reply link") Delete Comment
-            form(class="ui reply form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")
+                                button(id="buttonhidden" type="submit" value="Delete Comment" title="Delete Comment")
+                                    i(class="window close green large icon") 
+                                    div(class="icon-next link") Delete Comment 
+            form(class="ui form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")
                 div(class="field")
                     input(type="hidden" name="moviequoteid" value=moviequotes._id)
                     textarea(rows="2" name="moviecomment")
-                //- div(class="ui green right floated mini button") Add Comment
-                input(class="ui green mini button right floated" type="submit" value="Add Comment")
-
+                div(class="field")
+                    input(class="ui green mini button right floated" type="submit" value="Add Comment")
 include ../partials/footer

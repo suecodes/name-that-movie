@@ -274,5 +274,12 @@ body {
 }
 
 .spacer {
-  margin: 100px;
+  margin: 40px;
+}
+
+#buttonhidden {
+  border: 0;
+  background: none;
+  margin: 0;
+  left: 0;
 }
