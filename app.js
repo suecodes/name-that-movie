@@ -51,6 +51,13 @@ passport.use(new passportLocal(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// Make current user available to every route
+app.use(function (req, res, next) {
+	res.locals.currentUser = req.user;
+	next();
+});
+
+
 // Routers
 app.use("/", indexRouter);
 app.use("/moviequotes", movieQuotesRouter);

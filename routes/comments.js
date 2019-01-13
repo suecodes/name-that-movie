@@ -19,7 +19,7 @@ router.post("/", function (req, res) {
                 } else {
                     // add username and id to comment
                     comment.commenttext = req.body.moviecomment;
-                    comment.author = "Joe Smith"; // To do - get username
+                    comment.author = req.user.username;
                     // save comment
                     comment.save();
                     moviequotes.comments.push(comment);

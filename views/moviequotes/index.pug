@@ -15,7 +15,8 @@ block content
           a(class="item" href="/moviequotes/sort?value=moviename") Movie Name
           a(class="item" href="/moviequotes/sort?value=year") Movie Year
       div(class="icon-next")
-        a(href="/moviequotes/new" class="ui green mini button right floated") New Movie Quote
+        if currentuser
+          a(href="/moviequotes/new" class="ui green mini button right floated") New Movie Quote
     //- Grid example 
     div(class="gridcontainer")
       //- Loop 

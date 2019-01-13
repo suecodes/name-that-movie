@@ -160,7 +160,7 @@ router.delete("/:id/comments/:commentid", function (req, res) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.redirect("/moviequotes");
+                    res.redirect("/moviequotes/" + req.params.id);
                 }
             });
         }

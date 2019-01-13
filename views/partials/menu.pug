@@ -10,14 +10,11 @@ div(class="ui red top inverted attached menu")
         a(href="/register") Sign Up
     else
       div(class="item")
+        a(href="#") Signed in as #{currentuser.username}
+      div(class="item")
         a(href="/logout") Log Out
     div(class="ui right aligned category search item")
       div(class="ui white icon input")
         input(class="prompt" type="text" placeholder="Search")
         i(class="search link icon")
 div(class="ui container")
-  div(class="likefavoriteblock")
-    div(class="leftlike")
-    div(class="rightfavorite")
-      if currentuser
-        h4 Welcome #{currentuser.username}

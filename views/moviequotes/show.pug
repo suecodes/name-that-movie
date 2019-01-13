@@ -13,8 +13,9 @@ block content
                     div(class="icon-next") Back 
             span(class="rightfavorite")
                 form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
-                    button(class="ui green right floated mini button") Delete
-                    a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
+                    if currentuser
+                        button(class="ui green right floated mini button") Delete
+                        a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
         div(class="horizontal-line")
         //- Main content
         div(class="test")
@@ -43,9 +44,10 @@ block content
                                     i(class="window close green large icon") 
                                     div(class="icon-next link") Delete Comment 
             form(class="ui form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")
-                div(class="field")
-                    input(type="hidden" name="moviequoteid" value=moviequotes._id)
-                    textarea(rows="2" name="moviecomment")
-                div(class="field")
-                    input(class="ui green mini button right floated" type="submit" value="Add Comment")
+                if currentuser
+                    div(class="field")
+                        input(type="hidden" name="moviequoteid" value=moviequotes._id)
+                        textarea(rows="2" name="moviecomment")
+                    div(class="field")
+                        input(class="ui green mini button right floated" type="submit" value="Add Comment")
 include ../partials/footer
