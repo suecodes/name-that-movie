@@ -1,5 +1,5 @@
 /**
- *  Movie Quotes
+ *  Movie Quotes Router
  * 
  *  RESTful routing:
  *  INDEX   /moviequotes/index          GET     List collection of all movie quotes 
@@ -73,13 +73,18 @@ router.post("/", function (req, res) {
     var movieimage = req.body.movieimage;
     var screenwriter = req.body.screenwriter;
     var year = req.body.movieyear;
+    var author = {
+        id: req.user._id,
+        username: req.user.username
+    };
 
     var newMovieQuote = {
         moviename: moviename,
         moviequote: moviequote,
         movieimage: movieimage,
         screenwriter: screenwriter,
-        year: year
+        year: year,
+        author: author
     };
 
     // Create new movie and save to DB
@@ -150,7 +155,6 @@ router.delete("/:id/comments/:commentid", function (req, res) {
             console.log(err);
             res.redirect("/moviequotes");
         } else {
-
             // Then remove comment (subdocument) from movie quotes collection
             Moviequotes.findByIdAndUpdate(req.params.id, {
                 $pull: {

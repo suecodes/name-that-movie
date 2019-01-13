@@ -1,7 +1,8 @@
 /**
- *  Movie Quotes
+ *  Landing Page and Authentication Routers
  * 
  *  RESTful routing:
+ * 
  *  --- Landing page ---
  *  SHOW    /           GET     Display landing page and random quote for quiz
  *  
