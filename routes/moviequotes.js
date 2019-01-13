@@ -31,7 +31,8 @@ router.get("/", function (req, res, next) {
         } else {
             res.render("moviequotes/index", {
                 title: "Name That Movie",
-                moviequotes: allMovieQuotes
+                moviequotes: allMovieQuotes,
+                currentuser: req.user
             });
         }
     });
@@ -59,7 +60,8 @@ router.get("/sort", function (req, res, next) {
 // NEW - Show new movie quote form
 router.get('/new', function (req, res, next) {
     res.render("moviequotes/new", {
-        title: "Name That Move"
+        title: "Name That Move",
+        currentuser: req.user
     });
 });
 
@@ -102,7 +104,8 @@ router.get("/:id", function (req, res) {
             //Render show template with that movie quote
             res.render("moviequotes/show", {
                 moviequotes: foundMovieQuote,
-                formatDate: formatDate
+                formatDate: formatDate,
+                currentuser: req.user
             });
         }
     });

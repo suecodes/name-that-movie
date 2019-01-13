@@ -2,11 +2,24 @@ include partials/header
 
 block content
   div(class="bg")
-    div(class="menu") 
-      img(src="/images/namethatmovielight.png" width="170" height="49")
-    div(class="authenticate")
-      a(href="/" class="ui green mini right floated button") Sign up
-      a(href="/" class="ui green mini right floated button") Log in
+    //- div(class="likefavoriteblock")
+      div(class="leftlike") 
+        img(src="/images/namethatmovielight.png" width="170" height="49")
+      div(class="rightfavorite")
+        a(href="/register" class="ui green mini right floated button") Sign up
+        a(href="/login" class="ui green mini right floated button") Log in
+        a(href="/logout" class="ui green mini right floated button") Log out
+    div(class="ui top pink inverted attached menu")
+      div(class="menu") 
+        a(href="/")
+          img(src="/images/namethatmovielight.png" width="170" height="49")
+      div(class="right pink inverted menu")
+        div(class="item")
+          a(href="/login") Sign In
+        div(class="item")
+          a(href="/register") Sign Up
+        div(class="item")
+          a(href="/logout") Log Out
     div(class="landing-container")
       //- Quote 
       div(class="moviequote default-grey") "#{result[quiz].moviequote}"

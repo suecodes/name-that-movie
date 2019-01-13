@@ -2,8 +2,14 @@
  *  Movie Quotes
  * 
  *  RESTful routing:
+ *  --- Landing page ---
  *  SHOW    /           GET     Display landing page and random quote for quiz
  *  
+ *  --- Authentication ---
+ *  SHOW	/register	GET		Display register page
+ *  CREATE	/register	POST	Register user
+ *  SHOW	/login		GET		Display login page
+ *	CREATE	/login		POST	Login user 
  */
 
 var express = require('express');
@@ -14,6 +20,14 @@ var Moviequotes = require("../models/moviequotes");
 var passport = require("passport");
 var passportLocal = require("passport-local");
 var User = require("../models/users");
+
+// Middleware
+function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated()) {
+		return next();
+	}
+	res.redirect("/login");
+}
 
 // SHOW home page and random quote
 router.get("/", function (req, res, next) {
@@ -67,8 +81,17 @@ router.get("/login", function (req, res) {
 });
 
 // POST Login form handler
-router.post("/login", function (req, res) {
+router.post("/login", passport.authenticate("local", {
+	successRedirect: "/moviequotes",
+	failureRedirect: "/login"
+}), function (req, res) {
 	res.send("login fun");
+});
+
+// Logout handler
+router.get("/logout", function (req, res) {
+	req.logout();
+	res.redirect("/moviequotes");
 });
 
 module.exports = router;

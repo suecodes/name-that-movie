@@ -59,6 +59,20 @@ body {
   color: var(--lightestgrey);
 }
 
+.logoblock {
+  border: 1px solid green;
+  margin: 0;
+  padding: 0;
+}
+
+.authenticate {
+  border: 1px solid blueviolet;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
 .landing-container {
   z-index: 1;
   position: relative;
@@ -76,7 +90,7 @@ body {
   text-align: left;
   margin-left: 15em;
   margin-right: 15em;
-  padding-top: 10vh;
+  padding-top: 3vh;
   /*color: var(--white);*/
   text-align: left;
 }
@@ -89,7 +103,7 @@ body {
 }
 
 .quote-container {
-  margin: 4.0em;
+  margin: 1.0em;
 }
 
 /* Grid */
@@ -188,12 +202,13 @@ body {
 }
 
 .rightfavorite {
-  display: flex;
+  display: inline;
   justify-content: flex-end;
 }
 
-.authenticate {
-  display: inline;
+.welcome {
+  padding: 0;
+  margin: 0;
 }
 
 .default-grey {
