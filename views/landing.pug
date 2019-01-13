@@ -1,56 +1,37 @@
-include partials/header
+include partials/landingheader
 
 block content
-  div(class="bg")
-    //- div(class="likefavoriteblock")
-      div(class="leftlike") 
-        img(src="/images/namethatmovielight.png" width="170" height="49")
-      div(class="rightfavorite")
-        a(href="/register" class="ui green mini right floated button") Sign up
-        a(href="/login" class="ui green mini right floated button") Log in
-        a(href="/logout" class="ui green mini right floated button") Log out
-    div(class="ui top pink inverted attached menu")
-      div(class="menu") 
-        a(href="/")
-          img(src="/images/namethatmovielight.png" width="170" height="49")
-      div(class="right pink inverted menu")
-        div(class="item")
-          a(href="/login") Sign In
-        div(class="item")
-          a(href="/register") Sign Up
-        div(class="item")
-          a(href="/logout") Log Out
-    div(class="landing-container")
-      //- Quote 
-      div(class="moviequote default-grey") "#{result[quiz].moviequote}"
-      //- Format: Movie name, year made - writer (hidden by default)
-      i(class="hand point right icon red" id="incorrectanswer" style="visibility:hidden") 
-      i(class="thumbs up right icon green" id="rightanswer" style="visibility:hidden") 
-      div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
+  div(class="landing-container")
+    //- Quote 
+    div(class="moviequote default-grey") "#{result[quiz].moviequote}"
+    //- Format: Movie name, year made - writer (hidden by default)
+    i(class="hand point right icon red" id="incorrectanswer" style="visibility:hidden") 
+    i(class="thumbs up right icon green" id="rightanswer" style="visibility:hidden") 
+    div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
 
-      input(id="user-guess" type="hidden" value=result[quiz].moviename)
-      
-      //- Display 4 possible answers (displayed by default)
-      div(class="movie-user-answer" style="display:block" id="userinput")
+    input(id="user-guess" type="hidden" value=result[quiz].moviename)
+    
+    //- Display 4 possible answers (displayed by default)
+    div(class="movie-user-answer" style="display:block" id="userinput")
         form(class="check-user-answer" action="/")
-          div(class="moviename ui primary button") #{result[0].moviename}
-          div(class="moviename ui primary button") #{result[1].moviename}
-          div(class="moviename ui primary button") #{result[2].moviename}
-          div(class="moviename ui primary button") #{result[3].moviename}
+        div(class="moviename ui primary button") #{result[0].moviename}
+        div(class="moviename ui primary button") #{result[1].moviename}
+        div(class="moviename ui primary button") #{result[2].moviename}
+        div(class="moviename ui primary button") #{result[3].moviename}
 
-      //- Display right answer block and next steps (hidden by default)
-      div(class="movie-user-answer" style="display:none" id="right-answer-block")
-        p(id="message" class="default-grey") Correct! Guess another movie or view movie quotes?
-        a(href="/" class="ui primary button") Guess Another
-        a(href="/moviequotes" class="ui primary button") View Movie Quotes
-      
-      //- Display wrong answer block (hidden by default)
-      div(class="movie-user-answer" style="display:none" id="wrong-answer-block")
-        p(id="message" class="default-grey") Wrong! Try again or get answer.
-        form(class="check-user-answer")
-          button(type="button" onclick="guessAgain();" class="ui primary button") Guess Again
-        form(class="check-user-answer" action="/")
-          button(type="button" onclick="displayAnswer();" class="ui primary button") Get Answer
+    //- Display right answer block and next steps (hidden by default)
+    div(class="movie-user-answer" style="display:none" id="right-answer-block")
+      p(id="message" class="default-grey") Correct! Guess another movie or view movie quotes?
+      a(href="/" class="ui primary button") Guess Another
+      a(href="/moviequotes" class="ui primary button") View Movie Quotes
+    
+    //- Display wrong answer block (hidden by default)
+    div(class="movie-user-answer" style="display:none" id="wrong-answer-block")
+      p(id="message" class="default-grey") Wrong! Try again or get answer.
+      form(class="check-user-answer")
+        button(type="button" onclick="guessAgain();" class="ui primary button") Guess Again
+      form(class="check-user-answer" action="/")
+        button(type="button" onclick="displayAnswer();" class="ui primary button") Get Answer
 
 //- Add js script files  
 script(src="/javascripts/landing.js")

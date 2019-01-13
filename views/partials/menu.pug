@@ -3,12 +3,14 @@ div(class="ui red top inverted attached menu")
     a(href="/")
       img(src="/images/namethatmovielogo.png" width="170" height="49")
   div(class="right inverted menu")
-    div(class="item")
-      a(href="/login") Sign In
-    div(class="item")
-      a(href="/register") Sign Up
-    div(class="item")
-      a(href="/logout") Log Out
+    if !currentuser
+      div(class="item")
+        a(href="/login") Sign In
+      div(class="item")
+        a(href="/register") Sign Up
+    else
+      div(class="item")
+        a(href="/logout") Log Out
     div(class="ui right aligned category search item")
       div(class="ui white icon input")
         input(class="prompt" type="text" placeholder="Search")
@@ -17,4 +19,5 @@ div(class="ui container")
   div(class="likefavoriteblock")
     div(class="leftlike")
     div(class="rightfavorite")
+      if currentuser
         h4 Welcome #{currentuser.username}

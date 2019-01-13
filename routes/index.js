@@ -45,7 +45,8 @@ router.get("/", function (req, res, next) {
 			res.render('landing', {
 				title: 'Name That Movie',
 				result: result,
-				quiz: Math.floor(Math.random() * 4)
+				quiz: Math.floor(Math.random() * 4),
+				currentuser: req.user
 			});
 		}
 	});
