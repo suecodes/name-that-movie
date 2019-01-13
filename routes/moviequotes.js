@@ -102,7 +102,6 @@ router.post("/", function (req, res) {
 // SHOW - Show information about one quote
 router.get("/:id", function (req, res) {
     //Find the movie quote with the provided ID
-
     Moviequotes.findById(req.params.id).populate("comments").exec(function (err, foundMovieQuote) {
         if (err) {
             console.log(err);

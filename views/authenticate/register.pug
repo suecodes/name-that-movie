@@ -1,16 +1,26 @@
-include ../partials/header
+include ../partials/landingheader
 
 block content
-  div(class="bg")
-    div(class="menu") 
-      img(src="/images/namethatmovielight.png" width="170" height="49")
-    div(class="authenticate")
-      a(href="/" class="ui green mini right floated button") Sign up
-      a(href="/" class="ui green mini right floated button") Log in
-    div(class="landing-container")
-        h1 Sign up
-        form(action="/register" method="POST")
-            input(type="text" name="username" placeholder="username")
-            input(type="password" name="password" placeholder="password")
-            button Sign Up
-
+	div(class="ui authenticate-container")
+	h1(class="ui header red") Sign up
+		div(class="authenticatebox")
+			form(class="ui form" action="/register" method="POST")
+				div(class="field")
+					div(class="ui pointing below label") First Name *
+					input(type="text" name="firstname" placeholder="firstname")
+				div(class="field")
+					div(class="ui pointing below label") Last Name *
+					input(type="text" name="lastname" placeholder="lastname")
+				div(class="field")
+					div(class="ui pointing below label") Username *
+					input(type="text" name="username" placeholder="username")
+				div(class="field")
+					div(class="ui pointing below label") Password * 
+					input(type="password" name="password" placeholder="password")
+				div(class="field")
+					div(class="ui pointing below label") Re-enter Password * 
+					input(type="password" name="password2" placeholder="password")
+				div(class="field")
+					div(class="ui pointing below label") Email *
+					input(type="email" name="email" placeholder="email")
+				button(class="ui green mini button right floated") Sign Up

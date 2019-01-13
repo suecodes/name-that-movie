@@ -298,3 +298,22 @@ body {
 .submitblock {
   padding-bottom: 10px;
 }
+
+.authenticate-container {
+  z-index: 1;
+  position: relative;
+  text-align: left;
+  margin-left: 10em;
+  margin-right: 10em;
+  padding-top: 10vh;
+  color: var(--white);
+}
+
+.authenticatebox {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  border: 1px solid white;
+  width: 300px;
+  padding: 10px;
+}
