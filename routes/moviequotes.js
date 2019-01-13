@@ -20,6 +20,7 @@ var Moviequotes = require("../models/moviequotes");
 var Moviecomments = require("../models/comments");
 var methodOverride = require("method-override");
 var formatDate = require("../formatDate");
+var middleware = require("../middleware");
 
 router.use(methodOverride("_method"));
 
@@ -117,7 +118,7 @@ router.get("/:id", function (req, res) {
 });
 
 // EDIT - Show edit form for selected movie quote
-router.get("/:id/edit", function (req, res) {
+router.get("/:id/edit", middleware.checkMovieQuoteAuthor, function (req, res) {
     Moviequotes.findById(req.params.id, function (err, foundMoviequote) {
         res.render("moviequotes/edit", {
             moviequotes: foundMoviequote

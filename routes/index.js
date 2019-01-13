@@ -22,14 +22,6 @@ var passport = require("passport");
 var passportLocal = require("passport-local");
 var User = require("../models/users");
 
-// Middleware
-function isLoggedIn(req, res, next) {
-	if (req.isAuthenticated()) {
-		return next();
-	}
-	res.redirect("/login");
-}
-
 // SHOW home page and random quote
 router.get("/", function (req, res, next) {
 
