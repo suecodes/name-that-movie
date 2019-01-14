@@ -302,9 +302,8 @@ body {
 .authenticate-container {
   z-index: 1;
   position: relative;
-  text-align: left;
-  margin-left: 10em;
-  margin-right: 10em;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 10vh;
   color: var(--white);
 }
@@ -312,8 +311,10 @@ body {
 .authenticatebox {
   display: flex;
   align-items: left;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
-  border: 1px solid white;
-  width: 300px;
+  width: 500px;
   padding: 10px;
 }

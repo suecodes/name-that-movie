@@ -10,7 +10,7 @@ div(class="ui red top inverted attached menu")
         a(href="/register") Sign Up
     else
       div(class="item")
-        a(href="#") Signed in as #{currentuser.username}
+        a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
       div(class="item")
         a(href="/logout") Log Out
     div(class="ui right aligned category search item")

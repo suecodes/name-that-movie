@@ -55,7 +55,10 @@ router.get("/register", function (req, res) {
 // POST Sign Up Logic Handler
 router.post("/register", function (req, res) {
 	var newUser = new User({
-		username: req.body.username
+		username: req.body.username,
+		firstname: req.body.firstname,
+		lastname: req.body.lastname,
+		email: req.body.email
 	});
 	User.register(newUser, req.body.password, function (err, user) {
 		if (err) {

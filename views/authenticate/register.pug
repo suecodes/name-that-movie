@@ -2,25 +2,28 @@ include ../partials/landingheader
 
 block content
 	div(class="ui authenticate-container")
-	h1(class="ui header red") Sign up
 		div(class="authenticatebox")
 			form(class="ui form" action="/register" method="POST")
-				div(class="field")
-					div(class="ui pointing below label") First Name *
-					input(type="text" name="firstname" placeholder="firstname")
-				div(class="field")
-					div(class="ui pointing below label") Last Name *
-					input(type="text" name="lastname" placeholder="lastname")
-				div(class="field")
-					div(class="ui pointing below label") Username *
-					input(type="text" name="username" placeholder="username")
-				div(class="field")
-					div(class="ui pointing below label") Password * 
-					input(type="password" name="password" placeholder="password")
-				div(class="field")
-					div(class="ui pointing below label") Re-enter Password * 
-					input(type="password" name="password2" placeholder="password")
+				div(class="header") 
+					div(class="ui large header green right floated") Sign Up
+				div(class="horizontal-line")
+				div(class="spacetop")
+				div(class="two fields")
+					div(class="field")
+						div(class="ui pointing below label") First Name *
+						input(type="text" name="firstname")
+					div(class="field")
+						div(class="ui pointing below label") Last Name *
+						input(type="text" name="lastname")
 				div(class="field")
 					div(class="ui pointing below label") Email *
-					input(type="email" name="email" placeholder="email")
-				button(class="ui green mini button right floated") Sign Up
+					input(type="email" name="email" )
+				div(class="field")
+					div(class="ui pointing below label") Username *
+					input(type="text" name="username" )
+				div(class="field")
+					div(class="ui pointing below label") Password * 
+					input(type="password" name="password")
+				div(class="field")
+					p By clicking below, you agree to the Name That Movie Terms of Service and Privacy Policy.
+				button(class="ui green mini button right floated") Agree and Sign Up
