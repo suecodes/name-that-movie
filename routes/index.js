@@ -11,6 +11,8 @@
  *  CREATE	/register	POST	Register user
  *  SHOW	/login		GET		Display login page
  *	CREATE	/login		POST	Login user 
+ *          /logout		GET		Logs user out
+ *  
  */
 
 var express = require('express');
@@ -90,5 +92,14 @@ router.get("/logout", function (req, res) {
 	req.logout();
 	res.redirect("/moviequotes");
 });
+
+// SHOW - Forgot password page
+router.get("/forgotpassword", function (req, res) {
+	res.render("authenticate/forgotpassword", {
+		user: req.user
+	});
+});
+
+// 
 
 module.exports = router;
