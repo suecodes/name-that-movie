@@ -7,14 +7,18 @@
  *  SHOW    /           GET     Display landing page and random quote for quiz
  *  
  *  --- Authentication ---
- *  SHOW	/register	GET		Display register page
- *  CREATE	/register	POST	Register user
- *  SHOW	/login		GET		Display login page
- *	CREATE	/login		POST	Login user 
- *          /logout		GET		Logs user out
- *  
+ *  SHOW	/register				GET		Display register page
+ *  CREATE	/register				POST	Register user
+ *  SHOW	/login					GET		Display login page
+ *	CREATE	/login					POST	Login user 
+ *          /logout					GET		Logs user out
+ *  		/forgotpassword			GET		Display forgot password page
+ * 			/forgotpassword			POST	Call routine to reset password
+ * 			/resetpassword/:token	GET	Display reset password page
  */
 
+var ntmpassword = "*******";
+var ntmpassword = "namethatmovieteam@gmail.com";
 var express = require('express');
 var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
@@ -23,6 +27,11 @@ var Moviequotes = require("../models/moviequotes");
 var passport = require("passport");
 var passportLocal = require("passport-local");
 var User = require("../models/users");
+
+// Reset password libraries
+var async = require('async');
+var crypto = require('crypto');
+var xoauth2 = require('xoauth2');
 
 // SHOW home page and random quote
 router.get("/", function (req, res, next) {
@@ -100,6 +109,122 @@ router.get("/forgotpassword", function (req, res) {
 	});
 });
 
-// 
+// POST - Forgot password handler
+router.post("/forgotpassword", function (req, res, next) {
+	async.waterfall([
+			function (done) {
+				crypto.randomBytes(20, function (err, buf) {
+					var token = buf.toString('hex');
+					done(err, token);
+				});
+			},
+			// Check if email address exists or not
+			function (token, done) {
+				User.findOne({
+					email: req.body.email
+				}, function (err, user) {
+					if (!user) {
+						req.flash("error", "This email address does not exist.");
+						return res.redirect("/forgotpassword");
+					}
+					user.resetPasswordToken = token;
+					user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+					user.save(function (err) {
+						done(err, token, user);
+					});
+				});
+			},
+			// Set up the transport service for sending emails
+			function (token, user, done) {
+				var nodemailer = require("nodemailer");
+
+				var smtpTransport = nodemailer.createTransport("smtps://namethatmovieteam@gmail.com:" + encodeURIComponent(ntmpassword) + "@smtp.gmail.com:465");
+
+				// Configure the email 
+				var mailOptions = {
+					to: user.email,
+					from: ntmemail,
+					subject: "Name That Movie Password Reset",
+					text: "Forgot your password? No worries, click on the link below or copy and paste this in your browser to reset.\n\n" + "http://" + req.headers.host + "/resetpassword/" + token + "\n\n" +
+						"If you did not make this request, please ignore this email.\n"
+				};
+				// Send the email
+				smtpTransport.sendMail(mailOptions, function (err) {
+					if (err) {
+						console.log(err);
+					} else {
+						done(err, "done");
+					}
+				});
+			}
+		],
+		function (err) {
+			if (err) return next(err);
+			res.redirect("/forgotpassword");
+		});
+});
+
+// Reset password
+router.get("/resetpassword/:token", function (req, res) {
+	User.findOne({
+		resetPasswordToken: req.params.token,
+		resetPasswordExpires: {
+			$gt: Date.now()
+		}
+	}, function (err, user) {
+		if (!user) {
+			req.flash("error", "Password reset token is invalid or has expired.");
+			return res.redirect("/forgotpassword");
+		}
+		res.render("resetpassword", {
+			user: req.user
+		});
+	});
+});
+
+// POST - Reset passowrd
+router.post("/resetpassword/:token", function (req, res) {
+	async.waterfall([
+		function (done) {
+			User.findOne({
+				resetPasswordToken: req.params.token,
+				resetPasswordExpires: {
+					$gt: Date.now()
+				}
+			}, function (err, user) {
+				if (!user) {
+					req.flash("error", "Password reset token is invalid or has expired.");
+					return res.redirect("back");
+				}
+
+				user.password = req.body.password;
+				user.resetPasswordToken = undefined;
+				user.resetPasswordExpires = undefined;
+
+				user.save(function (err) {
+					req.logIn(user, function (err) {
+						done(err, user);
+					});
+				});
+			});
+		},
+		function (user, done) {
+			var smtpTransport = nodemailer.createTransport("smtps://namethatmovieteam@gmail.com:" + encodeURIComponent(ntmpassword) + "@smtp.gmail.com:465");
+			var mailOptions = {
+				to: user.email,
+				from: "namethatmovieteam@gmail.com",
+				subject: "Your password has been changed",
+				text: "Hello,\n\n" +
+					"This is a confirmation that the password for your Name That Movie account " + user.email + " has changed.\n"
+			};
+			smtpTransport.sendMail(mailOptions, function (err) {
+				done(err);
+			});
+		}
+	], function (err) {
+		res.redirect("/");
+	});
+});
 
 module.exports = router;
