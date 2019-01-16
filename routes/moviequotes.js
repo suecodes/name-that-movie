@@ -59,7 +59,7 @@ router.get("/sort", function (req, res, next) {
 });
 
 // NEW - Show new movie quote form
-router.get('/new', function (req, res, next) {
+router.get("/new", function (req, res, next) {
     res.render("moviequotes/new", {
         title: "Name That Move",
         currentuser: req.user

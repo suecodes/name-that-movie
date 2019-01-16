@@ -14,10 +14,10 @@ block content
     //- Display 4 possible answers (displayed by default)
     div(class="movie-user-answer" style="display:block" id="userinput")
         form(class="check-user-answer" action="/")
-        div(class="moviename ui primary button") #{result[0].moviename}
-        div(class="moviename ui primary button") #{result[1].moviename}
-        div(class="moviename ui primary button") #{result[2].moviename}
-        div(class="moviename ui primary button") #{result[3].moviename}
+          div(class="moviename ui primary button") #{result[0].moviename}
+          div(class="moviename ui primary button") #{result[1].moviename}
+          div(class="moviename ui primary button") #{result[2].moviename}
+          div(class="moviename ui primary button") #{result[3].moviename}
 
     //- Display right answer block and next steps (hidden by default)
     div(class="movie-user-answer" style="display:none" id="right-answer-block")

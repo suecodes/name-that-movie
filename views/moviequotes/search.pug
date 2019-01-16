@@ -1,0 +1,10 @@
+include ../partials/header
+include ../partials/menu
+
+block content
+    div(class="ui container")
+        form(class="ui form" action="/search" method="POST")
+            div Search Results
+                if moviequote
+                    each moviequote in moviequotes
+                            p #{moviequotes.moviename}

@@ -35,7 +35,6 @@ var xoauth2 = require('xoauth2');
 
 // SHOW home page and random quote
 router.get("/", function (req, res, next) {
-
 	// Get random sampling of quotes 
 	Moviequotes.aggregate([{
 		$sample: {
@@ -124,7 +123,7 @@ router.post("/forgotpassword", function (req, res, next) {
 					email: req.body.email
 				}, function (err, user) {
 					if (!user) {
-						req.flash("error", "This email address does not exist.");
+						//req.flash("error", "This email address does not exist.");
 						return res.redirect("/forgotpassword");
 					}
 					user.resetPasswordToken = token;
@@ -174,7 +173,7 @@ router.get("/resetpassword/:token", function (req, res) {
 		}
 	}, function (err, user) {
 		if (!user) {
-			req.flash("error", "Password reset token is invalid or has expired.");
+			//req.flash("error", "Password reset token is invalid or has expired.");
 			return res.redirect("/forgotpassword");
 		}
 		res.render("resetpassword", {
@@ -183,47 +182,97 @@ router.get("/resetpassword/:token", function (req, res) {
 	});
 });
 
+// TODO - Fix, not working atm
 // POST - Reset passowrd
-router.post("/resetpassword/:token", function (req, res) {
-	async.waterfall([
-		function (done) {
-			User.findOne({
-				resetPasswordToken: req.params.token,
-				resetPasswordExpires: {
-					$gt: Date.now()
-				}
-			}, function (err, user) {
-				if (!user) {
-					req.flash("error", "Password reset token is invalid or has expired.");
-					return res.redirect("back");
-				}
+// router.post("/resetpassword/:token", function (req, res) {
+// 	async.waterfall([
+// 		function (done) {
+// 			User.findOne({
+// 				resetPasswordToken: req.params.token,
+// 				resetPasswordExpires: {
+// 					$gt: Date.now()
+// 				}
+// 			}, function (err, user) {
+// 				if (!user) {
+// 					req.flash("error", "Password reset token is invalid or has expired.");
+// 					return res.redirect("back");
+// 				}
 
-				user.password = req.body.password;
-				user.resetPasswordToken = undefined;
-				user.resetPasswordExpires = undefined;
+// 				user.password = req.body.password;
+// 				user.resetPasswordToken = undefined;
+// 				user.resetPasswordExpires = undefined;
 
-				user.save(function (err) {
-					req.logIn(user, function (err) {
-						done(err, user);
-					});
-				});
-			});
-		},
-		function (user, done) {
-			var smtpTransport = nodemailer.createTransport("smtps://namethatmovieteam@gmail.com:" + encodeURIComponent(ntmpassword) + "@smtp.gmail.com:465");
-			var mailOptions = {
-				to: user.email,
-				from: "namethatmovieteam@gmail.com",
-				subject: "Your password has been changed",
-				text: "Hello,\n\n" +
-					"This is a confirmation that the password for your Name That Movie account " + user.email + " has changed.\n"
-			};
-			smtpTransport.sendMail(mailOptions, function (err) {
-				done(err);
+// 				user.save(function (err) {
+// 					req.logIn(user, function (err) {
+// 						done(err, user);
+// 					});
+// 				});
+// 			});
+// 		},
+// 		function (user, done) {
+// 			var smtpTransport = nodemailer.createTransport("smtps://namethatmovieteam@gmail.com:" + encodeURIComponent(ntmpassword) + "@smtp.gmail.com:465");
+// 			var mailOptions = {
+// 				to: user.email,
+// 				from: "namethatmovieteam@gmail.com",
+// 				subject: "Your password has been changed",
+// 				text: "Hello,\n\n" +
+// 					"This is a confirmation that the password for your Name That Movie account " + user.email + " has changed.\n"
+// 			};
+// 			smtpTransport.sendMail(mailOptions, function (err) {
+// 				done(err);
+// 			});
+// 		}
+// 	], function (err) {
+// 		res.redirect("/");
+// 	});
+// });
+
+// Search handler
+
+
+// router.post("/search", function (req, res) {
+// 	Moviequotes.find({
+// 		$text: {
+// 			$search: req.body.searchcriteria
+// 		}
+// 	}, function (err, searchResult) {
+// 		if (err) {
+// 			console.log(err);
+// 			res.redirect("/moviequotes");
+// 		} else {
+// 			res.render("/moviequotes/search", {
+// 				title: "Name That Movie",
+// 				moviequotes: searchResult,
+// 				currentuser: req.user
+// 			});
+// 		}
+// 	});
+// });
+
+
+// DISPLAY SEARCH - Search handler
+router.get("/search", function (req, res, next) {
+	res.render("moviequotes/search");
+});
+
+// LOAD RESULTS - TODO - not working properly yet
+router.post("/search", function (req, res) {
+	console.log(req.body.searchcriteria);
+	Moviequotes.find({
+		$text: {
+			$search: req.body.searchcriteria
+		}
+	}, function (err, searchResult) {
+		if (err) {
+			console.log(err);
+			res.redirect("/moviequotes");
+		} else {
+			res.render("moviequotes/search", {
+				title: "Name That Movie",
+				moviequotes: searchResult,
+				currentuser: req.user
 			});
 		}
-	], function (err) {
-		res.redirect("/");
 	});
 });
 
