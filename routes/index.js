@@ -252,11 +252,12 @@ router.get("/resetpassword/:token", function (req, res) {
 
 // DISPLAY SEARCH - Search handler
 router.get("/search", function (req, res, next) {
+	console.log(req.body.searchcriteria);
 	res.render("moviequotes/search");
 });
 
 // LOAD RESULTS - TODO - not working properly yet
-router.post("/search", function (req, res) {
+router.post("/searchresult", function (req, res) {
 	console.log(req.body.searchcriteria);
 	Moviequotes.find({
 		$text: {
