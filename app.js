@@ -16,6 +16,10 @@ var movieQuotesRouter = require("./routes/moviequotes");
 var movieCommentsRouter = require("./routes/comments");
 //var usersRouter = require('./routes/users');
 
+// Fill the database
+//var fillDB = require("./filler");
+//fillDB();
+
 var app = express();
 
 // DB setup
