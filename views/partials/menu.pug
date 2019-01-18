@@ -1,22 +1,23 @@
 div(class="ui red top inverted attached menu")
-  div(class="menu") 
-    a(href="/")
-      img(src="/images/namethatmovielogo.png" width="170" height="49")
-  div(class="right inverted menu")
-    if !currentuser
-      div(class="item")
-        a(href="/login") Sign In
-      div(class="item")
-        a(href="/register") Sign Up
-    else
-      div(class="item")
-        a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
-      div(class="item")
-        a(href="/logout") Log Out
-    div(class="ui right aligned category search item")
-      form(class="ui form" action="/searchresult" method="POST")
-        div(class="ui white icon input")
-          input(class="prompt" name="searchcriteria" type="text" placeholder="Search") 
-          a(href="/search") 
-            i(class="search link icon")
+	div(class="menu") 
+		a(href="/")
+			img(src="/images/namethatmovielogo.png" width="170" height="49")
+	div(class="right inverted menu")
+		if !currentuser
+			div(class="item")
+				a(href="/login") Sign In
+			div(class="item")
+				a(href="/register") Sign Up
+		else
+			div(class="item")
+				a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
+			div(class="item")
+				a(href="/logout") Log Out
+		div(class="ui right aligned category search item")
+			form(class="ui form" action="/searchresult" method="POST")
+				div(class="ui icon input")
+					a(href="/search")
+					input(type="text" name="searchcriteria" placeholder="Search")
+					a(href="/search")
+					i(class="inverted circular search icon green link")
 div(class="ui container")

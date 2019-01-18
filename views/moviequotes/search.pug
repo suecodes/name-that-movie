@@ -4,20 +4,27 @@ include ../partials/menu
 block content
     div(class="ui container new-container")
         div(class="header") 
-            i(class="angle right large icon") 
-            h5(class="icon-next") Displaying 1 of 4 movie quotes 
+            a(href="javascript:history.back()" class="ui green left floated link") 
+                i(class="hand point left outline large icon") 
+                div(class="icon-next") Back 
             div(class="ui large header green right floated") Search Results
         div(class="horizontal-line")
+            div(class="spacetop")
+                i(class="angle right large icon") 
+                h5(class="icon-next") #{moviequotes.length} results returned
         form(class="ui form" action="/search" method="POST")
             div(class="spacetop")
                 if moviequotes
-                    
                     each moviequote in moviequotes
-                        a(href="/moviequotes/" + moviequote._id class="link")
-                            p #{moviequote.moviename}
-                        p #{moviequote.moviequote}
-                        p #{moviequote.year}
-                        p #{moviequote.screenwriter}
+                        div(class="resultfield")
+                            a(href="/moviequotes/" + moviequote._id class="link")
+                                p #{moviequote.moviename}
+                        div(class="resultfield")
+                            p "#{moviequote.moviequote}"
+                        div(class="resultfield")
+                            p #{moviequote.year}
+                        div(class="resultfield")
+                            p #{moviequote.screenwriter}
                         div(class="horizontal-line")
                         div(class="spacetop")
 
