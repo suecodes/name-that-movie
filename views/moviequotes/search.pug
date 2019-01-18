@@ -2,12 +2,23 @@ include ../partials/header
 include ../partials/menu
 
 block content
-    div(class="ui container")
+    div(class="ui container new-container")
+        div(class="header") 
+            i(class="angle right large icon") 
+            h5(class="icon-next") Displaying 1 of 4 movie quotes 
+            div(class="ui large header green right floated") Search Results
+        div(class="horizontal-line")
         form(class="ui form" action="/search" method="POST")
-            div Search Results
+            div(class="spacetop")
                 if moviequotes
+                    
                     each moviequote in moviequotes
+                        a(href="/moviequotes/" + moviequote._id class="link")
                             p #{moviequote.moviename}
-                            p #{moviequote.moviequote}
-                            p #{moviequote.year}
-                            p #{moviequote.screenwriter}
+                        p #{moviequote.moviequote}
+                        p #{moviequote.year}
+                        p #{moviequote.screenwriter}
+                        div(class="horizontal-line")
+                        div(class="spacetop")
+
+include ../partials/footer
