@@ -3,28 +3,28 @@ include ../partials/menu
 
 block content
     
-    div(class="ui container new-container")
+    div(class="ui container movie-container")
         //- back/delete/edit buttons
-        div(class="likefavoriteblock")
-            span(class="leftlike")
+        div(class="leftrightfloatblock")
+            span(class="leftfloat")
                 //- div(class="ui large header green") "#{moviequotes.moviequote}"
                 a(href="javascript:history.back()" class="ui green left floated link") 
                     i(class="hand point left outline large icon") 
                     div(class="icon-next") Back 
-            span(class="rightfavorite")
+            span(class="rightfloat")
                 form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
                     if currentuser
                         button(class="ui green right floated mini button") Delete
                         a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
         div(class="horizontal-line")
         //- Main content
-        div(class="test")
+        div(class="showfield")
             div(class="itemMovieQuote") 
-                div(class="moviequotecoll default-grey") "#{moviequotes.moviequote}"
-        div(class="test")
+                div(class="moviequotesmall default-grey") "#{moviequotes.moviequote}"
+        div(class="showfield")
             i(class="video icon grey")
             div(class="icon-next movie-name-year default-grey") #{moviequotes.moviename}, #{moviequotes.year}
-        div(class="test")
+        div(class="showfield")
             i(class="pencil alternate icon default-grey") 
             div(class="icon-next movie-screenwriter default-grey") #{moviequotes.screenwriter}
         div(class="submitblock")

@@ -1,3 +1,5 @@
+/* Master css stylesheet */
+
 :root {
   --white: #ffffff;
   --black: #000000;
@@ -25,44 +27,82 @@
   --darkestgreen: #0E6655;
 }
 
+/* ---------------- */
+/* Site wide styles */
+/* ---------------- */
 body {
   margin: 0;
   padding: 0px;
   height: 100%;
 }
 
-/* link */
-.link {
-  color: var(--darkgreen) !important;
-}
-
-/* Background on landing page */
-#bg {
-  background-color: var(--softpink);
-}
-
 .header {
   height: 40px;
 }
 
-/* Logo */
-#ntmlogo {
-  margin: 0.3em;
-  color: var(--lightestgrey);
+.link {
+  color: var(--darkgreen) !important;
 }
 
-.logoblock {
-  border: 1px solid green;
-  margin: 0;
-  padding: 0;
+.horizontal-line {
+  border-color: var(--darkgrey);
+  border-top-style: solid;
+  border-width: 1px;
 }
 
-.authenticate {
-  border: 1px solid blueviolet;
+.icon-next {
+  display: inline;
+}
+
+.leftrightfloatblock {
   display: flex;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.leftfloat {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rightfloat {
+  display: inline;
   justify-content: flex-end;
+}
+
+.default-grey {
+  color: var(--darkgrey);
+}
+
+.moviequotesmall {
+  font: 2.9em 'Habibi', serif;
+  line-height: 1.2em;
+  padding: 5px;
+}
+
+.moviequotelarge {
+  font: 5em 'Habibi', serif;
+  line-height: 1.0em;
+}
+
+.spacer {
+  margin: 40px;
+}
+
+.spacetop {
+  margin-top: 20px;
+}
+
+.spacebottom {
+  padding: 3px;
+  margin-bottom: 20px;
+}
+
+/* -------------------------------------------------------- */
+/* Landing / login / register / forgot password page styles */
+/* -------------------------------------------------------- */
+#bg {
+  background-color: var(--softpink);
 }
 
 .landing-container {
@@ -76,167 +116,9 @@ body {
   text-align: center;
 }
 
-.new-container {
-  z-index: 1;
-  position: relative;
-  text-align: left;
-  margin-left: 15em;
-  margin-right: 15em;
-  padding-top: 3vh;
-  /*color: var(--white);*/
-  text-align: left;
-}
-
-.horizontal-line {
-  border-color: var(--darkgrey);
-  border-top-style: solid;
-  border-width: 1px;
-  /*padding-bottom: 10px;*/
-}
-
-.quote-container {
-  margin: 1.0em;
-}
-
-/* Grid */
-.gridcontainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: auto;
-  grid-gap: 30px;
-  grid-auto-flow: dense;
-  place-items: stretch stretch;
-  justify-content: space-between;
-}
-
-/* grid items */
-.quoteitem {
-  border-color: var(--darkgrey);
-  border-top-style: solid;
-  border-width: 1px;
-  /*overflow: hidden;
-  display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 1;
-  justify-self: center;
-  align-items: flex-end;*/
-}
-
-/* Movie Quote show page */
-.showgridcontainer {
-  display: grid;
-  grid-template-columns: 500px 1fr;
-  grid-template-rows: 300px;
-}
-
-.nestcontainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 50px);
-}
-
-.nestItem {
-  justify-content: center;
-}
-
-.itemMovieQuote {
-  grid-row: span 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.movie-year {
-  font-weight: bold;
-}
-
-.yeardropdown {
-  width: 30px;
-}
-
-.moreinfo {
-  float: right;
-  color: var(--darkgreen);
-}
-
-/* mobile layout */
-@media only screen and (max-device-width: 480px) {
-  .gridcontainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-    grid-gap: 15px;
-    grid-auto-flow: dense;
-    place-items: stretch stretch;
-    justify-content: space-between;
-  }
-
-  .moviequotecoll {
-    font: 5em 'Habibi', serif !important;
-  }
-}
-
-.commentblock {
-  display: flex;
-  justify-content: flex-end;
-  padding: 5px;
-}
-
-.likefavoriteblock {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-}
-
-.leftlike {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.rightfavorite {
+.check-user-answer {
   display: inline;
-  justify-content: flex-end;
-}
-
-.welcome {
-  padding: 0;
-  margin: 0;
-}
-
-.default-grey {
-  color: var(--darkgrey);
-}
-
-.moviequote {
-  font: 5em 'Habibi', serif;
-  line-height: 1.0em;
-}
-
-.spacetop {
-  margin-top: 20px;
-}
-
-.spacebottom {
-  padding: 3px;
-  margin-bottom: 20px;
-}
-
-.moviequotecoll {
-  font: 2.9em 'Habibi', serif;
-  line-height: 1.2em;
-  padding: 5px;
-}
-
-.movie-name-year {
-  margin-top: 10px;
-  font-size: 1.5em;
-  line-height: 1.2em;
-}
-
-.movie-screenwriter {
-  margin-top: 10px;
-  font-size: 1em;
-  line-height: 1.2em;
+  margin: 4px;
 }
 
 .movie-user-answer {
@@ -246,65 +128,15 @@ body {
   text-align: center;
 }
 
-#movie-input {
-  width: 30em;
-}
-
-.check-user-answer {
-  display: inline;
-  margin: 4px;
-}
-
-.icon-next {
-  display: inline;
-}
-
-.td-width {
-  width: 20%;
-}
-
-.test {
+/* ------------------------ */
+/* Authenticate page styles */
+/* ------------------------ */
+.authenticate {
+  border: 1px solid blueviolet;
   display: flex;
-  height: 100%;
-  width: 100%;
-  margin: 10px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.resultfield {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  margin: 10px;
-  align-items: left;
-}
-
-.footerui {
-  position: relative;
-  bottom: 0;
-  width: 100%;
   margin: 0;
-  clear: both;
-  padding: 1em 1em;
-  color: var(--darkgrey);
-  background: var(--palestgreen);
-}
-
-.spacer {
-  margin: 40px;
-}
-
-#buttonhidden {
-  border: 0;
-  background: none;
-  margin: 0;
-  left: 0;
-}
-
-.submitblock {
-  padding-bottom: 10px;
+  padding: 0;
+  justify-content: flex-end;
 }
 
 .authenticate-container {
@@ -325,4 +157,120 @@ body {
   justify-content: center;
   width: 500px;
   padding: 10px;
+}
+
+/* ----------------------------------------------------- */
+/* Movie quotes - index/new/show/edit/search page styles */
+/* ----------------------------------------------------- */
+.movie-container {
+  z-index: 1;
+  position: relative;
+  text-align: left;
+  margin-left: 15em;
+  margin-right: 15em;
+  padding-top: 3vh;
+  text-align: left;
+}
+
+.movie-name-year {
+  margin-top: 10px;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+/* ----------------- */
+/* index page styles */
+/* ----------------- */
+.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 30px;
+  grid-auto-flow: dense;
+  place-items: stretch stretch;
+  justify-content: space-between;
+}
+
+.quoteitem {
+  border-color: var(--darkgrey);
+  border-top-style: solid;
+  border-width: 1px;
+}
+
+.movie-year {
+  font-weight: bold;
+}
+
+.moreinfo {
+  float: right;
+  color: var(--darkgreen);
+}
+
+.commentblock {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+/* ---------------- */
+/* show page styles */
+/* ---------------- */
+.itemMovieQuote {
+  grid-row: span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.movie-screenwriter {
+  margin-top: 10px;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+.showfield {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#buttonhidden {
+  border: 0;
+  background: none;
+  margin: 0;
+  left: 0;
+}
+
+.submitblock {
+  padding-bottom: 10px;
+}
+
+/* ------------------ */
+/* Search page styles */
+/* ------------------ */
+.resultfield {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+  align-items: left;
+}
+
+/* -------------------------- */
+/* footer partial page styles */
+/* -------------------------- */
+.footerui {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  clear: both;
+  padding: 1em 1em;
+  color: var(--darkgrey);
+  background: var(--palestgreen);
 }

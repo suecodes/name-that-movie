@@ -1,9 +1,10 @@
 /**
  *  Code for home/landing page (client side)
  * 
- *  Contains quiz to allow users to name the movie the quote belongs to
+ *  Contains quiz to allow users to guess the movie the quote belongs to
  */
 
+// Fetch objects via DOM
 var userMovieInput = document.getElementById("user-guess");
 var userInputBlock = document.getElementById("userinput");
 var answerBlock = document.getElementById("right-answer-block");
@@ -25,70 +26,34 @@ function init() {
 }
 
 /** 
-    Checks if user entered the correct movie name 
-    - attach click event
-    - check answer and respond appropriately
-    - is not case sensitive
-
-    - TODO Refactor, possibly toggle style using conditional (ternary) operator
-*/
+ *   Set up quiz
+ *   - attach click event 
+ *   - check answer and respond appropriately
+ */
 function setupAnswers() {
 
-
     // TODO - Fix issue with function being declared within loops referencing an outer scopede variable !!
-    for (var i = 0; i < movieanswer.length; i++) {
-        // add click event 
+    for (let i = 0; i < movieanswer.length; i++) {
+
+        // attach click event to each button
         movieanswer[i].addEventListener("click", function () {
 
+            let movieanswer = this.textContent.toLowerCase();
+            let userinput = userMovieInput.value.toLowerCase();
+
+            movieanswer === userinput ? displayAnswer() : displayWrongAnswer();
+
             // Check if user clicked the correct answer
-            if (this.textContent.toLowerCase() === userMovieInput.value.toLowerCase()) {
-
-                // right answer
-                // this.style.backgroundColor = "#138D75";
-                moviename.style.color = "#138D75";
-                moviename.style.visibility = "visible";
-                userInputBlock.style.display = "none";
-                answerBlock.style.display = "block";
-                wrongBlock.style.display = "none";
-                //rightanswer.style.visibility = "visible";
-                //wronganswer.style.visibility = "hidden";
-
-            } else {
-
-                // wrong answer
-                this.style.backgroundColor = "#AAB7B8";
-                moviename.style.color = "#7B241C";
-                moviename.style.visibility = "hidden";
-                userInputBlock.style.display = "block";
-                answerBlock.style.display = "none";
-                wrongBlock.style.display = "block";
-                //rightanswer.style.visibility = "hidden";
-                //wronganswer.style.visibility = "visible";
-            }
+            // if (this.textContent.toLowerCase() === userMovieInput.value.toLowerCase()) {
+            //     displayAnswer();
+            // } else {
+            //     // wrong answer
+            //     displayWrongAnswer();
+            // }
         });
 
     }
 }
-
-// function checkMovieQuote(name) {
-
-//     if (userMovieInput.value.toLowerCase() === name.toLowerCase()) {
-
-//         // right answer
-//         moviename.style.visibility = "visible";
-//         userInputBlock.style.display = "none";
-//         answerBlock.style.display = "block";z
-//         wrongBlock.style.display = "none";
-
-//     } else {
-
-//         // wrong answer
-//         moviename.style.visibility = "hidden";
-//         userInputBlock.style.display = "none";
-//         answerBlock.style.display = "none";
-//         wrongBlock.style.display = "block";
-//     }
-// }
 
 /** 
     User requests answer to quote
@@ -96,10 +61,20 @@ function setupAnswers() {
     - TODO Refactor, repeats code from above. Need to split into sep function and just call that function
 */
 function displayAnswer() {
+    moviename.style.color = "#138D75";
     moviename.style.visibility = "visible";
     userInputBlock.style.display = "none";
     answerBlock.style.display = "block";
     wrongBlock.style.display = "none";
+}
+
+function displayWrongAnswer() {
+    this.style.backgroundColor = "#AAB7B8";
+    moviename.style.color = "#7B241C";
+    moviename.style.visibility = "hidden";
+    userInputBlock.style.display = "block";
+    answerBlock.style.display = "none";
+    wrongBlock.style.display = "block";
 }
 
 /** 

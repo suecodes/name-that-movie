@@ -106,6 +106,96 @@ var filldata = [{
             id: "5c3c603c0ea1e9cad4a01bff",
             username: "susan"
         }
+    },
+    {
+        moviename: "Goodfellas",
+        moviequote: "I mean, funny like I'm a clown? I amuse you?",
+        screenwriter: "Martin Scorsese, Nicholas Pileggi",
+        year: "1990",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
+    },
+    {
+        moviename: "Field of Dreams",
+        moviequote: "If you build it, he will come.",
+        screenwriter: "Phil Alden Robinson",
+        year: "1989",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
+    },
+    {
+        moviename: "Finding Nemo",
+        moviequote: "Just keep swimming.",
+        screenwriter: "Andrew Stanton",
+        year: "2003",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
+    },
+    {
+        moviename: "Titanic",
+        moviequote: "I'm the king of the world!",
+        screenwriter: "James Cameron",
+        year: "1997",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
+    },
+    {
+        moviename: "The Godfather, Part II",
+        moviequote: "Keep your friends close, but your enemies closer.",
+        screenwriter: "Francis Ford Coppola‎, ‎Mario Puzo",
+        year: "1974",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
+    },
+    {
+        moviename: "Back to the Future",
+        moviequote: "Roads? Where we're going we don't need roads.",
+        screenwriter: "Robert Zemeckis‎, ‎Bob Gale",
+        year: "1995",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
+    },
+    {
+        moviename: "Dirty Harry",
+        moviequote: "You've got to ask yourself one question: 'Do I feel lucky?' Well, do ya punk?",
+        screenwriter: "John Milius, Harry Julian Fink, Chuck Reisner Jr., R. M. Fink",
+        year: "1971",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
+    },
+    {
+        moviename: "Dead Poets Society",
+        moviequote: "Carpe diem. Seize the day, boys.",
+        screenwriter: "Tom Schulman",
+        year: "1989",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
+    },
+    {
+        moviename: "Apollo 13",
+        moviequote: "Houston, we have a problem.",
+        screenwriter: "William Broyles Jr.‎, ‎Al Reinert",
+        year: "1995",
+        author: {
+            id: "5c3c603c0ea1e9cad4a01bff",
+            username: "susan"
+        }
     }
 ];
 

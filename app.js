@@ -61,7 +61,6 @@ app.use(function (req, res, next) {
 	next();
 });
 
-
 // Routers
 app.use("/", indexRouter);
 app.use("/moviequotes", movieQuotesRouter);

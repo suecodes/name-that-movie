@@ -6,7 +6,7 @@ block content
     $(document).ready(function(){
       $('.ui.dropdown') .dropdown();
     });
-  div(class="ui container quote-container")
+  div(class="ui container movie-container")
     div(class="header") 
       div(class="ui simple dropdown")
         div(class="text") Sort By
@@ -37,14 +37,14 @@ block content
               i(class="pencil alternate icon grey") 
               div(class="icon-next grey") #{moviequote.screenwriter}
             //- Movie quote
-            div(class="moviequotecoll default-grey") "#{moviequote.moviequote}"
+            div(class="moviequotesmall default-grey") "#{moviequote.moviequote}"
             //- Like / Favorites
-            div(class="likefavoriteblock")
-              span(class="leftlike")
+            div(class="leftrightfloatblock")
+              span(class="leftfloat")
                 a(class="link")
                   i(class="like icon") 
                   div(class="icon-next") Like
-              span(class="rightfavorite")
+              span(class="rightfloat")
                 a(class="link")
                   i(class="star icon") 
                   div(class="icon-next") Favorite
