@@ -5,8 +5,6 @@ block content
     //- Quote 
     div(class="moviequotelarge default-grey") "#{result[quiz].moviequote}"
     //- Format: Movie name, year made - writer (hidden by default)
-    i(class="hand point right icon red" id="incorrectanswer" style="visibility:hidden") 
-    i(class="thumbs up right icon green" id="rightanswer" style="visibility:hidden") 
     div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
 
     input(id="user-guess" type="hidden" value=result[quiz].moviename)
