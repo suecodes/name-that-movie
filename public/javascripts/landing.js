@@ -12,6 +12,10 @@ var wrongBlock = document.getElementById("wrong-answer-block");
 var moviename = document.getElementById("movie-name");
 var movieanswer = document.querySelectorAll(".moviename");
 
+const COLOR_DARKGREEN = "#138D75";
+const COLOR_PRIMARYRED = "#7B241C";
+const COLOR_LIGHTGREY = "#AAB7B8";
+
 // Initialize
 init();
 
@@ -27,14 +31,13 @@ function init() {
  */
 function setupAnswers() {
 
-    // TODO - Fix issue with function being declared within loops referencing an outer scopede variable !!
     for (let i = 0; i < movieanswer.length; i++) {
 
         // attach click event to each button
         movieanswer[i].addEventListener("click", function () {
 
             // change button color so user knows it was clicked (eliminated)
-            this.style.backgroundColor = "#AAB7B8";
+            this.style.backgroundColor = COLOR_LIGHTGREY;
 
             // capture movie name clicked and movie name answer
             let movieanswer = this.textContent.toLowerCase();
@@ -43,7 +46,6 @@ function setupAnswers() {
             // compare answer and display right/wrong outcome
             movieanswer === userinput ? displayAnswer() : displayWrongAnswer();
         });
-
     }
 }
 
@@ -51,7 +53,7 @@ function setupAnswers() {
  * Correct answer display
  */
 function displayAnswer() {
-    moviename.style.color = "#138D75";
+    moviename.style.color = COLOR_DARKGREEN;
     moviename.style.visibility = "visible";
     userInputBlock.style.display = "none";
     answerBlock.style.display = "block";
@@ -61,8 +63,8 @@ function displayAnswer() {
 /** 
  * Wrong answer display
  */
-function displayWrongAnswer(obj) {
-    moviename.style.color = "#7B241C";
+function displayWrongAnswer() {
+    moviename.style.color = COLOR_PRIMARYRED;
     moviename.style.visibility = "hidden";
     userInputBlock.style.display = "block";
     answerBlock.style.display = "none";

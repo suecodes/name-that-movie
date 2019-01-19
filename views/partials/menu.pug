@@ -1,3 +1,4 @@
+//- Has search function in this menu
 div(class="ui red top inverted attached menu")
 	div(class="menu") 
 		a(href="/")
@@ -10,6 +11,7 @@ div(class="ui red top inverted attached menu")
 				a(href="/register") Sign Up
 		else
 			div(class="item")
+				//- Future functionality - to display user profile page
 				a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
 			div(class="item")
 				a(href="/logout") Log Out
