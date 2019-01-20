@@ -1,6 +1,8 @@
-extends layout
+include layout
 
-block content
+div(class="landing-container")
+  //- Quote 
+  div(class="moviequotemedium default-grey") "I'm sorry I ruined your New Year's Eve party, Lieutenant Dan. She tasted like cigarettes."
   h1= message
   h2= error.status
   pre #{error.stack}

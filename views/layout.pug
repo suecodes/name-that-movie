@@ -1,7 +1,25 @@
+//- doctype html
+//- html
+//-   head
+//-     title= title
+//-     link(rel='stylesheet', href='/stylesheets/style.css')
+//-   body
+//-     block content
+
 doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/stylesheets/style.css", type="text/css")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Habibi")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans")
+    link(rel="stylesheet", href="/dist/semantic.min.css" type="text/css")
+    script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+    script(src="/dist/semantic.min.js")
+  body(id="bg")
+    div(class="ui top pink inverted attached menu")
+      div(class="menu") 
+        a(href="/")
+          img(src="/images/namethatmovielight.png" width="170" height="49")
+          
