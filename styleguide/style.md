@@ -34,5 +34,5 @@
 * #2471A3, #7FB3D5, ##D4E6F1 - Notify message
 
 # Font Style
-* Primary - Asap (Google Fonts)
-* Secondary - Open Sans (Google Fonts) 
+* Primary - Open Sans (Google Fonts)
+* Secondary - Habibi (Google Fonts) 
