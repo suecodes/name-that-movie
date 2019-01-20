@@ -74,7 +74,7 @@ body {
 }
 
 .errormessage {
-  font: 5em 'Open Sans', serif;
+  font: 2em 'Open Sans', serif;
   color: var(--primaryred);
 }
 

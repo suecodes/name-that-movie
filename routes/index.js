@@ -25,7 +25,7 @@
 const APP_NAME = "Name That Movie";
 const APP_EMAIL = "namethatmovieteam@gmail.com";
 const RANDOM_QUIZ_SIZE = 4;
-const APP_EMAIL_PASSWORD = "tba";
+const APP_EMAIL_PASSWORD = "YkMF74CzyafkK9G";
 const SMTP_GMAIL = "@smtp.gmail.com:465";
 
 var express = require('express');
@@ -180,24 +180,23 @@ router.post("/forgotpassword", function (req, res, next) {
 });
 
 // Reset password
-// router.get("/resetpassword/:token", function (req, res) {
-// 	User.findOne({
-// 		resetPasswordToken: req.params.token,
-// 		resetPasswordExpires: {
-// 			$gt: Date.now()
-// 		}
-// 	}, function (err, user) {
-// 		if (!user) {
-// 			//req.flash("error", "Password reset token is invalid or has expired.");
-// 			return res.redirect("/forgotpassword");
-// 		}
-// 		res.render("resetpassword", {
-// 			user: req.user
-// 		});
-// 	});
-// });
+router.get("/resetpassword/:token", function (req, res) {
+	User.findOne({
+		resetPasswordToken: req.params.token,
+		resetPasswordExpires: {
+			$gt: Date.now()
+		}
+	}, function (err, user) {
+		if (!user) {
+			//req.flash("error", "Password reset token is invalid or has expired.");
+			return res.redirect("/forgotpassword");
+		}
+		res.render("authenticate/resetpassword", {
+			user: req.user
+		});
+	});
+});
 
-// TODO - Fix, not working atm
 // POST - Reset passowrd
 router.post("/resetpassword/:token", function (req, res) {
 	async.waterfall([
