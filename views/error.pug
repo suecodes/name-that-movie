@@ -1,8 +1,14 @@
 include layout
 
 div(class="landing-container")
-  //- Quote 
-  div(class="moviequotemedium default-grey") "I'm sorry I ruined your New Year's Eve party, Lieutenant Dan. She tasted like cigarettes."
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+	//- Quote and movie name
+	div(class="moviequotemedium default-grey") "Toto, I've got a feeling we're not in Kansas anymore.""
+	div(id="movie-name" class="movie-name-year default-grey") The Wizard of Oz, 1939 - L. Frank Baum
+
+	div(class="spacer")
+		div= error.status + " - " + message 
+		p Oops! Something went wrong. Please tell us about it or go home.
+		a(href="/" class="ui primary button") There's no place like home
+		a(href="mailto:namethatmovieteam@gmail.com" class="ui primary button") Tell the Wizard
+
+	//-pre #{error.stack}

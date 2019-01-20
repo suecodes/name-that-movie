@@ -227,28 +227,6 @@ router.get("/resetpassword/:token", function (req, res) {
 // 	});
 // });
 
-// Search handler
-
-
-// router.post("/search", function (req, res) {
-// 	Moviequotes.find({
-// 		$text: {
-// 			$search: req.body.searchcriteria
-// 		}
-// 	}, function (err, searchResult) {
-// 		if (err) {
-// 			console.log(err);
-// 			res.redirect("/moviequotes");
-// 		} else {
-// 			res.render("/moviequotes/search", {
-// 				title: "Name That Movie",
-// 				moviequotes: searchResult,
-// 				currentuser: req.user
-// 			});
-// 		}
-// 	});
-// });
-
 
 // DISPLAY SEARCH - Search handler
 router.get("/search", function (req, res, next) {
@@ -256,7 +234,7 @@ router.get("/search", function (req, res, next) {
 	res.render("moviequotes/search");
 });
 
-// LOAD RESULTS - TODO - not working properly yet
+// LOAD RESULTS - Return results matching search criteria
 router.post("/searchresult", function (req, res) {
 	console.log(req.body.searchcriteria);
 	Moviequotes.find({
