@@ -73,6 +73,11 @@ body {
   color: var(--darkgrey);
 }
 
+.errormessage {
+  font: 5em 'Open Sans', serif;
+  color: var(--primaryred);
+}
+
 .moviequotesmall {
   font: 2.9em 'Habibi', serif;
   line-height: 1.2em;
