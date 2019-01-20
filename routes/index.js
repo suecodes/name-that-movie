@@ -25,7 +25,7 @@
 const APP_NAME = "Name That Movie";
 const APP_EMAIL = "namethatmovieteam@gmail.com";
 const RANDOM_QUIZ_SIZE = 4;
-const APP_EMAIL_PASSWORD = "puzo2kenobi";
+const APP_EMAIL_PASSWORD = "tba";
 const SMTP_GMAIL = "@smtp.gmail.com:465";
 
 var express = require('express');
@@ -159,7 +159,7 @@ router.post("/forgotpassword", function (req, res, next) {
 				var mailOptions = {
 					to: user.email,
 					from: APP_EMAIL,
-					subject: APP_NAME + "Password Reset",
+					subject: APP_NAME + " Password Reset",
 					text: "Forgot your password? No worries, click on the link below or copy and paste this in your browser to reset.\n\n" + "http://" + req.headers.host + "/resetpassword/" + token + "\n\n" +
 						"If you did not make this request, please ignore this email.\n"
 				};
@@ -180,67 +180,67 @@ router.post("/forgotpassword", function (req, res, next) {
 });
 
 // Reset password
-router.get("/resetpassword/:token", function (req, res) {
-	User.findOne({
-		resetPasswordToken: req.params.token,
-		resetPasswordExpires: {
-			$gt: Date.now()
-		}
-	}, function (err, user) {
-		if (!user) {
-			//req.flash("error", "Password reset token is invalid or has expired.");
-			return res.redirect("/forgotpassword");
-		}
-		res.render("resetpassword", {
-			user: req.user
-		});
-	});
-});
+// router.get("/resetpassword/:token", function (req, res) {
+// 	User.findOne({
+// 		resetPasswordToken: req.params.token,
+// 		resetPasswordExpires: {
+// 			$gt: Date.now()
+// 		}
+// 	}, function (err, user) {
+// 		if (!user) {
+// 			//req.flash("error", "Password reset token is invalid or has expired.");
+// 			return res.redirect("/forgotpassword");
+// 		}
+// 		res.render("resetpassword", {
+// 			user: req.user
+// 		});
+// 	});
+// });
 
 // TODO - Fix, not working atm
 // POST - Reset passowrd
-// router.post("/resetpassword/:token", function (req, res) {
-// 	async.waterfall([
-// 		function (done) {
-// 			User.findOne({
-// 				resetPasswordToken: req.params.token,
-// 				resetPasswordExpires: {
-// 					$gt: Date.now()
-// 				}
-// 			}, function (err, user) {
-// 				if (!user) {
-// 					req.flash("error", "Password reset token is invalid or has expired.");
-// 					return res.redirect("back");
-// 				}
+router.post("/resetpassword/:token", function (req, res) {
+	async.waterfall([
+		function (done) {
+			User.findOne({
+				resetPasswordToken: req.params.token,
+				resetPasswordExpires: {
+					$gt: Date.now()
+				}
+			}, function (err, user) {
+				if (!user) {
+					req.flash("error", "Password reset token is invalid or has expired.");
+					return res.redirect("back");
+				}
 
-// 				user.password = req.body.password;
-// 				user.resetPasswordToken = undefined;
-// 				user.resetPasswordExpires = undefined;
+				user.password = req.body.password;
+				user.resetPasswordToken = undefined;
+				user.resetPasswordExpires = undefined;
 
-// 				user.save(function (err) {
-// 					req.logIn(user, function (err) {
-// 						done(err, user);
-// 					});
-// 				});
-// 			});
-// 		},
-// 		function (user, done) {
-// 			var smtpTransport = nodemailer.createTransport("smtps://namethatmovieteam@gmail.com:" + encodeURIComponent(APP_EMAIL_PASSWORD) + "@smtp.gmail.com:465");
-// 			var mailOptions = {
-// 				to: user.email,
-// 				from: "namethatmovieteam@gmail.com",
-// 				subject: "Your password has been changed",
-// 				text: "Hello,\n\n" +
-// 					"This is a confirmation that the password for your Name That Movie account " + user.email + " has changed.\n"
-// 			};
-// 			smtpTransport.sendMail(mailOptions, function (err) {
-// 				done(err);
-// 			});
-// 		}
-// 	], function (err) {
-// 		res.redirect("/");
-// 	});
-// });
+				user.save(function (err) {
+					req.logIn(user, function (err) {
+						done(err, user);
+					});
+				});
+			});
+		},
+		function (user, done) {
+			var smtpTransport = nodemailer.createTransport("smtps://" + APP_EMAIL + ":" + encodeURIComponent(APP_EMAIL_PASSWORD) + SMTP_GMAIL);
+			var mailOptions = {
+				to: user.email,
+				from: APP_EMAIL,
+				subject: "Your password has been changed",
+				text: "Hello,\n\n" +
+					"This is a confirmation that the password for your Name That Movie user account " + user.email + " has changed.\n"
+			};
+			smtpTransport.sendMail(mailOptions, function (err) {
+				done(err);
+			});
+		}
+	], function (err) {
+		res.redirect("/");
+	});
+});
 
 
 /* ------------- */
