@@ -1,5 +1,5 @@
 /**
- *  Landing Page and Authentication Routers
+ *  Landing Page, Authentication and Search Routers
  * 
  *  RESTful routing:
  * 
@@ -15,15 +15,23 @@
  *  		/forgotpassword			GET		Display forgot password page
  * 			/forgotpassword			POST	Call routine to reset password
  * 			/resetpassword/:token	GET	Display reset password page
+ * 
+ * --- Search ---
+ * SHOW		/search					GET		Display Search page
+ * CREATE	/searchresult			POST	Get data and display results
+ * 
  */
 
-var ntmpassword = "*******";
-var ntmpassword = "namethatmovieteam@gmail.com";
+const APP_NAME = "Name That Movie";
+const APP_EMAIL = "namethatmovieteam@gmail.com";
+const RANDOM_QUIZ_SIZE = 4;
+const APP_EMAIL_PASSWORD = "puzo2kenobi";
+const SMTP_GMAIL = "@smtp.gmail.com:465";
+
 var express = require('express');
 var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
 
-// Authentication
 var passport = require("passport");
 var passportLocal = require("passport-local");
 var User = require("../models/users");
@@ -33,12 +41,16 @@ var async = require('async');
 var crypto = require('crypto');
 var xoauth2 = require('xoauth2');
 
+/* ------------------- */
+/* Landing Page Routes */
+/* ------------------- */
+
 // SHOW home page and random quote
 router.get("/", function (req, res, next) {
 	// Get random sampling of quotes 
 	Moviequotes.aggregate([{
 		$sample: {
-			size: 4
+			size: RANDOM_QUIZ_SIZE
 		}
 	}]).exec(function (err, result) {
 		if (err) {
@@ -46,16 +58,19 @@ router.get("/", function (req, res, next) {
 		} else {
 			// Render page and return result
 			res.render('landing', {
-				title: 'Name That Movie',
+				title: APP_NAME,
 				result: result,
-				quiz: Math.floor(Math.random() * 4),
+				quiz: Math.floor(Math.random() * RANDOM_QUIZ_SIZE),
 				currentuser: req.user
 			});
 		}
 	});
 });
 
-// Authentication routes
+
+/* --------------------- */
+/* Authentication Routes */
+/* --------------------- */
 
 // SHOW register form
 router.get("/register", function (req, res) {
@@ -138,13 +153,13 @@ router.post("/forgotpassword", function (req, res, next) {
 			function (token, user, done) {
 				var nodemailer = require("nodemailer");
 
-				var smtpTransport = nodemailer.createTransport("smtps://namethatmovieteam@gmail.com:" + encodeURIComponent(ntmpassword) + "@smtp.gmail.com:465");
+				var smtpTransport = nodemailer.createTransport("smtps://" + APP_EMAIL + ":" + encodeURIComponent(APP_EMAIL_PASSWORD) + SMTP_GMAIL);
 
 				// Configure the email 
 				var mailOptions = {
 					to: user.email,
-					from: ntmemail,
-					subject: "Name That Movie Password Reset",
+					from: APP_EMAIL,
+					subject: APP_NAME + "Password Reset",
 					text: "Forgot your password? No worries, click on the link below or copy and paste this in your browser to reset.\n\n" + "http://" + req.headers.host + "/resetpassword/" + token + "\n\n" +
 						"If you did not make this request, please ignore this email.\n"
 				};
@@ -210,7 +225,7 @@ router.get("/resetpassword/:token", function (req, res) {
 // 			});
 // 		},
 // 		function (user, done) {
-// 			var smtpTransport = nodemailer.createTransport("smtps://namethatmovieteam@gmail.com:" + encodeURIComponent(ntmpassword) + "@smtp.gmail.com:465");
+// 			var smtpTransport = nodemailer.createTransport("smtps://namethatmovieteam@gmail.com:" + encodeURIComponent(APP_EMAIL_PASSWORD) + "@smtp.gmail.com:465");
 // 			var mailOptions = {
 // 				to: user.email,
 // 				from: "namethatmovieteam@gmail.com",
@@ -227,6 +242,10 @@ router.get("/resetpassword/:token", function (req, res) {
 // 	});
 // });
 
+
+/* ------------- */
+/* Search Routes */
+/* ------------- */
 
 // DISPLAY SEARCH - Search handler
 router.get("/search", function (req, res, next) {
@@ -247,7 +266,7 @@ router.post("/searchresult", function (req, res) {
 			res.redirect("/moviequotes");
 		} else {
 			res.render("moviequotes/search", {
-				title: "Name That Movie",
+				title: APP_NAME,
 				moviequotes: searchResult,
 				currentuser: req.user
 			});
