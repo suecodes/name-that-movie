@@ -25,8 +25,6 @@
 const APP_NAME = "Name That Movie";
 const APP_EMAIL = "namethatmovieteam@gmail.com";
 const RANDOM_QUIZ_SIZE = 4;
-const APP_EMAIL_PASSWORD = "YkMF74CzyafkK9G";
-const SMTP_GMAIL = "@smtp.gmail.com:465";
 
 var express = require('express');
 var router = express.Router();
@@ -138,7 +136,7 @@ router.post("/forgotpassword", function (req, res, next) {
 					email: req.body.email
 				}, function (err, user) {
 					if (!user) {
-						//req.flash("error", "This email address does not exist.");
+						console.log("This email address does not exist.");
 						return res.redirect("/forgotpassword");
 					}
 					user.resetPasswordToken = token;
@@ -153,7 +151,13 @@ router.post("/forgotpassword", function (req, res, next) {
 			function (token, user, done) {
 				var nodemailer = require("nodemailer");
 
-				var smtpTransport = nodemailer.createTransport("smtps://" + APP_EMAIL + ":" + encodeURIComponent(APP_EMAIL_PASSWORD) + SMTP_GMAIL);
+				var smtpTransport = nodemailer.createTransport({
+					service: 'Gmail',
+					auth: {
+						user: APP_EMAIL,
+						pass: process.env.GMAILPW
+					}
+				});
 
 				// Configure the email 
 				var mailOptions = {
@@ -188,7 +192,7 @@ router.get("/resetpassword/:token", function (req, res) {
 		}
 	}, function (err, user) {
 		if (!user) {
-			//req.flash("error", "Password reset token is invalid or has expired.");
+			console.log("Password reset token is invalid or has expired.");
 			return res.redirect("/forgotpassword");
 		}
 		res.render("authenticate/resetpassword", {
@@ -197,8 +201,8 @@ router.get("/resetpassword/:token", function (req, res) {
 	});
 });
 
-// POST - Reset passowrd
-router.post("/resetpassword/:token", function (req, res) {
+// POST - Reset password
+router.post('/resetpassword/:token', function (req, res) {
 	async.waterfall([
 		function (done) {
 			User.findOne({
@@ -208,39 +212,50 @@ router.post("/resetpassword/:token", function (req, res) {
 				}
 			}, function (err, user) {
 				if (!user) {
-					req.flash("error", "Password reset token is invalid or has expired.");
-					return res.redirect("back");
+					console.log("Password reset token is invalid or has expired.");
+					return res.redirect('back');
 				}
+				if (req.body.password === req.body.confirm) {
+					user.setPassword(req.body.password, function (err) {
+						user.resetPasswordToken = undefined;
+						user.resetPasswordExpires = undefined;
 
-				user.password = req.body.password;
-				user.resetPasswordToken = undefined;
-				user.resetPasswordExpires = undefined;
-
-				user.save(function (err) {
-					req.logIn(user, function (err) {
-						done(err, user);
-					});
-				});
+						user.save(function (err) {
+							req.logIn(user, function (err) {
+								done(err, user);
+							});
+						});
+					})
+				} else {
+					console.log("Passwords do not match.");
+					return res.redirect('back');
+				}
 			});
 		},
 		function (user, done) {
-			var smtpTransport = nodemailer.createTransport("smtps://" + APP_EMAIL + ":" + encodeURIComponent(APP_EMAIL_PASSWORD) + SMTP_GMAIL);
+			var smtpTransport = nodemailer.createTransport({
+				service: 'Gmail',
+				auth: {
+					user: APP_EMAIL,
+					pass: rocess.env.GMAILPW
+				}
+			});
 			var mailOptions = {
 				to: user.email,
 				from: APP_EMAIL,
-				subject: "Your password has been changed",
-				text: "Hello,\n\n" +
-					"This is a confirmation that the password for your Name That Movie user account " + user.email + " has changed.\n"
+				subject: 'Your password has been changed',
+				text: 'Hello,\n\n' +
+					'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
 			};
 			smtpTransport.sendMail(mailOptions, function (err) {
+				console.log("Success! Your password has been changed");
 				done(err);
 			});
 		}
 	], function (err) {
-		res.redirect("/");
+		res.redirect('/moviequotes');
 	});
 });
-
 
 /* ------------- */
 /* Search Routes */

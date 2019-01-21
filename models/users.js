@@ -12,7 +12,7 @@ var userSchema = new mongoose.Schema({
     },
     email: String,
     resetPasswordToken: String,
-    resetPasswordExpires: String
+    resetPasswordExpires: Date
 });
 
 // Plugin to pass methods/functionality to user model
