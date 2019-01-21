@@ -31,13 +31,12 @@ var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
 
 var passport = require("passport");
-var passportLocal = require("passport-local");
+//var passportLocal = require("passport-local");
 var User = require("../models/users");
 
-// Reset password libraries
+// Reset password libraries - tokens
 var async = require('async');
 var crypto = require('crypto');
-var xoauth2 = require('xoauth2');
 
 /* ------------------- */
 /* Landing Page Routes */
@@ -225,9 +224,10 @@ router.post('/resetpassword/:token', function (req, res) {
 									return next(err);
 								}
 								res.redirect("/moviequotes");
+								//done(err, user); <-- this caused error
 							});
 						});
-					});
+					}); 
 				} else {
 					console.log("Passwords do not match.");
 					return res.redirect('back');
