@@ -97,7 +97,6 @@ router.post("/register", function (req, res) {
 
 // SHOW login form
 router.get("/login", function (req, res) {
-	console.log(process.env.GMAILHOST);
 	res.render("authenticate/login");
 });
 
@@ -105,9 +104,7 @@ router.get("/login", function (req, res) {
 router.post("/login", passport.authenticate("local", {
 	successRedirect: "/moviequotes",
 	failureRedirect: "/login"
-}), function (req, res) {
-	res.send("login fun");
-});
+}), function (req, res) {});
 
 // Logout handler
 router.get("/logout", function (req, res) {
@@ -224,7 +221,10 @@ router.post('/resetpassword/:token', function (req, res) {
 
 						user.save(function (err) {
 							req.logIn(user, function (err) {
-								done(err, user);
+								if (err) {
+									return next(err);
+								}
+								res.redirect("/moviequotes");
 							});
 						});
 					});
@@ -266,13 +266,11 @@ router.post('/resetpassword/:token', function (req, res) {
 
 // DISPLAY SEARCH - Search handler
 router.get("/search", function (req, res, next) {
-	console.log(req.body.searchcriteria);
 	res.render("moviequotes/search");
 });
 
 // LOAD RESULTS - Return results matching search criteria
 router.post("/searchresult", function (req, res) {
-	console.log(req.body.searchcriteria);
 	Moviequotes.find({
 		$text: {
 			$search: req.body.searchcriteria
