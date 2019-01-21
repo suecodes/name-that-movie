@@ -71,3 +71,5 @@ semantic/dist/semantic.js
 semantic/src
 semantic/tasks
 semantic/gulpfile.js
+
+.env

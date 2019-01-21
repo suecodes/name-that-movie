@@ -2,6 +2,7 @@
  *  Application main entry point
  * 
  */
+require('dotenv').config()
 
 var createError = require('http-errors');
 var express = require('express');
@@ -14,6 +15,7 @@ var bodyparser = require("body-parser");
 var passport = require("passport");
 var passportLocal = require("passport-local");
 var User = require("./models/users");
+
 
 // Routers
 var indexRouter = require('./routes/index');

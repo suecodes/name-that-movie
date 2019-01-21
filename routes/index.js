@@ -97,6 +97,7 @@ router.post("/register", function (req, res) {
 
 // SHOW login form
 router.get("/login", function (req, res) {
+	console.log(process.env.GMAILHOST);
 	res.render("authenticate/login");
 });
 
@@ -152,6 +153,7 @@ router.post("/forgotpassword", function (req, res, next) {
 				var nodemailer = require("nodemailer");
 
 				var smtpTransport = nodemailer.createTransport({
+					host: process.env.GMAILHOST,
 					service: 'Gmail',
 					auth: {
 						user: APP_EMAIL,
@@ -225,7 +227,7 @@ router.post('/resetpassword/:token', function (req, res) {
 								done(err, user);
 							});
 						});
-					})
+					});
 				} else {
 					console.log("Passwords do not match.");
 					return res.redirect('back');
@@ -234,6 +236,7 @@ router.post('/resetpassword/:token', function (req, res) {
 		},
 		function (user, done) {
 			var smtpTransport = nodemailer.createTransport({
+				host: process.env.GMAILHOST,
 				service: 'Gmail',
 				auth: {
 					user: APP_EMAIL,
