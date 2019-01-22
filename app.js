@@ -2,7 +2,7 @@
  *  Application main entry point
  * 
  */
-require('dotenv').config()
+require('dotenv').config();
 
 var createError = require('http-errors');
 var express = require('express');
@@ -16,14 +16,13 @@ var passport = require("passport");
 var passportLocal = require("passport-local");
 var User = require("./models/users");
 
-
 // Routers
 var indexRouter = require('./routes/index');
 var movieQuotesRouter = require("./routes/moviequotes");
 var movieCommentsRouter = require("./routes/comments");
 //var usersRouter = require('./routes/users');
 
-// Fill the database
+// Fill the database - comment out if you do not want to refresh db with data
 //var fillDB = require("./filler");
 //fillDB();
 

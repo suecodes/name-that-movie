@@ -200,7 +200,7 @@ router.get("/resetpassword/:token", function (req, res) {
 });
 
 // POST - Reset password
-router.post('/resetpassword/:token', function (req, res) {
+router.post('/resetpassword/:token', function (req, res, next) {
 	async.waterfall([
 		function (done) {
 			User.findOne({
@@ -219,15 +219,15 @@ router.post('/resetpassword/:token', function (req, res) {
 						user.resetPasswordExpires = undefined;
 
 						user.save(function (err) {
-							req.logIn(user, function (err) {
+							req.login(user, function (err) {
 								if (err) {
 									return next(err);
 								}
-								res.redirect("/moviequotes");
-								//done(err, user); <-- this caused error
+								//res.redirect("/moviequotes");
+								done(null, user); //<-- this caused error
 							});
 						});
-					}); 
+					});
 				} else {
 					console.log("Passwords do not match.");
 					return res.redirect('back');
@@ -235,12 +235,14 @@ router.post('/resetpassword/:token', function (req, res) {
 			});
 		},
 		function (user, done) {
+			var nodemailer = require("nodemailer");
+
 			var smtpTransport = nodemailer.createTransport({
 				host: process.env.GMAILHOST,
 				service: 'Gmail',
 				auth: {
 					user: APP_EMAIL,
-					pass: rocess.env.GMAILPW
+					pass: process.env.GMAILPW
 				}
 			});
 			var mailOptions = {

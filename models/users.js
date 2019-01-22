@@ -15,6 +15,16 @@ var userSchema = new mongoose.Schema({
     resetPasswordExpires: Date
 });
 
+// generating a hash
+userSchema.methods.generateHash = function (password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+// checking if password is valid
+userSchema.methods.validPassword = function (password) {
+    return bcrypt.compareSync(password, this.local.password);
+};
+
 // Plugin to pass methods/functionality to user model
 userSchema.plugin(passportLocalMongoose);
 
