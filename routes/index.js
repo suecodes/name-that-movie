@@ -100,11 +100,6 @@ router.get("/login", function (req, res) {
 });
 
 // POST Login form handler
-// router.post("/login", passport.authenticate("local", {
-// 	successRedirect: "/moviequotes",
-// 	failureRedirect: "/login"
-// }), function (req, res) {});
-
 router.post("/login", function (req, res, next) {
 	passport.authenticate("local", function (err, user, info) {
 		if (err) {
@@ -230,13 +225,10 @@ router.post('/resetpassword/:token', function (req, res, next) {
 					return res.redirect('back');
 				}
 				if (req.body.password === req.body.confirm) {
+					// Hash password in db
 					user.password = user.generateHash(req.body.password);
 					user.resetPasswordToken = undefined;
 					user.resetPasswordExpires = undefined;
-
-					//user.setPassword(req.body.password, function (err) {
-					//user.resetPasswordToken = undefined;
-					//user.resetPasswordExpires = undefined;
 
 					user.save(function (err) {
 						req.login(user, function (err) {
