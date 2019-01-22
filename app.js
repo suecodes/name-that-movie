@@ -10,6 +10,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyparser = require("body-parser");
+var flash = require("connect-flash");
 
 // Authentication
 var passport = require("passport");
@@ -40,6 +41,7 @@ app.set('view engine', 'pug');
 app.use(bodyparser.urlencoded({
 	extended: true
 }));
+app.use(flash());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({
@@ -64,6 +66,8 @@ passport.deserializeUser(User.deserializeUser());
 // Make current user available to every route
 app.use(function (req, res, next) {
 	res.locals.currentUser = req.user;
+	res.locals.error = req.flash("error");
+	res.locals.success = req.flash("success");
 	next();
 });
 

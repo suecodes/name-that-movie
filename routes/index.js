@@ -144,7 +144,7 @@ router.post("/forgotpassword", function (req, res, next) {
 					email: req.body.email
 				}, function (err, user) {
 					if (!user) {
-						console.log("This email address does not exist.");
+						req.flash("error", "This email address does not exist.");
 						return res.redirect("/forgotpassword");
 					}
 					user.resetPasswordToken = token;
