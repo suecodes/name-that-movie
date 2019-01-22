@@ -100,10 +100,26 @@ router.get("/login", function (req, res) {
 });
 
 // POST Login form handler
-router.post("/login", passport.authenticate("local", {
-	successRedirect: "/moviequotes",
-	failureRedirect: "/login"
-}), function (req, res) {});
+// router.post("/login", passport.authenticate("local", {
+// 	successRedirect: "/moviequotes",
+// 	failureRedirect: "/login"
+// }), function (req, res) {});
+
+router.post("/login", function (req, res, next) {
+	passport.authenticate("local", function (err, user, info) {
+		if (err) {
+			return next(err);
+		}
+		if (!user) {
+			return res.redirect("/login");
+		}
+		req.logIn(user, function (err) {
+			if (err) return next(err);
+			return res.redirect("/moviequotes");
+		});
+	})(req, res, next);
+});
+
 
 // Logout handler
 router.get("/logout", function (req, res) {
@@ -214,20 +230,23 @@ router.post('/resetpassword/:token', function (req, res, next) {
 					return res.redirect('back');
 				}
 				if (req.body.password === req.body.confirm) {
-					user.setPassword(req.body.password, function (err) {
-						user.resetPasswordToken = undefined;
-						user.resetPasswordExpires = undefined;
+					user.password = user.generateHash(req.body.password);
+					user.resetPasswordToken = undefined;
+					user.resetPasswordExpires = undefined;
 
-						user.save(function (err) {
-							req.login(user, function (err) {
-								if (err) {
-									return next(err);
-								}
-								//res.redirect("/moviequotes");
-								done(null, user); //<-- this caused error
-							});
+					//user.setPassword(req.body.password, function (err) {
+					//user.resetPasswordToken = undefined;
+					//user.resetPasswordExpires = undefined;
+
+					user.save(function (err) {
+						req.login(user, function (err) {
+							if (err) {
+								return next(err);
+							}
+							done(null, user);
 						});
 					});
+					//});
 				} else {
 					console.log("Passwords do not match.");
 					return res.redirect('back');

@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
+var bcrypt = require('bcrypt-nodejs');
 
 var userSchema = new mongoose.Schema({
     username: String,
@@ -15,14 +16,9 @@ var userSchema = new mongoose.Schema({
     resetPasswordExpires: Date
 });
 
-// generating a hash
+// generating a hash to keep password secure
 userSchema.methods.generateHash = function (password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
-
-// checking if password is valid
-userSchema.methods.validPassword = function (password) {
-    return bcrypt.compareSync(password, this.local.password);
 };
 
 // Plugin to pass methods/functionality to user model
