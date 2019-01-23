@@ -75,17 +75,20 @@ body {
 
 .errormessagebox {
   display: flex;
-  justify-content: center;
-  width: 400px;
-  padding: 10px;
+  padding-top: 5px;
   margin-left: auto;
   margin-right: auto;
   background-color: var(--pinkred);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .errormessage {
   font: 1.2em 'Open Sans', serif;
   color: var(--white);
+  padding: 5px;
 }
 
 .moviequotesmall {
