@@ -85,7 +85,8 @@ router.post("/register", function (req, res) {
 	User.register(newUser, req.body.password, function (err, user) {
 		if (err) {
 			// Username already exists
-			console.log(err);
+			//console.log(err);
+			req.flash("error", "Username already exists");
 			return res.render("authenticate/register");
 		}
 		passport.authenticate("local")(req, res, function () {
@@ -181,6 +182,7 @@ router.post("/forgotpassword", function (req, res, next) {
 					if (err) {
 						console.log(err);
 					} else {
+						req.flash("success", "Please check your email.");
 						done(err, "done");
 					}
 				});
@@ -201,7 +203,7 @@ router.get("/resetpassword/:token", function (req, res) {
 		}
 	}, function (err, user) {
 		if (!user) {
-			console.log("Password reset token is invalid or has expired.");
+			req.flash("error", "Password reset token is invalid or has expired.");
 			return res.redirect("/forgotpassword");
 		}
 		res.render("authenticate/resetpassword", {
@@ -221,7 +223,9 @@ router.post('/resetpassword/:token', function (req, res, next) {
 				}
 			}, function (err, user) {
 				if (!user) {
-					console.log("Password reset token is invalid or has expired.");
+					//console.log("Password reset token is invalid or has expired.");
+					req.flash("error", "Password reset token is invalid or has expired.");
+
 					return res.redirect('back');
 				}
 				if (req.body.password === req.body.confirm) {
@@ -240,7 +244,8 @@ router.post('/resetpassword/:token', function (req, res, next) {
 					});
 					//});
 				} else {
-					console.log("Passwords do not match.");
+					//console.log("Passwords do not match.");
+					req.flash("error", "Passwords do not match.");
 					return res.redirect('back');
 				}
 			});

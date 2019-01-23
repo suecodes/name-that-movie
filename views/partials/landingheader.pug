@@ -31,9 +31,19 @@ html
 	if error && error.length > 0
 		div(class="errormessagebox")
 			div(class="leftrightfloatblock")
-				div(class="leftfloat errormessage")
+				div(class="leftfloat message")
 					i(class="check circle large white icon")
 					div(class="icon-next")
 						div #{error}
 				div(class="rightfloat")
-					button(type="button" onclick="displayAnswer();" class="ui primary button") Close
+					button(type="button" onclick="" class="ui primary button") Close
+
+	if success && success.length > 0
+		div(class="successmessagebox")
+			div(class="leftrightfloatblock")
+				div(class="leftfloat message")
+					i(class="check circle large white icon")
+					div(class="icon-next")
+						div #{success}
+				div(class="rightfloat")
+					button(type="button" onclick="" class="ui green button") Close
