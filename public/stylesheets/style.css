@@ -73,9 +73,19 @@ body {
   color: var(--darkgrey);
 }
 
+.errormessagebox {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--pinkred);
+}
+
 .errormessage {
-  font: 2em 'Open Sans', serif;
-  color: var(--primaryred);
+  font: 1.2em 'Open Sans', serif;
+  color: var(--white);
 }
 
 .moviequotesmall {
@@ -167,6 +177,8 @@ body {
   width: 500px;
   padding: 10px;
 }
+
+
 
 /* ----------------------------------------------------- */
 /* Movie quotes - index/new/show/edit/search page styles */

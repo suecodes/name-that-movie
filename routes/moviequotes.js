@@ -19,7 +19,7 @@ var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
 var Moviecomments = require("../models/comments");
 var methodOverride = require("method-override");
-var formatDate = require("../formatDate");
+var formatDate = require("../public/javascripts/formatDate");
 var middleware = require("../middleware");
 
 router.use(methodOverride("_method"));
