@@ -11,6 +11,8 @@ var answerBlock = document.getElementById("right-answer-block");
 var wrongBlock = document.getElementById("wrong-answer-block");
 var moviename = document.getElementById("movie-name");
 var movieanswer = document.querySelectorAll(".moviename");
+var errormessagebox = document.querySelectorAll("errormessagebox");
+var successmessagebox = document.querySelectorAll("successmessagebox");
 
 const COLOR_DARKGREEN = "#138D75";
 const COLOR_PRIMARYRED = "#7B241C";
@@ -77,4 +79,12 @@ function displayWrongAnswer() {
 function guessAgain() {
     userInputBlock.style.display = "block";
     wrongBlock.style.display = "none";
+}
+
+/**
+ *  Close flash message 
+ */
+function closeMessageBox() {
+    errormessagebox.style.display = "none";
+    successmessagebox.style.display = "none";
 }

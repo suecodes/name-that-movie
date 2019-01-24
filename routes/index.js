@@ -32,7 +32,6 @@ var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
 
 var passport = require("passport");
-//var passportLocal = require("passport-local");
 var User = require("../models/users");
 
 // Reset password libraries - tokens
@@ -85,12 +84,12 @@ router.post("/register", function (req, res) {
 	});
 	User.register(newUser, req.body.password, function (err, user) {
 		if (err) {
-			// Username already exists
 			req.flash("error", "Username already exists");
+			wlogger.info("Username already exists");
 			return res.render("authenticate/register");
 		}
 		passport.authenticate("local")(req, res, function () {
-			wlogger.info("New user has registered an account");
+			wlogger.info("New user has registered an account: " + user.username);
 			res.redirect("/moviequotes");
 		});
 	});
@@ -112,7 +111,7 @@ router.post("/login", function (req, res, next) {
 		}
 		req.logIn(user, function (err) {
 			if (err) return next(err);
-			wlogger.info("User has logged in");
+			wlogger.info(user.username + " has logged in");
 			return res.redirect("/moviequotes");
 		});
 	})(req, res, next);
