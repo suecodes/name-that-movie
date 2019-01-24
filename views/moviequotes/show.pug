@@ -13,7 +13,7 @@ block content
                     div(class="icon-next") Back 
             span(class="rightfloat")
                 form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
-                    if currentuser
+                    if currentuser && moviequotes.author.id.equals(currentuser._id)
                         button(class="ui green right floated mini button") Delete
                         a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
         div(class="horizontal-line")
@@ -37,15 +37,16 @@ block content
             each comment in moviequotes.comments
                 div(class="comment")
                     div(class="content")
-                        a(class="author default-grey link") #{comment.author}
+                        a(class="author default-grey link") #{comment.author.username}
                         div(class="metadata")
                             span(class="date" id="createdDate") #{formatDate(comment.dateCreated)}
                         div(class="text") #{comment.commenttext}
                         div(class="field")
                             form(class="delete-form" action="/moviequotes/" + moviequotes.id + "/comments/" + comment.id + "?_method=DELETE" method="POST")
-                                button(id="buttonhidden" type="submit" value="Delete Comment" title="Delete Comment")
-                                    i(class="window close green large icon") 
-                                    div(class="icon-next link") Delete Comment 
+                                if currentuser && comment.author.id.equals(currentuser._id)
+                                    button(id="buttonhidden" type="submit" value="Delete Comment" title="Delete Comment")
+                                        i(class="window close green large icon") 
+                                        div(class="icon-next link") Delete Comment 
             form(class="ui form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")
                 if currentuser
                     div(class="field")

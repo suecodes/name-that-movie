@@ -28,7 +28,8 @@ router.post("/", function (req, res) {
                 } else {
                     // add username and id to comment
                     comment.commenttext = req.body.moviecomment;
-                    comment.author = req.user.username;
+                    comment.author.username = req.user.username;
+                    comment.author.id = req.user._id;
                     // save comment 
                     comment.save();
                     moviequotes.comments.push(comment);
