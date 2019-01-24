@@ -13,6 +13,8 @@ This application will display the quote, name of the movie, year movie made and 
 - css
 - mongoose
 - semantic-ui
+- passport.js
+- winston 
 
 ## Current Features:
 - Quiz to test your knowledge of movie quotes

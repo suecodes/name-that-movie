@@ -73,3 +73,5 @@ semantic/tasks
 semantic/gulpfile.js
 
 .env
+
+.logs
