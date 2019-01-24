@@ -93,8 +93,10 @@ router.post("/", function (req, res) {
     Moviequotes.create(newMovieQuote, function (err, newMovie) {
         if (err) {
             wlogger.error(err);
+            req.flash("error", "Your movie quote failed to be added. Please try again.");
         } else {
-            // redirect back to movie quotes collection
+            // success, redirect back to movie quotes collection
+            req.flash("success", "Your movie quote has been added sucessfully.");
             res.redirect("/moviequotes");
         }
     });
@@ -132,6 +134,7 @@ router.put("/:id", function (req, res) {
         if (err) {
             res.redirect("/moviequotes");
         } else {
+            req.flash("success", "Your movie quote has been updated sucessfully.");
             res.redirect("/moviequotes/" + req.params.id);
         }
     });
@@ -143,6 +146,7 @@ router.delete("/:id", function (req, res) {
         if (err) {
             res.redirect("/moviequotes");
         } else {
+            req.flash("success", "Your movie quote has been deleted.");
             res.redirect("/moviequotes");
         }
     });
@@ -165,6 +169,7 @@ router.delete("/:id/comments/:commentid", function (req, res) {
                 if (err) {
                     wlogger.error(err);
                 } else {
+                    req.flash("success", "Your comment has been deleted.");
                     res.redirect("/moviequotes/" + req.params.id);
                 }
             });

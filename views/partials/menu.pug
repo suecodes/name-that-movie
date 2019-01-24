@@ -22,4 +22,24 @@ div(class="ui red top inverted attached menu")
 					input(type="text" name="searchcriteria" placeholder="Search")
 					a(href="/search")
 					i(class="inverted circular search icon green link")
+div
+	if error && error.length > 0
+		div(class="errormessagebox")
+			div(class="leftrightfloatblock")
+				div(class="leftfloat message")
+					i(class="close circle large white icon")
+					div(class="icon-next")
+						div #{error}
+				div(class="rightfloat")
+					button(type="button" onclick="closeMessageBox();" class="ui primary button") Close
+
+	if success && success.length > 0
+		div(class="successmessagebox")
+			div(class="leftrightfloatblock")
+				div(class="leftfloat message")
+					i(class="check circle large white icon")
+					div(class="icon-next")
+						div #{success}
+				div(class="rightfloat")
+					button(type="button" onclick="closeMessageBox();" class="ui green button") Close
 div(class="ui container")
