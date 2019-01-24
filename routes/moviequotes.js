@@ -14,6 +14,7 @@
  *  
  */
 
+var wlogger = require("../utils/logger.js");
 var express = require('express');
 var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
@@ -28,7 +29,7 @@ router.use(methodOverride("_method"));
 router.get("/", function (req, res, next) {
     Moviequotes.find({}, function (err, allMovieQuotes) {
         if (err) {
-            console.log(err);
+            wlogger.error(err);
         } else {
             res.render("moviequotes/index", {
                 title: "Name That Movie",
@@ -48,7 +49,7 @@ router.get("/sort", function (req, res, next) {
     // Get data sorted by selected value and display
     Moviequotes.find({}, function (err, allMovieQuotes) {
         if (err) {
-            console.log(err);
+            wlogger.error(err);
         } else {
             res.render("moviequotes/index", {
                 title: "Name That Movie",
@@ -91,7 +92,7 @@ router.post("/", function (req, res) {
     // Create new movie and save to DB
     Moviequotes.create(newMovieQuote, function (err, newMovie) {
         if (err) {
-            console.log(err);
+            wlogger.error(err);
         } else {
             // redirect back to movie quotes collection
             res.redirect("/moviequotes");
@@ -104,7 +105,7 @@ router.get("/:id", function (req, res) {
     //Find the movie quote with the provided ID
     Moviequotes.findById(req.params.id).populate("comments").exec(function (err, foundMovieQuote) {
         if (err) {
-            console.log(err);
+            wlogger.error(err);
         } else {
             //Render show template with that movie quote
             res.render("moviequotes/show", {
@@ -152,7 +153,7 @@ router.delete("/:id/comments/:commentid", function (req, res) {
     // Delete the comment (subdocument)
     Moviecomments.findByIdAndRemove(req.params.commentid, function (err) {
         if (err) {
-            console.log(err);
+            wlogger.error(err);
             res.redirect("/moviequotes");
         } else {
             // Then remove comment (subdocument) from movie quotes collection
@@ -162,7 +163,7 @@ router.delete("/:id/comments/:commentid", function (req, res) {
                 }
             }, function (err, data) {
                 if (err) {
-                    console.log(err);
+                    wlogger.error(err);
                 } else {
                     res.redirect("/moviequotes/" + req.params.id);
                 }

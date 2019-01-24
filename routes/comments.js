@@ -6,6 +6,7 @@
  *  
  */
 
+var wlogger = require("../utils/logger.js");
 var express = require('express');
 var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
@@ -18,12 +19,12 @@ router.use(methodOverride("_method"));
 router.post("/", function (req, res) {
     Moviequotes.findById(req.body.moviequoteid, function (err, moviequotes) {
         if (err) {
-            console.log(err);
+            wlogger.error(err);
             res.redirect("/moviequotes");
         } else {
             Moviecomments.create(req.body.comment, function (err, comment) {
                 if (err) {
-                    console.log(err);
+                    wlogger.error(err);
                 } else {
                     // add username and id to comment
                     comment.commenttext = req.body.moviecomment;

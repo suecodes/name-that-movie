@@ -1,3 +1,7 @@
+/**
+ *  Logger - to a log file or console (if in debug mode)
+ */
+
 const winston = require("winston");
 
 const logger = winston.createLogger({
@@ -7,12 +11,23 @@ const logger = winston.createLogger({
         service: "user-service"
     },
     transports: [
+        // errors
         new winston.transports.File({
-            filename: "error.log",
-            level: "error"
+            filename: "./logs/error.log",
+            level: "error",
+            handleExceptions: true
         }),
+        // errors + everything else
         new winston.transports.File({
-            filename: "combined.log"
+            filename: "./logs/combined.log",
+            handleExceptions: true
+        }),
+        // console if debug mode
+        new winston.transports.Console({
+            level: "debug",
+            handleExceptions: true,
+            json: false,
+            colorize: true
         })
     ]
 });

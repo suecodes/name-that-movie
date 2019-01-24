@@ -6,9 +6,9 @@
 // Environment variables
 require('dotenv').config();
 
-// Logging 
+// Logging using winston
 var wlogger = require("./utils/logger.js");
-wlogger.info("Starting app");
+wlogger.info("Starting app ...");
 
 var createError = require('http-errors');
 var express = require('express');

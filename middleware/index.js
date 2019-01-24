@@ -1,3 +1,8 @@
+/**
+ *  Middleware 
+ */
+
+var wlogger = require("../utils/logger.js");
 var Moviequotes = require("../models/moviequotes");
 
 var middlewareObj = {};
@@ -15,7 +20,7 @@ middlewareObj.checkMovieQuoteAuthor = function (req, res, next) {
     if (req.isAuthenticated()) {
         Moviequotes.findById(req.params.id, function (err, foundMovieQuote) {
             if (err) {
-                console.log(err);
+                wlogger.error(err);
                 res.redirect("/moviequotes");
             } else {
                 if (typeof foundMovieQuote.author.id !== 'undefined') {

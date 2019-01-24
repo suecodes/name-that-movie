@@ -26,6 +26,7 @@ const APP_NAME = "Name That Movie";
 const APP_EMAIL = "namethatmovieteam@gmail.com";
 const RANDOM_QUIZ_SIZE = 4;
 
+var wlogger = require("../utils/logger.js");
 var express = require('express');
 var router = express.Router();
 var Moviequotes = require("../models/moviequotes");
@@ -51,7 +52,7 @@ router.get("/", function (req, res, next) {
 		}
 	}]).exec(function (err, result) {
 		if (err) {
-			console.log(err);
+			wlogger.error(err);
 		} else {
 			// Render page and return result
 			res.render('landing', {
@@ -85,11 +86,11 @@ router.post("/register", function (req, res) {
 	User.register(newUser, req.body.password, function (err, user) {
 		if (err) {
 			// Username already exists
-			//console.log(err);
 			req.flash("error", "Username already exists");
 			return res.render("authenticate/register");
 		}
 		passport.authenticate("local")(req, res, function () {
+			wlogger.info("New user has registered an account");
 			res.redirect("/moviequotes");
 		});
 	});
@@ -111,6 +112,7 @@ router.post("/login", function (req, res, next) {
 		}
 		req.logIn(user, function (err) {
 			if (err) return next(err);
+			wlogger.info("User has logged in");
 			return res.redirect("/moviequotes");
 		});
 	})(req, res, next);
@@ -119,6 +121,7 @@ router.post("/login", function (req, res, next) {
 
 // Logout handler
 router.get("/logout", function (req, res) {
+	wlogger.info("User has logged out");
 	req.logout();
 	res.redirect("/moviequotes");
 });
@@ -180,7 +183,7 @@ router.post("/forgotpassword", function (req, res, next) {
 				// Send the email
 				smtpTransport.sendMail(mailOptions, function (err) {
 					if (err) {
-						console.log(err);
+						wlogger.error(err);
 					} else {
 						req.flash("success", "Please check your email.");
 						done(err, "done");
@@ -223,9 +226,8 @@ router.post('/resetpassword/:token', function (req, res, next) {
 				}
 			}, function (err, user) {
 				if (!user) {
-					//console.log("Password reset token is invalid or has expired.");
+					wlogger.info("Password reset token is invalid or has expired.");
 					req.flash("error", "Password reset token is invalid or has expired.");
-
 					return res.redirect('back');
 				}
 				if (req.body.password === req.body.confirm) {
@@ -244,7 +246,7 @@ router.post('/resetpassword/:token', function (req, res, next) {
 					});
 					//});
 				} else {
-					//console.log("Passwords do not match.");
+					wlogger.info("Passwords do not match.");
 					req.flash("error", "Passwords do not match.");
 					return res.redirect('back');
 				}
@@ -269,7 +271,8 @@ router.post('/resetpassword/:token', function (req, res, next) {
 					'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
 			};
 			smtpTransport.sendMail(mailOptions, function (err) {
-				console.log("Success! Your password has been changed");
+				req.flash("success", "Your password has been changed!");
+				wlogger.info("Password for user " + user.username + " has been changed.");
 				done(err);
 			});
 		}
@@ -295,7 +298,7 @@ router.post("/searchresult", function (req, res) {
 		}
 	}, function (err, searchResult) {
 		if (err) {
-			console.log(err);
+			wlogger.error(err);
 			res.redirect("/moviequotes");
 		} else {
 			res.render("moviequotes/search", {
