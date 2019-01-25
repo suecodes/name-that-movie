@@ -160,13 +160,13 @@ body {
   z-index: 1;
   position: relative;
   text-align: center;
+  display: block
 }
 
 /* ------------------------ */
 /* Authenticate page styles */
 /* ------------------------ */
 .authenticate {
-  border: 1px solid blueviolet;
   display: flex;
   margin: 0;
   padding: 0;

@@ -1,15 +1,33 @@
 /* mobile layout */
-@media only screen and (max-device-width: 480px) {
-    .gridcontainer {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-      grid-gap: 15px;
-      grid-auto-flow: dense;
-      place-items: stretch stretch;
-      justify-content: space-between;
-    }
-  
-    .moviequotecoll {
-      font: 5em 'Habibi', serif !important;
-    }
-  }
+@media only screen and (max-device-width: 700px) {
+
+	.landing-container {
+		z-index: 1;
+		position: relative;
+		text-align: left;
+		margin-left: 2em;
+		margin-right: 2em;
+		padding-top: 6vh;
+		color: var(--white);
+		text-align: center;
+		border: 1px solid red;
+	}
+
+	.moviequotelarge {
+		font: 2em 'Habibi', serif;
+		line-height: 1.0em;
+	}
+
+	.check-user-answer {
+		display: inline;
+		margin: 2px;
+	}
+
+	.movie-user-answer {
+		margin-top: 1em;
+		z-index: 1;
+		position: relative;
+		text-align: center;
+	}
+
+}
