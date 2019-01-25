@@ -24,15 +24,18 @@
 					i(class="inverted circular search icon green link")
 //- Hamburger menu
 div(class="topMenu" id="topMenuNav")
-	a(href="/") Home
-	if !currentuser
-		a(href="/login") Sign In
-		a(href="/register") Sign Up
-	else	
-		a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
-		a(href="/logout") Log Out
-	a(href="javascript:void(0);" class="menuIcon" style="border: 1px solid red;" onclick="openCloseMenu();")
-		i(class="fa fa-bars")
+	div(class="leftrightfloatblock")
+		span(class="leftfloat")
+			a(href="/") Home
+		span(class="rightfloat")
+			if !currentuser
+				a(href="/login") Sign In
+				a(href="/register") Sign Up
+			else 
+				a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname} 
+				a(href="/logout") Log Out
+			a(href="javascript:void(0);" class="menuIcon" onclick="openCloseMenu();")
+				i(class="fa fa-bars")
 
 div
 	if error && error.length > 0

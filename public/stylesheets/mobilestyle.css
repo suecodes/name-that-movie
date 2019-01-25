@@ -33,24 +33,23 @@
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
 	.topMenu a:not(:first-child) {
 		display: none;
 	}
 
-	.topMenu a.icon {
+	.topMenu a.menuicon {
 		float: right;
 		display: block;
 	}
 }
 
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
 	.topMenu.responsive {
 		position: relative;
 	}
 
-	.topMenu.responsive a.icon {
+	.topMenu.responsive a.menuicon {
 		position: absolute;
 		right: 0;
 		top: 0;
