@@ -9,10 +9,12 @@ html
 		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Habibi")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans")
 		link(rel="stylesheet", href="/dist/semantic.min.css" type="text/css")
-		script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
+		script(src="https://code.jquery.com/jquery-3.1.1.min.js" 
+		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous")
 		script(src="/dist/semantic.min.js")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
 	body(id="bg")
-		div(class="ui top pink inverted attached menu")
+		//-div(class="ui top pink inverted attached menu")
 			div(class="menu")
 				a(href="/")
 					img(src="/images/namethatmovielight.png" width="170" height="49")
@@ -28,6 +30,17 @@ html
 						a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
 					div(class="item")
 						a(href="/logout") Log Out
+		//- Hamburger menu
+		div(class="topMenu" id="topMenuNav")
+			a(href="/") Home
+			if !currentuser
+				a(href="/login") Sign In
+				a(href="/register") Sign Up
+			else 
+				a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname} 
+				a(href="/logout") Log Out
+			a(href="javascript:void(0);" style="border: 1px solid red;" class="menuIcon" onclick="openCloseMenu();")
+				i(class="fa fa-bars")
 
 	if error && error.length > 0
 		div(class="errormessagebox")

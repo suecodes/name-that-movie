@@ -1,5 +1,5 @@
 //- Has search function in this menu
-div(class="ui red top inverted attached menu")
+//- div(class="ui red top inverted attached menu")
 	div(class="menu") 
 		a(href="/")
 			img(src="/images/namethatmovielogo.png" width="170" height="49")
@@ -22,6 +22,18 @@ div(class="ui red top inverted attached menu")
 					input(type="text" name="searchcriteria" placeholder="Search")
 					a(href="/search")
 					i(class="inverted circular search icon green link")
+//- Hamburger menu
+div(class="topMenu" id="topMenuNav")
+	a(href="/") Home
+	if !currentuser
+		a(href="/login") Sign In
+		a(href="/register") Sign Up
+	else	
+		a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
+		a(href="/logout") Log Out
+	a(href="javascript:void(0);" class="menuIcon" style="border: 1px solid red;" onclick="openCloseMenu();")
+		i(class="fa fa-bars")
+
 div
 	if error && error.length > 0
 		div(class="errormessagebox")
@@ -43,3 +55,8 @@ div
 				div(class="rightfloat")
 					button(type="button" onclick="closeMessageBox();" class="ui green button") Close
 div(class="ui container")
+
+
+
+
+

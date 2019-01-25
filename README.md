@@ -1,6 +1,6 @@
 # name-that-movie
 Web app to display a collection of movie quotes.
-This application will display the quote, name of the movie, year movie made and the writer(s) who wrote the movie screenplay. 
+This application will display the quote, name of the movie, year movie made and the writer(s) who wrote the movie screenplay. Users can register an account to add their own favorite movie quotes and enter comments on any quote.
 
 ## Live link: coming soon
 
@@ -32,3 +32,4 @@ This application will display the quote, name of the movie, year movie made and 
 - Create screenwriter profile page displayed when user clicks on a screenwriters name
 - Allow logged on users to comment on a specific comment (nested comments)
 - Expand search to search by movie year and screenwriter name
+- Ability to add image to a movie quote

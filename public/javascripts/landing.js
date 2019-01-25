@@ -85,6 +85,16 @@ function guessAgain() {
  *  Close flash message 
  */
 function closeMessageBox() {
+    console.log("hit one");
     errormessagebox.style.display = "none";
     successmessagebox.style.display = "none";
+}
+
+function openCloseMenu() {
+    var menu = document.getElementById("topMenuNav");
+    if (menu.className === "topMenu") {
+        menu.className += " responsive";
+    } else {
+        menu.className = "topMenu";
+    }
 }
