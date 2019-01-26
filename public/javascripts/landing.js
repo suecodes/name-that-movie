@@ -11,8 +11,7 @@ var answerBlock = document.getElementById("right-answer-block");
 var wrongBlock = document.getElementById("wrong-answer-block");
 var moviename = document.getElementById("movie-name");
 var movieanswer = document.querySelectorAll(".moviename");
-var errormessagebox = document.querySelectorAll("errormessagebox");
-var successmessagebox = document.querySelectorAll("successmessagebox");
+
 
 const COLOR_DARKGREEN = "#138D75";
 const COLOR_PRIMARYRED = "#7B241C";
@@ -84,13 +83,27 @@ function guessAgain() {
 /**
  *  Close flash message 
  */
-function closeMessageBox() {
-    console.log("hit one");
-    errormessagebox.style.display = "none";
-    successmessagebox.style.display = "none";
+function closeErrorMessageBox() {
+    debugger;
+    var box = document.getElementById("errorbox");
+    if (box.className === "errormessagebox") {
+        box.className += " hidemessage";
+    } else {
+        box.className = "errormessagebox";
+    }
+}
+
+function closeSuccessMessageBox() {
+    var box = document.getElementById("successbox");
+    if (box.className === "successmessagebox") {
+        box.className += " hidemessage";
+    } else {
+        box.className = "errormessagebox";
+    }
 }
 
 function openCloseMenu() {
+    debugger;
     var menu = document.getElementById("topMenuNav");
     if (menu.className === "topMenu") {
         menu.className += " responsive";

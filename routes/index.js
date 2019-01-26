@@ -107,6 +107,7 @@ router.post("/login", function (req, res, next) {
 			return next(err);
 		}
 		if (!user) {
+			req.flash("error", "Sorry we could not find an account with the email you entered.");
 			return res.redirect("/login");
 		}
 		req.logIn(user, function (err) {

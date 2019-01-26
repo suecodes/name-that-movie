@@ -103,6 +103,10 @@ body {
   padding: 5px;
 }
 
+.hidemessage {
+  display: none;
+}
+
 .moviequotesmall {
   font: 2.9em 'Habibi', serif;
   line-height: 1.2em;
