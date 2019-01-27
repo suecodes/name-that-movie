@@ -12,7 +12,6 @@ var wrongBlock = document.getElementById("wrong-answer-block");
 var moviename = document.getElementById("movie-name");
 var movieanswer = document.querySelectorAll(".moviename");
 
-
 const COLOR_DARKGREEN = "#138D75";
 const COLOR_PRIMARYRED = "#7B241C";
 const COLOR_LIGHTGREY = "#AAB7B8";
@@ -31,6 +30,16 @@ function init() {
  *   - check answer and respond appropriately
  */
 function setupAnswers() {
+
+    let quote = document.getElementById("moviequote");
+
+    if (quote.textContent.length > 50) {
+        if (quote.className === "moviequotelarge default-grey") {
+            quote.className = "moviequotemedium default-grey";
+        } else {
+            quote.className = "moviequotelarge default-grey";
+        }
+    }
 
     for (let i = 0; i < movieanswer.length; i++) {
 
@@ -55,7 +64,7 @@ function setupAnswers() {
  */
 function displayAnswer() {
     moviename.style.color = COLOR_DARKGREEN;
-    moviename.style.visibility = "visible";
+    moviename.style.display = "block";
     userInputBlock.style.display = "none";
     answerBlock.style.display = "block";
     wrongBlock.style.display = "none";
@@ -66,7 +75,7 @@ function displayAnswer() {
  */
 function displayWrongAnswer() {
     moviename.style.color = COLOR_PRIMARYRED;
-    moviename.style.visibility = "hidden";
+    moviename.style.display = "none";
     userInputBlock.style.display = "block";
     answerBlock.style.display = "none";
     wrongBlock.style.display = "block";
@@ -81,10 +90,9 @@ function guessAgain() {
 }
 
 /**
- *  Close flash message 
+ *  Close flash messages
  */
 function closeErrorMessageBox() {
-    debugger;
     var box = document.getElementById("errorbox");
     if (box.className === "errormessagebox") {
         box.className += " hidemessage";
@@ -102,8 +110,10 @@ function closeSuccessMessageBox() {
     }
 }
 
+/**
+ *  Make menu responsive (i.e. hamburger)
+ */
 function openCloseMenu() {
-    debugger;
     var menu = document.getElementById("topMenuNav");
     if (menu.className === "topMenu") {
         menu.className += " responsive";

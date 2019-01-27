@@ -167,6 +167,10 @@ body {
   display: block
 }
 
+.moviename {
+  width: 250px;
+}
+
 /* ------------------------ */
 /* Authenticate page styles */
 /* ------------------------ */

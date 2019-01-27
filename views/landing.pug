@@ -3,9 +3,9 @@ include partials/landingheader
 block content
   div(class="landing-container")
     //- Quote 
-    div(class="moviequotelarge default-grey") "#{result[quiz].moviequote}"
+    div(class="moviequotelarge default-grey" id="moviequote") "#{result[quiz].moviequote}"
     //- Format: Movie name, year made - writer (hidden by default)
-    div(id="movie-name" class="movie-name-year default-grey" style="visibility:hidden") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
+    div(id="movie-name" class="movie-name-year default-grey" style="display: none") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
 
     input(id="user-guess" type="hidden" value=result[quiz].moviename)
     
@@ -26,7 +26,7 @@ block content
     //- Display wrong answer block (hidden by default)
     div(class="movie-user-answer" style="display:none" id="wrong-answer-block")
       p(id="message" class="default-grey") Wrong! Try again or get answer.
-      form(class="check-user-answer")
+      //- form(class="check-user-answer")
         button(type="button" onclick="guessAgain();" class="ui primary button") Guess Again
       form(class="check-user-answer" action="/")
         button(type="button" onclick="displayAnswer();" class="ui primary button") Get Answer
