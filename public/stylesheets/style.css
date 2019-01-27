@@ -162,9 +162,21 @@ body {
 .movie-user-answer {
   margin-top: 3em;
   z-index: 1;
+  position: fixed;
+  text-align: center;
+  display: block;
+  bottom: 140px;
+}
+
+.movie-user-answer2 {
+  margin-top: 3em;
+  z-index: 1;
   position: relative;
   text-align: center;
-  display: block
+  display: block;
+  padding-top: 20vh;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .moviename {

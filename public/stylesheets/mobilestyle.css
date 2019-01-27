@@ -10,11 +10,21 @@
 		padding-top: 6vh;
 		color: var(--white);
 		text-align: center;
-		border: 1px solid red;
+	}
+
+	.moviequotesmall {
+		font: 1.2em 'Habibi', serif;
+		line-height: 1.2em;
+		padding: 5px;
+	}
+
+	.moviequotemedium {
+		font: 1.9em 'Habibi', serif;
+		line-height: 1.2em;
 	}
 
 	.moviequotelarge {
-		font: 2em 'Habibi', serif;
+		font: 2.5em 'Habibi', serif;
 		line-height: 1.0em;
 	}
 
@@ -32,7 +42,7 @@
 
 	.moviename {
 		width: 250px;
-		margin: 10px !important;
+		margin: 5px !important;
 	}
 }
 

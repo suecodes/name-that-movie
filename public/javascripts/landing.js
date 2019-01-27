@@ -15,6 +15,7 @@ var movieanswer = document.querySelectorAll(".moviename");
 const COLOR_DARKGREEN = "#138D75";
 const COLOR_PRIMARYRED = "#7B241C";
 const COLOR_LIGHTGREY = "#AAB7B8";
+const MAX_CHAR_LENGTH = 70;
 
 // Initialize
 init();
@@ -22,6 +23,7 @@ init();
 // Initialise form
 function init() {
     setupAnswers();
+    checkQuoteLength();
 }
 
 /** 
@@ -30,16 +32,6 @@ function init() {
  *   - check answer and respond appropriately
  */
 function setupAnswers() {
-
-    let quote = document.getElementById("moviequote");
-
-    if (quote.textContent.length > 50) {
-        if (quote.className === "moviequotelarge default-grey") {
-            quote.className = "moviequotemedium default-grey";
-        } else {
-            quote.className = "moviequotelarge default-grey";
-        }
-    }
 
     for (let i = 0; i < movieanswer.length; i++) {
 
@@ -56,6 +48,22 @@ function setupAnswers() {
             // compare answer and display right/wrong outcome
             movieanswer === userinput ? displayAnswer() : displayWrongAnswer();
         });
+    }
+}
+
+/**
+ *  Resize quote if it is over specific character length to prevent
+ *  quote from fallin below the fold
+ */
+function checkQuoteLength() {
+    let quote = document.getElementById("moviequote");
+
+    if (quote.textContent.length > MAX_CHAR_LENGTH) {
+        if (quote.className === "moviequotelarge default-grey") {
+            quote.className = "moviequotemedium default-grey";
+        } else {
+            quote.className = "moviequotelarge default-grey";
+        }
     }
 }
 
