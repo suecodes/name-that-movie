@@ -10,7 +10,7 @@ block content
     input(id="user-guess" type="hidden" value=result[quiz].moviename)
     
     //- Display 4 possible answers (displayed by default)
-    div(class="movie-user-answer" id="userinput")
+    div(class="movie-user-guess" id="userinput")
         form(class="check-user-answer" action="/")
           div(class="moviename ui primary button") #{result[0].moviename}
           div(class="moviename ui primary button") #{result[1].moviename}
@@ -18,13 +18,13 @@ block content
           div(class="moviename ui primary button") #{result[3].moviename}
 
     //- Display right answer block and next steps (hidden by default)
-    div(class="movie-user-answer2" style="display:none" id="right-answer-block")
+    div(class="movie-user-answer" style="display:none" id="right-answer-block")
       p(id="message" class="default-grey") Correct! Guess another movie or view movie quotes?
-      a(href="/" class="ui primary button") Guess Another
+      a(href="/" class="ui primary button" style="margin: 5px;") Guess Another
       a(href="/moviequotes" class="ui primary button") View Movie Quotes
     
     //- Display wrong answer block (hidden by default)
-    div(class="movie-user-answer2" style="display:none;" id="wrong-answer-block")
+    div(class="movie-user-answer" style="display:none;" id="wrong-answer-block")
       p(id="message" class="default-grey") Wrong! Try again.
       //- form(class="check-user-answer")
         button(type="button" onclick="guessAgain();" class="ui primary button") Guess Again

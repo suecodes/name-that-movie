@@ -33,11 +33,24 @@
 		margin: 2px;
 	}
 
-	.movie-user-answer {
+	.movie-user-guess {
 		margin-top: 1em;
+		z-index: 1;
+		position: fixed;
+		text-align: center;
+		display: block;
+		bottom: 80px;
+	}
+
+	.movie-user-answer {
+		margin-top: 2em;
 		z-index: 1;
 		position: relative;
 		text-align: center;
+		display: block;
+		padding-top: 40vh;
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.moviename {
