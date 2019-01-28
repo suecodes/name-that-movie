@@ -58,11 +58,13 @@ function setupAnswers() {
 function checkQuoteLength() {
     let quote = document.getElementById("moviequote");
 
-    if (quote.textContent.length > MAX_CHAR_LENGTH) {
-        if (quote.className === "moviequotelarge default-grey") {
-            quote.className = "moviequotemedium default-grey";
-        } else {
-            quote.className = "moviequotelarge default-grey";
+    if (quote) {
+        if (quote.textContent.length > MAX_CHAR_LENGTH) {
+            if (quote.className === "moviequotelarge default-grey") {
+                quote.className = "moviequotemedium default-grey";
+            } else {
+                quote.className = "moviequotelarge default-grey";
+            }
         }
     }
 }

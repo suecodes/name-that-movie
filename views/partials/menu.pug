@@ -1,61 +1,23 @@
-//- Has search function in this menu
-//- div(class="ui red top inverted attached menu")
-	div(class="menu") 
-		a(href="/")
-			img(src="/images/namethatmovielogo.png" width="170" height="49")
-	div(class="right inverted menu")
-		if !currentuser
-			div(class="item")
-				a(href="/login") Sign In
-			div(class="item")
-				a(href="/register") Sign Up
-		else
-			div(class="item")
-				//- Future functionality - to display user profile page
-				a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
-			div(class="item")
-				a(href="/logout") Log Out
-		div(class="ui right aligned category search item")
-			form(class="ui form" action="/searchresult" method="POST")
-				div(class="ui icon input")
-					a(href="/search")
-					input(type="text" name="searchcriteria" placeholder="Search")
-					a(href="/search")
-					i(class="inverted circular search icon green link")
-//- Hamburger menu
+//- Hamburger menu 
 div(class="topMenu" id="topMenuNav")
 	div(class="leftrightfloatblock")
 		span(class="leftfloat")
-			a(href="/") Home
+			a(href="/") 
+				h5 Home
 		span(class="rightfloat")
 			if !currentuser
-				a(href="/login") Sign In
-				a(href="/register") Sign Up
+				a(href="/login") 
+					h5 Sign In
+				a(href="/register") 
+					h5 Sign Up
 			else 
-				a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname} 
-				a(href="/logout") Log Out
+				a(href="#") 
+					h5 Signed in as #{currentuser.firstname} #{currentuser.lastname} 
+				a(href="/logout") 
+					h5 Log Out
 			a(href="javascript:void(0);" class="menuIcon" onclick="openCloseMenu();")
 				i(class="fa fa-bars")
-div
-	if error && error.length > 0
-		div(class="errormessagebox" id="errorbox")
-			div(class="leftrightfloatblock")
-				div(class="leftfloat message")
-					i(class="close circle large white icon")
-					div(class="icon-next")
-						div #{error}
-				div(class="rightfloat")
-					button(type="button" onclick="closeErrorMessageBox();" class="ui primary button") Close
-
-	if success && success.length > 0
-		div(class="successmessagebox" id="successbox")
-			div(class="leftrightfloatblock")
-				div(class="leftfloat message")
-					i(class="check circle large white icon")
-					div(class="icon-next")
-						div #{success}
-				div(class="rightfloat")
-					button(type="button" onclick="closeSuccessMessageBox();" class="ui green button") Close
+include ../partials/message				
 div(class="ui container")
 
 

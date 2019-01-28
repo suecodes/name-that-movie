@@ -124,16 +124,16 @@ body {
 }
 
 .spacer {
-  margin: 10px;
+  margin: 5px;
 }
 
 .spacetop {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .spacebottom {
   padding: 3px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 /* -------------------------------------------------------- */
@@ -230,7 +230,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: auto;
-  grid-gap: 30px;
+  grid-gap: 20px;
   grid-auto-flow: dense;
   place-items: stretch stretch;
   justify-content: space-between;

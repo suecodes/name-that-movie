@@ -1,0 +1,20 @@
+div
+	if error && error.length > 0
+		div(class="errormessagebox" id="errorbox")
+			div(class="leftrightfloatblock")
+				div(class="leftfloat message")
+					i(class="close circle large white icon")
+					div(class="icon-next")
+						div #{error}
+				div(class="rightfloat")
+					button(type="button" onclick="closeErrorMessageBox();" class="ui primary button") Close
+
+	if success && success.length > 0
+		div(class="successmessagebox" id="successbox")
+			div(class="leftrightfloatblock")
+				div(class="leftfloat message")
+					i(class="check circle large white icon")
+					div(class="icon-next")
+						div #{success}
+				div(class="rightfloat")
+					button(type="button" onclick="closeSuccessMessageBox();" class="ui green button") Close

@@ -29,38 +29,39 @@ block content
 			//- Loop 
 			each moviequote in moviequotes
 				div(class="quoteitem")
-					div
-						div(class="spacetop")
+					div(class="spacetop")
+						div(class="leftrightfloatblock")
+							div(class="leftfloat")
+							div(class="rightfloat")
+								a(href="/moviequotes/" + moviequote._id class="link") 
+									i(class="eye large icon") 
+									div(class="icon-next") View
+						div
 							//- Movie & year
 							i(class="video icon grey")
 							div(class="movie-year icon-next default-grey") #{moviequote.moviename}, #{moviequote.year}
-							div(class="moreinfo")
-							//- More info
-							a(href="/moviequotes/" + moviequote._id class="link") 
-								i(class="eye large icon") 
-								div(class="icon-next") View
-								div(class="spacebottom")
-									//- screenwriter
-									i(class="pencil alternate icon grey") 
-									div(class="icon-next grey") #{moviequote.screenwriter}
-								//- Movie quote
-								div(class="moviequotesmall default-grey") "#{moviequote.moviequote}"
-								//- Like / Favorites (future functionality)
-								//- div(class="leftrightfloatblock")
-									span(class="leftfloat")
-										a(class="link")
-											i(class="like icon") 
-											div(class="icon-next") Like
-									span(class="rightfloat")
-										a(class="link")
-											i(class="star icon") 
-											div(class="icon-next") Favorite
-								//- Comments - get count of comments
-								div(class="commentblock")
-									span(class="right floated")
-										div(class="icon-next") 
-										a(href="/moviequotes/" + moviequote._id class="link") #{moviequote.comments.length} Comments 
-											i(class="comment outline icon")
-								div(class="spacer")
+							div
+								//- screenwriter
+								i(class="pencil alternate icon grey") 
+								div(class="icon-next grey") #{moviequote.screenwriter}
+							//- Movie quote
+							div(class="moviequotesmall default-grey") "#{moviequote.moviequote}"
+							//- Like / Favorites (future functionality)
+							//- div(class="leftrightfloatblock")
+								span(class="leftfloat")
+									a(class="link")
+										i(class="like icon") 
+										div(class="icon-next") Like
+								span(class="rightfloat")
+									a(class="link")
+										i(class="star icon") 
+										div(class="icon-next") Favorite
+							//- Comments - get count of comments
+							div(class="commentblock")
+								span(class="right floated")
+									div(class="icon-next") 
+									a(href="/moviequotes/" + moviequote._id class="link") #{moviequote.comments.length} Comments 
+										i(class="comment outline icon")
+						//-div(class="spacer")
 
 include ../partials/footer

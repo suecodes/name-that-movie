@@ -1,4 +1,4 @@
-//- No search function in this menu
+//- Home page
 doctype html
 html
 	head
@@ -14,53 +14,6 @@ html
 		script(src="/dist/semantic.min.js")
 		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
 	body(id="bg")
-		//-div(class="ui top pink inverted attached menu")
-			div(class="menu")
-				a(href="/")
-					img(src="/images/namethatmovielight.png" width="170" height="49")
-			div(class="right pink inverted menu")
-				if !currentuser
-					div(class="item")
-						a(href="/login") Sign In
-					div(class="item")
-						a(href="/register") Sign Up
-				else
-					div(class="item")
-						//- Future functionality - to display user profile page
-						a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname}
-					div(class="item")
-						a(href="/logout") Log Out
 		//- Hamburger menu
-		div(class="topMenu" id="topMenuNav")
-			div(class="leftrightfloatblock")
-				span(class="leftfloat")
-					a(href="/") Home
-				span(class="rightfloat")
-					if !currentuser
-						a(href="/login") Sign In
-						a(href="/register") Sign Up
-					else 
-						a(href="#") Signed in as #{currentuser.firstname} #{currentuser.lastname} 
-						a(href="/logout") Log Out
-					a(href="javascript:void(0);" class="menuIcon" onclick="openCloseMenu();")
-						i(class="fa fa-bars")
-
-	if error && error.length > 0
-		div(class="errormessagebox" id="errorbox")
-			div(class="leftrightfloatblock")
-				div(class="leftfloat message")
-					i(class="close circle large white icon")
-					div(class="icon-next")
-						div #{error}
-				div(class="rightfloat")
-					button(type="button" onclick="closeErrorMessageBox();" class="ui primary button") Close
-
-	if success && success.length > 0
-		div(class="successmessagebox" id="successbox")
-			div(class="leftrightfloatblock")
-				div(class="leftfloat message")
-					i(class="check circle large white icon")
-					div(class="icon-next")
-						div #{success}
-				div(class="rightfloat")
-					button(type="button" onclick="closeSuccessMessageBox();" class="ui green button") Close
+		include ../partials/menu
+	include ../partials/message
