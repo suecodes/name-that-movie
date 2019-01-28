@@ -1,22 +1,21 @@
 include ../partials/landingheader
 
 block content
-	div(class="ui authenticate-container")
-		div(class="authenticatebox")
-			form(class="ui form" action="/login" method="POST")
-				div(class="header") 
-					div(class="ui large header green right floated") Log In
-				div(class="horizontal-line")
-				div(class="spacetop")
-				div(class="field")
-					div(class="ui pointing below label") Username *
-					input(type="text" name="username" )
-				div(class="field")
-					div(class="ui pointing below label") Password * 
-					input(type="password" name="password")
-				div(class="ui checkbox")
-					a(href="/forgotpassword" class="ui link") Forgot password
-				div(class="field")
-					a(href="/register" class="ui link") No account? Sign Up
+	div(class="formcontainer")
+		form(class="ui form" action="/login" method="POST")
+			div(class="header") 
+				div(class="ui large header green right floated") Log In
+			div(class="horizontal-line")
+			div(class="spacetop")
+			div(class="formfield")
+				div(class="ui pointing below label") Username *
+				input(type="text" name="username" )
+			div(class="formfield")
+				div(class="ui pointing below label") Password * 
+				input(type="password" name="password")
+			div(class="formfield")
+				a(href="/forgotpassword" class="ui link") Forgot password
+			div(class="formfield")
+				a(href="/register" class="ui link") No account? Sign Up
 				button(class="ui green mini button right floated") Log In
 script(src="/javascripts/landing.js" type="text/javascript")

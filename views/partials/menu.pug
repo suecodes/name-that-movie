@@ -1,22 +1,19 @@
 //- Hamburger menu 
 div(class="topMenu" id="topMenuNav")
-	div(class="leftrightfloatblock")
-		span(class="leftfloat")
-			a(href="/") 
-				h5 Home
-		span(class="rightfloat")
-			if !currentuser
-				a(href="/login") 
-					h5 Sign In
-				a(href="/register") 
-					h5 Sign Up
-			else 
-				a(href="#") 
-					h5 Signed in as #{currentuser.firstname} #{currentuser.lastname} 
-				a(href="/logout") 
-					h5 Log Out
-			a(href="javascript:void(0);" class="menuIcon" onclick="openCloseMenu();")
-				i(class="fa fa-bars")
+	a(href="/") 
+		h5 Home
+	if !currentuser
+		a(href="/login" class="menuItem")
+			h5 Sign In
+		a(href="/register" class="menuItem")
+			h5 Sign Upß
+	else 
+		a(href="#" class="menuItem")
+			h5 Signed in as #{currentuser.firstname} #{currentuser.lastname} 
+		a(href="/logout" class="menuItem")
+			h5 Log Out
+	a(href="javascript:void(0);" class="menuIcon" onclick="openCloseMenu();")
+		i(class="fa fa-bars")
 include ../partials/message				
 div(class="ui container")
 

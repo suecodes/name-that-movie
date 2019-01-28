@@ -1,21 +1,38 @@
-/* mobile layout */
-@media only screen and (max-device-width: 700px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+	/* ---------------------- */
+	/* Form controls - mobile */
+	/* ---------------------- */
+
+	.formcontainer {
+		padding-top: 5vh;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.formfield {
+		width: 320px;
+		padding: 5px;
+	}
+
+	/* TODO - check below */
 
 	.landing-container {
-		z-index: 1;
-		position: relative;
-		text-align: left;
 		margin-left: 2em;
 		margin-right: 2em;
 		padding-top: 6vh;
-		color: var(--white);
-		text-align: center;
 	}
 
+	.movie-container {
+		margin-left: 5em;
+		margin-right: 5em;
+	}
+
+	/* Quote text sizes */
 	.moviequotesmall {
 		font: 1.2em 'Habibi', serif;
 		line-height: 1.4em;
-		padding: 5px;
 	}
 
 	.moviequotemedium {
@@ -24,18 +41,12 @@
 	}
 
 	.moviequotelarge {
-		font: 2.5em 'Habibi', serif;
+		font: 3em 'Habibi', serif;
 		line-height: 1.1em;
-	}
-
-	.check-user-answer {
-		display: inline;
-		margin: 2px;
 	}
 
 	.quoteblock {
 		display: block;
-		/* border: 1px solid green; */
 		margin-bottom: 20px;
 	}
 
@@ -53,15 +64,25 @@
 		width: 250px;
 		margin: 5px !important;
 	}
-}
 
+	.nextbutton {
+		margin: 5px !important;
+	}
 
-@media only screen and (max-width: 390px) {
+	/* show */
+	.showfield {
+		margin: 3px;
+	}
+
+	.resultfield {
+		width: 95%;
+	}
+
 	.topMenu a:not(:first-child) {
 		display: none;
 	}
 
-	.topMenu a.menuicon {
+	.topMenu a.menuIcon {
 		float: right;
 		display: block;
 	}
@@ -70,7 +91,7 @@
 		position: relative;
 	}
 
-	.topMenu.responsive a.menuicon {
+	.topMenu.responsive a.menuIcon {
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -81,4 +102,23 @@
 		display: block;
 		text-align: left;
 	}
+
+
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+	.moviename {
+		width: 250px;
+		margin: 5px !important;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

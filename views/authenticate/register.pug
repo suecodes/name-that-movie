@@ -1,29 +1,29 @@
 include ../partials/landingheader
 
 block content
-	div(class="ui authenticate-container")
-		div(class="authenticatebox")
-			form(class="ui form" action="/register" method="POST")
-				div(class="header") 
-					div(class="ui large header green right floated") Sign Up
-				div(class="horizontal-line")
-				div(class="spacetop")
-				div(class="two fields")
-					div(class="field")
-						div(class="ui pointing below label") First Name *
-						input(type="text" name="firstname")
-					div(class="field")
-						div(class="ui pointing below label") Last Name *
-						input(type="text" name="lastname")
-				div(class="field")
-					div(class="ui pointing below label") Email *
-					input(type="email" name="email" )
-				div(class="field")
-					div(class="ui pointing below label") Username *
-					input(type="text" name="username" )
-				div(class="field")
-					div(class="ui pointing below label") Password * 
-					input(type="password" name="password")
-				div(class="field")
-					p By clicking below, you agree to the Name That Movie Terms of Service and Privacy Policy.
+	div(class="formcontainer")
+		form(class="ui form" action="/register" method="POST")
+			div(class="header") 
+				div(class="ui large header green right floated") Sign Up
+			div(class="horizontal-line")
+			div(class="spacetop")
+			div(class="formfield")
+				div(class="ui pointing below label") First Name *
+				input(type="text" name="firstname")
+			div(class="formfield")
+				div(class="ui pointing below label") Last Name *
+				input(type="text" name="lastname")
+			div(class="formfield")
+				div(class="ui pointing below label") Email *
+				input(type="email" name="email" )
+			div(class="formfield")
+				div(class="ui pointing below label") Username *
+				input(type="text" name="username" )
+			div(class="formfield")
+				div(class="ui pointing below label") Password * 
+				input(type="password" name="password")
+			div(class="formfield")
+				p By clicking below, you agree to the Name That Movie Terms of Service and Privacy Policy.
+			div(class="formfield")
 				button(class="ui green mini button right floated") Agree and Sign Up
+script(src="/javascripts/landing.js" type="text/javascript")
