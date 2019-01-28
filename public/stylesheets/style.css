@@ -154,33 +154,30 @@ body {
   text-align: center;
 }
 
-.check-user-answer {
-  display: inline;
-  margin: 4px;
+.quoteblock {
+  display: block;
+  /* border: 1px solid green; */
+  margin-bottom: 40px;
+}
+
+.movie-user-guess {
+  display: block;
+  /* border: 1px solid violet; */
 }
 
 .movie-user-answer {
-  margin-top: 3em;
-  z-index: 1;
-  position: fixed;
-  text-align: center;
+  position: relative;
   display: block;
-  bottom: 140px;
+  /* border: 1px solid blue; */
 }
 
-.movie-user-answer2 {
-  margin-top: 3em;
-  z-index: 1;
-  position: relative;
-  text-align: center;
-  display: block;
-  padding-top: 20vh;
-  margin-left: 0;
-  margin-right: 0;
+.movie-name-year {
+  font-size: 1.5em;
+  line-height: 1.2em;
 }
 
 .moviename {
-  width: 250px;
+  margin: 5px !important;
 }
 
 /* ------------------------ */
@@ -213,8 +210,6 @@ body {
   padding: 10px;
 }
 
-
-
 /* ----------------------------------------------------- */
 /* Movie quotes - index/new/show/edit/search page styles */
 /* ----------------------------------------------------- */
@@ -226,12 +221,6 @@ body {
   margin-right: 15em;
   padding-top: 3vh;
   text-align: left;
-}
-
-.movie-name-year {
-  margin-top: 10px;
-  font-size: 1.5em;
-  line-height: 1.2em;
 }
 
 /* ----------------- */

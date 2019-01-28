@@ -14,18 +14,18 @@
 
 	.moviequotesmall {
 		font: 1.2em 'Habibi', serif;
-		line-height: 1.2em;
+		line-height: 1.4em;
 		padding: 5px;
 	}
 
 	.moviequotemedium {
-		font: 1.9em 'Habibi', serif;
-		line-height: 1.2em;
+		font: 2.5em 'Habibi', serif;
+		line-height: 1.3em;
 	}
 
 	.moviequotelarge {
 		font: 2.5em 'Habibi', serif;
-		line-height: 1.0em;
+		line-height: 1.1em;
 	}
 
 	.check-user-answer {
@@ -33,24 +33,20 @@
 		margin: 2px;
 	}
 
-	.movie-user-guess {
-		margin-top: 1em;
-		z-index: 1;
-		position: fixed;
-		text-align: center;
+	.quoteblock {
 		display: block;
-		bottom: 80px;
+		/* border: 1px solid green; */
+		margin-bottom: 20px;
+	}
+
+	.movie-user-guess {
+		position: relative;
+		display: block;
 	}
 
 	.movie-user-answer {
-		margin-top: 2em;
-		z-index: 1;
 		position: relative;
-		text-align: center;
 		display: block;
-		padding-top: 40vh;
-		margin-left: 0;
-		margin-right: 0;
 	}
 
 	.moviename {

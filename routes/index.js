@@ -104,6 +104,8 @@ router.get("/login", function (req, res) {
 router.post("/login", function (req, res, next) {
 	passport.authenticate("local", function (err, user, info) {
 		if (err) {
+			console.log(err);
+			wlogger.info(err);
 			return next(err);
 		}
 		if (!user) {
@@ -298,6 +300,7 @@ router.post("/searchresult", function (req, res) {
 		}
 	}, function (err, searchResult) {
 		if (err) {
+			wlogger(req.body.searchcriteria);
 			wlogger.error(err);
 			res.redirect("/moviequotes");
 		} else {

@@ -8,9 +8,7 @@ require('dotenv').config();
 
 // Logging using winston
 var wlogger = require("./utils/logger.js");
-wlogger.info("----------------");
-wlogger.info("Starting app ...");
-wlogger.info("----------------");
+wlogger.info("Starting app - Name That Movie");
 
 var createError = require('http-errors');
 var express = require('express');

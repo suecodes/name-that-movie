@@ -11,10 +11,13 @@ block content
         div(class="horizontal-line")
             div(class="spacetop")
                 i(class="angle right large icon") 
-                h5(class="icon-next") #{moviequotes.length} results returned
+                if moviequotes 
+                    h5(class="icon-next") #{moviequotes.length} results returned
+                else    
+                    h5(class="icon-next") 0 results returned
         form(class="ui form" action="/search" method="POST")
             div(class="spacetop")
-                if moviequotes
+                if moviequotes 
                     each moviequote in moviequotes
                         div(class="resultfield")
                             a(href="/moviequotes/" + moviequote._id class="link")

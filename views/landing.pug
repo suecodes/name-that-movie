@@ -3,11 +3,13 @@ include partials/landingheader
 block content
   div(class="landing-container")
     //- Quote 
-    div(class="moviequotelarge default-grey" id="moviequote") "#{result[quiz].moviequote}"
-    //- Format: Movie name, year made - writer (hidden by default)
-    div(id="movie-name" class="movie-name-year default-grey" style="display: none") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
+    div(class="quoteblock")
+      div(class="moviequotelarge default-grey" id="moviequote") "#{result[quiz].moviequote}"
+      //- Format: Movie name, year made - writer (hidden by default)
+      div(class="spacer")
+      div(id="movie-name" class="movie-name-year default-grey" style="display: none") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
 
-    input(id="user-guess" type="hidden" value=result[quiz].moviename)
+      input(id="user-guess" type="hidden" value=result[quiz].moviename)
     
     //- Display 4 possible answers (displayed by default)
     div(class="movie-user-guess" id="userinput")
@@ -19,13 +21,13 @@ block content
 
     //- Display right answer block and next steps (hidden by default)
     div(class="movie-user-answer" style="display:none" id="right-answer-block")
-      p(id="message" class="default-grey") Correct! Guess another movie or view movie quotes?
-      a(href="/" class="ui primary button" style="margin: 5px;") Guess Another
-      a(href="/moviequotes" class="ui primary button") View Movie Quotes
+      h4(id="message" class="ui white") Correct! Guess another movie or view movie quotes?
+      a(href="/" class="ui primary button" style="margin: 5px; width: 250px;") Guess Another
+      a(href="/moviequotes" class="ui primary button" style="width: 250px;") View Movie Quotes
     
     //- Display wrong answer block (hidden by default)
-    div(class="movie-user-answer" style="display:none;" id="wrong-answer-block")
-      p(id="message" class="default-grey") Wrong! Try again.
+    div(class="movie-user-wrong" style="display:none;" id="wrong-answer-block")
+      h4(id="message" class="ui white") Wrong! Try again.
       //- form(class="check-user-answer")
         button(type="button" onclick="guessAgain();" class="ui primary button") Guess Again
       //-form(class="check-user-answer" action="/")
