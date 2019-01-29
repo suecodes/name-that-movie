@@ -282,13 +282,14 @@
 /* -------------------------- */
 /* footer partial page styles */
 /* -------------------------- */
+
 .footerui {
   position: relative;
   bottom: 0;
   width: 100%;
-  margin: 0;
-  clear: both;
-  padding: 1em 1em;
+  height: 4rem;
+  /* clear: both;
+  padding: 1em 1em; */
   color: var(--darkgrey);
   background: var(--palestgreen);
 }
