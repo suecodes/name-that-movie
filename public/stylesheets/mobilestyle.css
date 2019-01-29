@@ -78,6 +78,10 @@
 		width: 95%;
 	}
 
+	.menuItem {
+		float: left;
+	}
+
 	.topMenu a:not(:first-child) {
 		display: none;
 	}

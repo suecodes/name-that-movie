@@ -297,7 +297,7 @@
 /* menu
 /* -----------------
 
-/* Add a black background color to the top navigation */
+/* Add a background color to the top navigation */
 .topMenu {
   background-color: var(--primaryred);
   overflow: hidden;
@@ -310,6 +310,10 @@
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
+}
+
+.topMenu .menuItem {
+  float: right;
 }
 
 /* Change the color of links on hover */
@@ -326,9 +330,4 @@
 /* Hide the link that should open and close the topnav on small screens */
 .topMenu .menuIcon {
   display: none;
-}
-
-.menuItem {
-  float: right;
-  display: block;
 }
