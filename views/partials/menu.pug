@@ -3,15 +3,15 @@ div(class="topMenu" id="topMenuNav")
 	a(href="/") 
 		h5 Home
 	if !currentuser
-		a(href="/login" class="menuItem")
-			h5 Sign In
 		a(href="/register" class="menuItem")
 			h5 Sign Up
+		a(href="/login" class="menuItem")
+			h5 Sign In
 	else 
-		a(href="#" class="menuItem")
-			h5 Signed in as #{currentuser.firstname} #{currentuser.lastname} 
 		a(href="/logout" class="menuItem")
 			h5 Log Out
+		a(href="#" class="menuItem")
+			h5 Signed in as #{currentuser.firstname} #{currentuser.lastname} 
 	a(href="javascript:void(0);" class="menuIcon" onclick="openCloseMenu();")
 		i(class="fa fa-bars")
 include ../partials/message				
