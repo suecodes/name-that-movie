@@ -12,8 +12,16 @@
 	}
 
 	.formfield {
-		width: 320px;
-		padding: 5px;
+		/* width: 100%;
+		max-width: 500px;
+		box-sizing: border-box;
+		padding: 5px; */
+
+		padding-top: 5vh;
+		color: var(--white);
+		text-align: center;
+		margin: 0 auto;
+		width: 80%;
 	}
 
 	/* TODO - check below */
@@ -78,6 +86,16 @@
 		width: 95%;
 	}
 
+	.icon-next {
+		display: block;
+	}
+
+	/* .leftrightfloatblock {
+		display: block;
+		margin-top: 10px;
+	} */
+
+	/* Hamburger menu */
 	.menuItem {
 		float: left;
 	}

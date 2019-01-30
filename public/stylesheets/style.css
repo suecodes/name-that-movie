@@ -145,24 +145,37 @@
 /* -------------------------------------------------------- */
 /* Landing / login / register / forgot password page styles */
 /* -------------------------------------------------------- */
-#bg {
+/* #bg {
   background-color: var(--softpink);
+} */
+
+/* https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80 
+https://images.unsplash.com/photo-1527239828038-fc0c588f4607?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80 
+https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto=format&fit=crop&w=802&q=80*/
+
+#bg {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--pinkred);
+  /*background-image: url("https://images.unsplash.com/photo-1446102892025-3900145fd2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
+  transition: all 0.3s ease;
+  -webkit-transform: translate3d(0, 0, 0);*/
 }
 
 .landing-container {
-  z-index: 1;
-  position: relative;
-  text-align: left;
-  margin-left: 10em;
-  margin-right: 10em;
   padding-top: 10vh;
   color: var(--white);
+  display: block;
   text-align: center;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .quoteblock {
   display: block;
-  /* border: 1px solid green; */
   margin-bottom: 40px;
 }
 
@@ -171,6 +184,7 @@
 }
 
 .movie-name-year {
+  margin-top: 5px;
   font-size: 1.5em;
   line-height: 1.2em;
 }
@@ -179,8 +193,17 @@
   margin: 5px !important;
 }
 
+.moviename:hover {
+  color: var(--palegreen) !important;
+}
+
 .nextbutton {
   width: 180px;
+  color: var(--greenish) !important;
+}
+
+.nextbutton:hover {
+  background-color: var(--palegreen) !important;
 }
 
 /* ----------------------------------------------------- */
@@ -300,7 +323,7 @@
 
 /* Add a background color to the top navigation */
 .topMenu {
-  background-color: var(--primaryred);
+  background-color: var(--softpink);
   overflow: hidden;
 }
 
@@ -308,7 +331,7 @@
 .topMenu a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: var(--white);
   text-align: center;
   padding: 14px 16px;
 }
