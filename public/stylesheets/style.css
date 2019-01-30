@@ -171,12 +171,13 @@ https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto
   display: block;
   text-align: center;
   margin: 0 auto;
-  width: 80%;
+  height: 400px;
 }
 
 .quoteblock {
   display: block;
-  margin-bottom: 40px;
+  margin: auto;
+  width: 80%;
 }
 
 .movie-user-answer {
@@ -194,7 +195,7 @@ https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto
 }
 
 .moviename:hover {
-  color: var(--palegreen) !important;
+  /* color: var(--palegreen) !important; */
 }
 
 .nextbutton {
@@ -323,7 +324,7 @@ https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto
 
 /* Add a background color to the top navigation */
 .topMenu {
-  background-color: var(--softpink);
+  background-color: var(--greenish);
   overflow: hidden;
 }
 
@@ -342,7 +343,7 @@ https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto
 
 /* Change the color of links on hover */
 .topMenu a:hover {
-  color: white;
+  color: var(--darkestgreen);
 }
 
 /* Add an active class to highlight the current page */

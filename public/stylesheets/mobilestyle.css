@@ -12,11 +12,6 @@
 	}
 
 	.formfield {
-		/* width: 100%;
-		max-width: 500px;
-		box-sizing: border-box;
-		padding: 5px; */
-
 		padding-top: 5vh;
 		color: var(--white);
 		text-align: center;
@@ -26,10 +21,22 @@
 
 	/* TODO - check below */
 
+	/* ---------------------- */
+	/* Landing page - mobile */
+	/* ---------------------- */
 	.landing-container {
-		margin-left: 2em;
-		margin-right: 2em;
-		padding-top: 6vh;
+		padding-top: 5vh;
+		color: var(--white);
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		height: 320px;
+	}
+
+	.quoteblock {
+		display: block;
+		margin: auto;
+		width: 80%;
 	}
 
 	.movie-container {
@@ -44,13 +51,13 @@
 	}
 
 	.moviequotemedium {
-		font: 2.5em 'Habibi', serif;
+		font: 2.3em 'Habibi', serif;
 		line-height: 1.3em;
 	}
 
 	.moviequotelarge {
 		font: 3em 'Habibi', serif;
-		line-height: 1.1em;
+		line-height: 1.3em;
 	}
 
 	.quoteblock {
@@ -63,17 +70,14 @@
 		display: block;
 	}
 
-	.movie-user-answer {
-		position: relative;
-		display: block;
-	}
-
 	.moviename {
 		width: 250px;
 		margin: 5px !important;
 	}
 
 	.nextbutton {
+		border: 1px solid yellow;
+		width: 250px;
 		margin: 5px !important;
 	}
 
@@ -89,11 +93,6 @@
 	.icon-next {
 		display: block;
 	}
-
-	/* .leftrightfloatblock {
-		display: block;
-		margin-top: 10px;
-	} */
 
 	/* Hamburger menu */
 	.menuItem {

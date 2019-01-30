@@ -6,13 +6,13 @@ block content
 		//- Quote 
 		div(class="quoteblock")
 			div(class="moviequotelarge white" id="moviequote") "#{result[quiz].moviequote}"
-			
 			//- Format: Movie name, year made - writer (hidden by default)
 			div(class="spacer")
 			div(id="movie-name" class="movie-name-year" style="display: none") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
 			input(id="user-guess" type="hidden" value=result[quiz].moviename)
 			
 		//- Display 4 possible answers (displayed by default)
+	div(class="landing-container")
 		div(id="userinput")
 			div(class="moviename ui inverted button white") #{result[0].moviename}
 			div(class="moviename ui inverted button white") #{result[1].moviename}
@@ -22,9 +22,12 @@ block content
 		//- Display right answer block and next steps (hidden by default)
 		div(class="movie-user-answer" style="display:none" id="right-answer-block")
 			h4(id="quizmessage" class="ui white") Correct! Guess another movie or view movie quotes?
-			a(href="/" class="ui button nextbutton") Guess Another
-			a(href="/moviequotes" class="ui button nextbutton") View Movie Quotes
-    
+			div(class="userinput")
+				//-button(href="/" class="moviename ui button") Guess Another
+				//-button(href="/moviequotes" class="moviename ui button") View Movie Quotes
+				a(href="/" class="ui button") Guess Another
+				a(href="/moviequotes" class="ui button") View Movie Quotes
+		
 		//- Display wrong answer block (hidden by default)
 		div(class="movie-user-wrong" style="display:none;" id="wrong-answer-block")
 			h4(id="quizmessage" class="ui white") Wrong! Try again.

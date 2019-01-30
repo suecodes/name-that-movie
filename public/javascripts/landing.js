@@ -11,6 +11,7 @@ var answerBlock = document.getElementById("right-answer-block");
 var wrongBlock = document.getElementById("wrong-answer-block");
 var moviename = document.getElementById("movie-name");
 var movieanswer = document.querySelectorAll(".moviename");
+var menu = document.getElementById("topMenuNav");
 
 const COLOR_DARKGREEN = "#138D75";
 const COLOR_PRIMARYRED = "#7B241C";
@@ -26,6 +27,11 @@ init();
 function init() {
     setupAnswers();
     checkQuoteLength();
+
+    // var path = window.location.pathname;
+    // if (path === "/") {
+    //     menu.style.backgroundColor = COLOR_GREENISH;
+    // }
 }
 
 /** 
@@ -41,8 +47,8 @@ function setupAnswers() {
         movieanswer[i].addEventListener("click", function () {
 
             // change button color so user knows it was clicked (eliminated)
-            this.style.backgroundColor = COLOR_WHITE;
-            this.style.color = COLOR_DARKGREEN;
+            this.style.backgroundColor = COLOR_GREENISH;
+            //this.style.color = COLOR_DARKGREEN;
 
             // capture movie name clicked and movie name answer
             let movieanswer = this.textContent.toLowerCase();
