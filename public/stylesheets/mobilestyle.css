@@ -12,11 +12,10 @@
 	}
 
 	.formfield {
-		padding-top: 5vh;
 		color: var(--white);
-		text-align: center;
+		/* text-align: center; */
 		margin: 0 auto;
-		width: 80%;
+		width: auto;
 	}
 
 	/* TODO - check below */
@@ -71,12 +70,6 @@
 	}
 
 	.moviename {
-		width: 250px;
-		margin: 5px !important;
-	}
-
-	.nextbutton {
-		border: 1px solid yellow;
 		width: 250px;
 		margin: 5px !important;
 	}

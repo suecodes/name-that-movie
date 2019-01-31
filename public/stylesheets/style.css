@@ -166,12 +166,12 @@ https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto
 }
 
 .landing-container {
-  padding-top: 10vh;
+  padding-top: 20vh;
   color: var(--white);
   display: block;
   text-align: center;
   margin: 0 auto;
-  height: 400px;
+  height: 320px;
 }
 
 .quoteblock {
@@ -195,16 +195,7 @@ https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto
 }
 
 .moviename:hover {
-  /* color: var(--palegreen) !important; */
-}
-
-.nextbutton {
-  width: 180px;
-  color: var(--greenish) !important;
-}
-
-.nextbutton:hover {
-  background-color: var(--palegreen) !important;
+  color: var(--darkgreen) !important;
 }
 
 /* ----------------------------------------------------- */

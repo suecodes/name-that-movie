@@ -18,7 +18,7 @@ const COLOR_PRIMARYRED = "#7B241C";
 const COLOR_WHITE = "#ffffff";
 const COLOR_DARKESTGREY = "#1B2631";
 const COLOR_GREENISH = "#45B39D";
-const MAX_CHAR_LENGTH = 60;
+const MAX_CHAR_LENGTH = 80;
 
 // Initialize
 init();
