@@ -130,17 +130,26 @@
 /* -------------- */
 
 .formcontainer {
-  display: flex;
+  display: relative;
+  margin-left: 5em;
+  margin-right: 5em;
+  padding-top: 3vh;
+  justify-content: center;
+}
+
+.smallformcontainer {
+  display: relative;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10vh;
+  padding-top: 3vh;
+  width: 50%;
   justify-content: center;
 }
 
 .formfield {
-  width: 600px;
   padding: 5px;
 }
+
 
 /* -------------------------------------------------------- */
 /* Landing / login / register / forgot password page styles */
@@ -149,10 +158,6 @@
   background-color: var(--softpink);
 } */
 
-/* https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80 
-https://images.unsplash.com/photo-1527239828038-fc0c588f4607?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80 
-https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto=format&fit=crop&w=802&q=80*/
-
 #bg {
   overflow: hidden;
   height: 100%;
@@ -160,9 +165,6 @@ https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto
   background-size: cover;
   background-position: center;
   background-color: var(--pinkred);
-  /*background-image: url("https://images.unsplash.com/photo-1446102892025-3900145fd2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
-  transition: all 0.3s ease;
-  -webkit-transform: translate3d(0, 0, 0);*/
 }
 
 .landing-container {
@@ -299,14 +301,23 @@ https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?ixlib=rb-1.2.1&auto
 /* -------------------------- */
 
 .footerui {
-  position: relative;
+  background-color: var(--palestgreen);
+  overflow: hidden;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 4rem;
+  /* position: relative;
+  height: 4rem; */
   /* clear: both;
   padding: 1em 1em; */
+}
+
+.footerui a {
+  float: left;
+  display: block;
   color: var(--darkgrey);
-  background: var(--palestgreen);
+  text-align: center;
+  padding: 14px 16px;
 }
 
 /* ----------------

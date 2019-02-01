@@ -2,18 +2,19 @@ include ../partials/header
 include ../partials/menu
 
 block content
-	div(class="formcontainer")
+	div(class="smallformcontainer")
 		form(class="ui form" action="/register" method="POST")
 			div(class="header") 
 				div(class="ui large header green right floated") Sign Up
 			div(class="horizontal-line")
 			div(class="spacetop")
-			div(class="formfield")
-				div(class="ui pointing below label") First Name *
-				input(type="text" name="firstname")
-			div(class="formfield")
-				div(class="ui pointing below label") Last Name *
-				input(type="text" name="lastname")
+			div(class="two fields")
+				div(class="field")
+					div(class="ui pointing below label") First Name *
+					input(type="text" name="firstname")
+				div(class="field")
+					div(class="ui pointing below label") Last Name *
+					input(type="text" name="lastname")
 			div(class="formfield")
 				div(class="ui pointing below label") Email *
 				input(type="email" name="email" )

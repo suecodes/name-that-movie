@@ -40,13 +40,13 @@ block content
         });
 
     div(class="ui container movie-container")
-        div(class="header") 
-            a(href="javascript:history.back()" class="ui green left floated link") 
-                i(class="hand point left outline large icon") 
-                div(class="icon-next") Back 
-            div(class="ui large header green right floated") New Movie Quote
-        div(class="horizontal-line")
         form(class="ui form" action="/moviequotes" method="POST")
+            div(class="header") 
+                a(href="javascript:history.back()" class="ui green left floated link") 
+                    i(class="hand point left outline large icon") 
+                    div(class="icon-next") Back 
+                div(class="ui large header green right floated") New Movie Quote
+            div(class="horizontal-line")
             div(class="spacetop")
             div(class="two fields")
                 div(class="field")
@@ -54,8 +54,9 @@ block content
                     input(type="text" name="moviename" required)
                 div(class="field")
                     div(class="ui pointing below label") Enter the year movie was made * 
-                    select(class="ui dropdown dropmenu" name="movieyear") 
-                        div(class="default text") Year
+                    div
+                        select(class="ui fluid selection dropdown dropmenu" name="movieyear") 
+                            div(class="default text") Year
             div(class="field")
                 div(class="ui pointing below label") Enter the movie quote *
                 textarea(rows="2" name="moviequote" required)
@@ -63,5 +64,6 @@ block content
                 div(class="ui pointing below label") Enter the screenwriters name (separate with comma if multiple) *
                 input(type="text" name="screenwriter" required)
             input(class="ui green mini button right floated" type="submit")
+            //-button(class="ui green mini button right floated") Submit
 
 include ../partials/footer

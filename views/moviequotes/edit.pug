@@ -40,7 +40,7 @@ block content
             });
         });
 
-    div(class="ui container form-container")
+    div(class="formcontainer")
         div(class="header") 
             a(href="/moviequotes" class="ui green left floated link") 
                 i(class="hand point left outline large icon") 
@@ -49,12 +49,14 @@ block content
         div(class="horizontal-line")
         form(class="ui form" action="/moviequotes/" + moviequotes.id + "?_method=PUT" method="POST")
             div(class="spacetop")
-                div(class="formfield")
-                    div(class="ui pointing below label") Edit the movie name *
-                    input(type="text" name="moviename" required value=moviequotes.moviename) 
-                div(class="formfield")
-                    div(class="ui pointing below label") Edit the year movie was made *
-                    select(class="ui selection dropdown dropmenu" name="movieyear") 
+                div(class="two fields")
+                    div(class="field")
+                        div(class="ui pointing below label") Edit the movie name *
+                        input(type="text" name="moviename" required value=moviequotes.moviename) 
+                    div(class="field")
+                        div(class="ui pointing below label") Edit the year movie was made *
+                        div
+                            select(class="ui fluid selection dropdown dropmenu" name="movieyear") 
             div(class="formfield")
                 div(class="ui pointing below label") Edit the movie quote *
                 textarea(rows="2" name="moviequote" required) #{moviequotes.moviequote}
