@@ -2,33 +2,33 @@ include partials/landingheader
 
 block content
 
-	div(class="landing-container")
-		//- Quote 
+	div(class="flexcontainer quoteblock")
+		//- movie details
 		div(class="quoteblock")
-			div(class="moviequotelarge white" id="moviequote") "#{result[quiz].moviequote}"
-			//- Format: Movie name, year made - writer (hidden by default)
-			div(class="spacer")
-			div(id="movie-name" class="movie-name-year" style="display: none") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
-			input(id="user-guess" type="hidden" value=result[quiz].moviename)
-			
-		//- Display 4 possible answers (displayed by default)
-	div(class="landing-container")
-		div(id="userinput")
-			div(class="moviename ui inverted button white") #{result[0].moviename}
-			div(class="moviename ui inverted button white") #{result[1].moviename}
-			div(class="moviename ui inverted button white") #{result[2].moviename}
-			div(class="moviename ui inverted button white") #{result[3].moviename}
+			div(class="flexitem moviequotelarge" id="moviequote") "#{result[quiz].moviequote}"
+			div(class="flexitem movie-name-year" id="movie-name" style="display: none;") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
 
-		//- Display right answer block and next steps (hidden by default)
-		div(class="movie-user-answer" style="display:none" id="right-answer-block")
-			h4(id="quizmessage" class="ui white") Correct! Guess another movie or view movie quotes?
-			div(class="userinput")
-				a(href="/" class="ui button green") Guess Another
-				a(href="/moviequotes" class="ui button green") View Movie Quotes
-		
-		//- Display wrong answer block (hidden by default)
-		div(class="movie-user-wrong" style="display:none;" id="wrong-answer-block")
-			h4(id="quizmessage" class="ui white") Wrong! Try again.
+	//- display information to user 
+	div(class="flexcontainer" id="message-block" style="visibility: hidden;")
+		div(class="flexitem")
+			h4(id="usermessage" class="ui white quizmessage") 
+			//-h4(id="rightmessage" class="ui white quizmessage") Correct! Guess another movie or view movie quotes?
+
+	//- multiple choice buttons
+	div(class="flexcontainer" id="userinput")
+		div(class="flexitem moviename ui inverted button white flexbutton") #{result[0].moviename}
+		div(class="flexitem moviename ui inverted button white flexbutton") #{result[1].moviename}
+		div(class="flexitem moviename ui inverted button white flexbutton") #{result[2].moviename}
+		div(class="flexitem moviename ui inverted button white flexbutton") #{result[3].moviename}
+
+	//- Instruction to user on next move
+	div(class="flexcontainer" id="right-answer-block" style="display: none;")
+		div(class="flexitem")
+			a(href="/" class="ui button green flexbutton") Guess Another
+			a(href="/moviequotes" class="ui button green flexbutton") View Movie Quotes
+
+	//- hidden field to capture user input
+	input(id="user-guess" type="hidden" value=result[quiz].moviename)
     
 //- Add js script files  
 script(src="/javascripts/landing.js" type="text/javascript")

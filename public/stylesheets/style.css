@@ -35,7 +35,7 @@
   height: 100%;
 } */
 
-.header {
+.titleheader {
   height: 40px;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .moviequotemedium {
-  font: 3.0em 'Habibi', serif;
+  font: 3.2em 'Habibi', serif;
   line-height: 1.2em;
 }
 
@@ -118,11 +118,6 @@
 
 .spacetop {
   margin-top: 10px;
-}
-
-.spacebottom {
-  padding: 3px;
-  margin-bottom: 5px;
 }
 
 /* -------------- */
@@ -154,12 +149,8 @@
 /* -------------------------------------------------------- */
 /* Landing / login / register / forgot password page styles */
 /* -------------------------------------------------------- */
-/* #bg {
-  background-color: var(--softpink);
-} */
 
 #bg {
-  overflow: hidden;
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -167,41 +158,57 @@
   background-color: var(--pinkred);
 }
 
-.landing-container {
-  padding-top: 20vh;
-  color: var(--white);
-  display: block;
-  text-align: center;
+.flexcontainer {
   margin: 0 auto;
-  height: 320px;
+  display: relative;
+  text-align: center;
+}
+
+.flexcolumns {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.flexrows {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.flexitem {
+  flex: 1;
+  text-align: center;
+}
+
+.flexbutton {
+  width: 220px;
+  padding: 10px;
+}
+
+#moviequote {
+  color: var(--white);
 }
 
 .quoteblock {
-  display: block;
-  margin: auto;
-  width: 80%;
+  height: 350px;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.movie-user-answer {
-  position: relative;
+#usermessage {
+  height: 50px;
 }
 
 .movie-name-year {
-  margin-top: 5px;
   font-size: 1.5em;
   line-height: 1.2em;
 }
 
-.moviename {
-  margin: 5px !important;
-}
-
-.moviename:hover {
-  color: var(--darkgreen) !important;
-}
-
 /* ----------------------------------------------------- */
-/* Movie quotes - index/new/show/edit/search page styles */
+/* Movie quotes - new/show/search page styles */
 /* ----------------------------------------------------- */
 .movie-container {
   z-index: 1;
@@ -288,6 +295,8 @@
 /* ------------------ */
 /* Search page styles */
 /* ------------------ */
+;
+
 .resultfield {
   display: flex;
   height: 100%;
@@ -306,10 +315,6 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  /* position: relative;
-  height: 4rem; */
-  /* clear: both;
-  padding: 1em 1em; */
 }
 
 .footerui a {

@@ -8,10 +8,11 @@
 var userMovieInput = document.getElementById("user-guess");
 var userInputBlock = document.getElementById("userinput");
 var answerBlock = document.getElementById("right-answer-block");
-var wrongBlock = document.getElementById("wrong-answer-block");
+var wrongBlock = document.getElementById("message-block");
 var moviename = document.getElementById("movie-name");
 var movieanswer = document.querySelectorAll(".moviename");
 var menu = document.getElementById("topMenuNav");
+var message = document.getElementById("usermessage");
 
 const COLOR_DARKGREEN = "#138D75";
 const COLOR_PRIMARYRED = "#7B241C";
@@ -27,11 +28,6 @@ init();
 function init() {
     setupAnswers();
     checkQuoteLength();
-
-    // var path = window.location.pathname;
-    // if (path === "/") {
-    //     menu.style.backgroundColor = COLOR_GREENISH;
-    // }
 }
 
 /** 
@@ -69,10 +65,10 @@ function checkQuoteLength() {
 
     if (quote) {
         if (quote.textContent.length > MAX_CHAR_LENGTH) {
-            if (quote.className === "moviequotelarge white") {
-                quote.className = "moviequotemedium white";
+            if (quote.className === "flexitem moviequotelarge white") {
+                quote.className = "flexitem moviequotemedium white";
             } else {
-                quote.className = "moviequotelarge white";
+                quote.className = "flexitem moviequotelarge white";
             }
         }
     }
@@ -86,7 +82,8 @@ function displayAnswer() {
     moviename.style.display = "block";
     userInputBlock.style.display = "none";
     answerBlock.style.display = "block";
-    wrongBlock.style.display = "none";
+    wrongBlock.style.visibility = "visible";
+    message.textContent = "Correct! Guess another movie or view movie quotes?";
 }
 
 /** 
@@ -97,7 +94,8 @@ function displayWrongAnswer() {
     moviename.style.display = "none";
     userInputBlock.style.display = "block";
     answerBlock.style.display = "none";
-    wrongBlock.style.display = "block";
+    wrongBlock.style.visibility = "visible";
+    message.textContent = "Wrong! Try again.";
 }
 
 /** 
@@ -105,7 +103,7 @@ function displayWrongAnswer() {
  */
 function guessAgain() {
     userInputBlock.style.display = "block";
-    wrongBlock.style.display = "none";
+    wrongBlock.style.visibility = "hidden";
 }
 
 /**

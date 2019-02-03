@@ -1,4 +1,6 @@
+/* -------------------------------------------------------------- */
 /* Extra small devices (phones, 600px and down) */
+/* -------------------------------------------------------------- */
 @media only screen and (max-width: 600px) {
 
 	/* ---------------------- */
@@ -6,36 +8,29 @@
 	/* ---------------------- */
 
 	.formcontainer {
-		padding-top: 5vh;
-		margin-left: 10px;
-		margin-right: 10px;
+		display: relative;
+		margin-left: 5em;
+		margin-right: 5em;
+		padding-top: 3vh;
+		justify-content: center;
+	}
+
+	.smallformcontainer {
+		display: relative;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 3vh;
+		width: 80%;
+		justify-content: center;
 	}
 
 	.formfield {
-		color: var(--white);
-		margin: 0 auto;
-		width: auto;
+		padding: 3px;
 	}
 
-	/* TODO - check below */
-
-	/* ---------------------- */
-	/* Landing page - mobile */
-	/* ---------------------- */
-	.landing-container {
-		padding-top: 5vh;
-		color: var(--white);
-		display: block;
-		text-align: center;
-		margin: 0 auto;
-		height: 320px;
-	}
-
-	.quoteblock {
-		display: block;
-		margin: auto;
-		width: 80%;
-	}
+	/* ---------------- */
+	/* Landing - mobile */
+	/* ---------------- */
 
 	.movie-container {
 		margin-left: 5em;
@@ -49,28 +44,19 @@
 	}
 
 	.moviequotemedium {
-		font: 2.3em 'Habibi', serif;
+		font: 1.8em 'Habibi', serif;
 		line-height: 1.3em;
 	}
 
 	.moviequotelarge {
-		font: 3em 'Habibi', serif;
+		font: 2.0em 'Habibi', serif;
 		line-height: 1.3em;
 	}
 
-	.quoteblock {
-		display: block;
-		margin-bottom: 20px;
-	}
-
-	.movie-user-guess {
-		position: relative;
-		display: block;
-	}
-
-	.moviename {
-		width: 250px;
-		margin: 5px !important;
+	.movie-name-year {
+		margin-top: 5px;
+		font-size: 1.0em;
+		line-height: 1.2em;
 	}
 
 	/* show */
@@ -115,23 +101,96 @@
 		display: block;
 		text-align: left;
 	}
-
-
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
+/* ------------------------------------------------------------------------- */
+/* Small devices (portrait tablets and large phones, e.g. iPad 600px and up) */
+/* ------------------------------------------------------------------------- */
 @media only screen and (max-width: 768px) {
-	.moviename {
-		width: 250px;
-		margin: 5px !important;
+
+	/* -------------- */
+	/* Form controls  */
+	/* -------------- */
+
+	.formcontainer {
+		display: relative;
+		margin-left: 5em;
+		margin-right: 5em;
+		padding-top: 3vh;
+		justify-content: center;
+	}
+
+	.smallformcontainer {
+		display: relative;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 3vh;
+		width: 80%;
+		justify-content: center;
+	}
+
+	.formfield {
+		padding: 3px;
+	}
+
+	/* ---------------- */
+	/* Landing - mobile */
+	/* ---------------- */
+
+	.movie-name-year {
+		margin-top: 15px;
+		font-size: 2.0em;
+		line-height: 1.2em;
 	}
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+/* -------------------------------------------------------------- */
+/* Medium devices (landscape tablets, e.g. iPad Pro 768px and up) */
+/* -------------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
 
+	/* -------------- */
+	/* Form controls  */
+	/* -------------- */
+
+	.formcontainer {
+		display: relative;
+		margin-left: 5em;
+		margin-right: 5em;
+		padding-top: 3vh;
+		justify-content: center;
+	}
+
+	.smallformcontainer {
+		display: relative;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 3vh;
+		width: 80%;
+		justify-content: center;
+	}
+
+	.formfield {
+		padding: 3px;
+	}
+
+	/* ---------------- */
+	/* Landing - mobile */
+	/* ---------------- */
+
+	.movie-name-year {
+		margin-top: 15px;
+		font-size: 2.0em;
+		line-height: 1.2em;
+	}
+}
+
+/* -------------------------------------------------------------- */
 /* Large devices (laptops/desktops, 992px and up) */
+/* -------------------------------------------------------------- */
 @media only screen and (min-width: 992px) {}
 
+/* --------------------------------------------------------------- */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+/* --------------------------------------------------------------- */
 @media only screen and (min-width: 1200px) {}

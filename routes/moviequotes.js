@@ -23,6 +23,8 @@ var methodOverride = require("method-override");
 var formatDate = require("../public/javascripts/formatDate");
 var middleware = require("../middleware");
 
+const APP_NAME = "Name That Movie";
+
 router.use(methodOverride("_method"));
 
 // INDEX - Show collection of movie quotes
@@ -32,7 +34,7 @@ router.get("/", function (req, res, next) {
             wlogger.error(err);
         } else {
             res.render("moviequotes/index", {
-                title: "Name That Movie",
+                title: APP_NAME,
                 moviequotes: allMovieQuotes,
                 currentuser: req.user
             });
@@ -52,7 +54,7 @@ router.get("/sort", function (req, res, next) {
             wlogger.error(err);
         } else {
             res.render("moviequotes/index", {
-                title: "Name That Movie",
+                title: APP_NAME,
                 moviequotes: allMovieQuotes
             });
         }
@@ -62,7 +64,7 @@ router.get("/sort", function (req, res, next) {
 // NEW - Show new movie quote form
 router.get("/new", function (req, res, next) {
     res.render("moviequotes/new", {
-        title: "Name That Move",
+        title: APP_NAME,
         currentuser: req.user
     });
 });
