@@ -44,7 +44,6 @@ function setupAnswers() {
 
             // change button color so user knows it was clicked (eliminated)
             this.style.backgroundColor = COLOR_GREENISH;
-            //this.style.color = COLOR_DARKGREEN;
 
             // capture movie name clicked and movie name answer
             let movieanswer = this.textContent.toLowerCase();
@@ -65,10 +64,10 @@ function checkQuoteLength() {
 
     if (quote) {
         if (quote.textContent.length > MAX_CHAR_LENGTH) {
-            if (quote.className === "flexitem moviequotelarge white") {
-                quote.className = "flexitem moviequotemedium white";
+            if (quote.className === "flexitem moviequotelarge") {
+                quote.className = "flexitem moviequotemedium";
             } else {
-                quote.className = "flexitem moviequotelarge white";
+                quote.className = "flexitem moviequotelarge";
             }
         }
     }
@@ -83,7 +82,7 @@ function displayAnswer() {
     userInputBlock.style.display = "none";
     answerBlock.style.display = "block";
     wrongBlock.style.visibility = "visible";
-    message.textContent = "Correct! Guess another movie or view movie quotes?";
+    message.textContent = "Correct! What do you want to do next?";
 }
 
 /** 

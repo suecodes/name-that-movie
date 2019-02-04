@@ -2,26 +2,26 @@ include partials/landingheader
 
 block content
 
-	div(class="flexcontainer quoteblock")
-		//- movie details
-		div(class="quoteblock")
-			div(class="flexitem moviequotelarge" id="moviequote") "#{result[quiz].moviequote}"
-			div(class="flexitem movie-name-year" id="movie-name" style="display: none;") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
+	//- movie details 
+	div(class="flexcontainer")
+		div(class="flexitem moviequotelarge" id="moviequote") "#{result[quiz].moviequote}"
+
+	div(class="flexcontainer")
+		div(class="flexitem movie-name-year" id="movie-name" style="display: none;") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
 
 	//- display information to user 
 	div(class="flexcontainer" id="message-block" style="visibility: hidden;")
 		div(class="flexitem")
 			h4(id="usermessage" class="ui white quizmessage") 
-			//-h4(id="rightmessage" class="ui white quizmessage") Correct! Guess another movie or view movie quotes?
 
 	//- multiple choice buttons
-	div(class="flexcontainer" id="userinput")
-		div(class="flexitem moviename ui inverted button white flexbutton") #{result[0].moviename}
-		div(class="flexitem moviename ui inverted button white flexbutton") #{result[1].moviename}
-		div(class="flexitem moviename ui inverted button white flexbutton") #{result[2].moviename}
-		div(class="flexitem moviename ui inverted button white flexbutton") #{result[3].moviename}
+	div(class="nonflex" id="userinput")
+		div(class="flexitem moviename ui inverted button white") #{result[0].moviename}
+		div(class="flexitem moviename ui inverted button white") #{result[1].moviename}
+		div(class="flexitem moviename ui inverted button white") #{result[2].moviename}
+		div(class="flexitem moviename ui inverted button white") #{result[3].moviename}
 
-	//- Instruction to user on next move
+	//- Next move
 	div(class="flexcontainer" id="right-answer-block" style="display: none;")
 		div(class="flexitem")
 			a(href="/" class="ui button green flexbutton") Guess Another

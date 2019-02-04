@@ -32,6 +32,11 @@
 	/* Landing - mobile */
 	/* ---------------- */
 
+	.flexcontainer {
+		margin-left: 2em;
+		margin-right: 2em;
+	}
+
 	.movie-container {
 		margin-left: 5em;
 		margin-right: 5em;
@@ -49,12 +54,11 @@
 	}
 
 	.moviequotelarge {
-		font: 2.0em 'Habibi', serif;
-		line-height: 1.3em;
+		font: 2.5em 'Habibi', serif;
+		line-height: 1.2em;
 	}
 
 	.movie-name-year {
-		margin-top: 5px;
 		font-size: 1.0em;
 		line-height: 1.2em;
 	}
@@ -138,8 +142,7 @@
 	/* ---------------- */
 
 	.movie-name-year {
-		margin-top: 15px;
-		font-size: 2.0em;
+		font-size: 1.5em;
 		line-height: 1.2em;
 	}
 }
@@ -179,7 +182,6 @@
 	/* ---------------- */
 
 	.movie-name-year {
-		margin-top: 15px;
 		font-size: 2.0em;
 		line-height: 1.2em;
 	}
