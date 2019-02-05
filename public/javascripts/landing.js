@@ -43,7 +43,7 @@ function setupAnswers() {
         movieanswer[i].addEventListener("click", function () {
 
             // change button color so user knows it was clicked (eliminated)
-            //this.style.backgroundColor = COLOR_GREENISH;
+            this.style.backgroundColor = COLOR_GREENISH;
 
             // capture movie name clicked and movie name answer
             let movieanswer = this.textContent.toLowerCase();

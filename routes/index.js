@@ -100,6 +100,14 @@ router.get("/login", function (req, res) {
 	res.render("authenticate/login");
 });
 
+router.get("/termsofservice", function (req, res) {
+	res.render("authenticate/termsofservice");
+});
+
+router.get("/privacypolicy", function (req, res) {
+	res.render("authenticate/privacypolicy");
+});
+
 // POST Login form handler
 router.post("/login", function (req, res, next) {
 	passport.authenticate("local", function (err, user, info) {
