@@ -32,9 +32,19 @@
 	/* Landing - mobile */
 	/* ---------------- */
 
-	.flexcontainer {
-		margin-left: 2em;
-		margin-right: 2em;
+	.flexstretch {
+		display: flex;
+		text-align: center;
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.flexitem {
+		width: 220px;
+	}
+
+	.flexitemvertical {
+		height: 300px;
 	}
 
 	.movie-container {

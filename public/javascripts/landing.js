@@ -19,7 +19,7 @@ const COLOR_PRIMARYRED = "#7B241C";
 const COLOR_WHITE = "#ffffff";
 const COLOR_DARKESTGREY = "#1B2631";
 const COLOR_GREENISH = "#45B39D";
-const MAX_CHAR_LENGTH = 80;
+const MAX_CHAR_LENGTH = 60;
 
 // Initialize
 init();
@@ -43,7 +43,7 @@ function setupAnswers() {
         movieanswer[i].addEventListener("click", function () {
 
             // change button color so user knows it was clicked (eliminated)
-            this.style.backgroundColor = COLOR_GREENISH;
+            //this.style.backgroundColor = COLOR_GREENISH;
 
             // capture movie name clicked and movie name answer
             let movieanswer = this.textContent.toLowerCase();
