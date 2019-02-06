@@ -4,6 +4,7 @@
 
 const mongoose = require("mongoose");
 
+
 const moviequotesSchema = new mongoose.Schema({
     moviename: String,
     moviequote: String,

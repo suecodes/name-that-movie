@@ -26,17 +26,17 @@ const APP_NAME = "Name That Movie";
 const APP_EMAIL = "namethatmovieteam@gmail.com";
 const RANDOM_QUIZ_SIZE = 4;
 
-var wlogger = require("../utils/logger.js");
-var express = require('express');
-var router = express.Router();
-var Moviequotes = require("../models/moviequotes");
+const wlogger = require("../utils/logger.js");
+const express = require('express');
+const router = express.Router();
+const Moviequotes = require("../models/moviequotes");
 
-var passport = require("passport");
-var User = require("../models/users");
+const passport = require("passport");
+const User = require("../models/users");
 
 // Reset password libraries - tokens
-var async = require('async');
-var crypto = require('crypto');
+const async = require('async');
+const crypto = require('crypto');
 
 /* ------------------- */
 /* Landing Page Routes */

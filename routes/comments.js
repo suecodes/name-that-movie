@@ -6,12 +6,12 @@
  *  
  */
 
-var wlogger = require("../utils/logger.js");
-var express = require('express');
-var router = express.Router();
-var Moviequotes = require("../models/moviequotes");
-var Moviecomments = require("../models/comments");
-var methodOverride = require("method-override");
+const wlogger = require("../utils/logger.js");
+const express = require('express');
+const router = express.Router();
+const Moviequotes = require("../models/moviequotes");
+const Moviecomments = require("../models/comments");
+const methodOverride = require("method-override");
 
 router.use(methodOverride("_method"));
 
