@@ -7,36 +7,36 @@
 require('dotenv').config();
 
 // Logging using winston
-var wlogger = require("./utils/logger.js");
+const wlogger = require("./utils/logger.js");
 wlogger.info("Starting app - Name That Movie");
 
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var bodyparser = require("body-parser");
-var flash = require("connect-flash");
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const bodyparser = require("body-parser");
+const flash = require("connect-flash");
 
 // Authentication
-var passport = require("passport");
-var passportLocal = require("passport-local");
-var User = require("./models/users");
+const passport = require("passport");
+const passportLocal = require("passport-local");
+const User = require("./models/users");
 
 // Routers
-var indexRouter = require('./routes/index');
-var movieQuotesRouter = require("./routes/moviequotes");
-var movieCommentsRouter = require("./routes/comments");
-//var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const movieQuotesRouter = require("./routes/moviequotes");
+const movieCommentsRouter = require("./routes/comments");
+//var usersRouter = require('./routes/users');	// future functionality - user profile
 
 // Fill the database - comment out if you do not want to refresh db with data
 //var fillDB = require("./filler");
 //fillDB();
 
-var app = express();
+const app = express();
 
 // DB setup
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/namethatmovie", {
 	useNewUrlParser: true
 });

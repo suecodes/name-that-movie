@@ -77,13 +77,15 @@
   padding: 5px;
   background-color: var(--pinkred);
   justify-content: center;
+  vertical-align: middle;
 }
 
 .successmessagebox {
   display: flex;
   padding: 5px;
-  background-color: var(--greenish);
+  background-color: var(--palegreen);
   justify-content: center;
+  vertical-align: middle;
 }
 
 .quizmessage {
