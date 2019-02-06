@@ -5,21 +5,24 @@
  */
 
 // Fetch objects via DOM
-var userMovieInput = document.getElementById("user-guess");
-var userInputBlock = document.getElementById("userinput");
-var answerBlock = document.getElementById("right-answer-block");
-var wrongBlock = document.getElementById("message-block");
-var moviename = document.getElementById("movie-name");
-var movieanswer = document.querySelectorAll(".moviename");
-var menu = document.getElementById("topMenuNav");
-var message = document.getElementById("usermessage");
+const userMovieInput = document.getElementById("user-guess");
+const userInputBlock = document.getElementById("userinput");
+const answerBlock = document.getElementById("right-answer-block");
+const wrongBlock = document.getElementById("message-block");
+const moviename = document.getElementById("movie-name");
+const movieanswer = document.querySelectorAll(".moviename");
+const menu = document.getElementById("topMenuNav");
+const message = document.getElementById("usermessage");
 
+// Not immutable values
 const COLOR_DARKGREEN = "#138D75";
 const COLOR_PRIMARYRED = "#7B241C";
 const COLOR_WHITE = "#ffffff";
 const COLOR_DARKESTGREY = "#1B2631";
 const COLOR_GREENISH = "#45B39D";
 const MAX_CHAR_LENGTH = 60;
+const FAIL_MESSAGE = "Wrong! Try again.";
+const SUCCESS_MESSAGE = "Correct! What do you want to do next?";
 
 // Initialize
 init();
@@ -57,7 +60,7 @@ function setupAnswers() {
 
 /**
  *  Resize quote if it is over specific character length to prevent
- *  quote from fallin below the fold
+ *  quote from falling below the fold
  */
 function checkQuoteLength() {
     let quote = document.getElementById("moviequote");
@@ -82,7 +85,7 @@ function displayAnswer() {
     userInputBlock.style.display = "none";
     answerBlock.style.display = "block";
     wrongBlock.style.visibility = "visible";
-    message.textContent = "Correct! What do you want to do next?";
+    message.textContent = SUCCESS_MESSAGE;
 }
 
 /** 
@@ -94,7 +97,7 @@ function displayWrongAnswer() {
     userInputBlock.style.display = "block";
     answerBlock.style.display = "none";
     wrongBlock.style.visibility = "visible";
-    message.textContent = "Wrong! Try again.";
+    message.textContent = FAIL_MESSAGE;
 }
 
 /** 

@@ -5,12 +5,12 @@
  */
 
 module.exports = function (date) {
-	var cdate = new Date(date);
-	var day = cdate.getDate();
-	var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	var month = monthNames[cdate.getMonth()];
-	var year = cdate.getFullYear();
-	var hour = cdate.getHours();
-	var min = cdate.getMinutes();
+	const cdate = new Date(date);
+	const day = cdate.getDate();
+	const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	const month = monthNames[cdate.getMonth()];
+	const year = cdate.getFullYear();
+	const hour = cdate.getHours();
+	const min = cdate.getMinutes();
 	return day + " " + month + " " + year + " " + hour + ":" + min;
 };
