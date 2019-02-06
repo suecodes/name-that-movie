@@ -1,6 +1,10 @@
-var mongoose = require("mongoose");
+/**
+ *  Model - Movie Quotes 
+ */
 
-var moviequotesSchema = new mongoose.Schema({
+const mongoose = require("mongoose");
+
+const moviequotesSchema = new mongoose.Schema({
     moviename: String,
     moviequote: String,
     movieimage: String,

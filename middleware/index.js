@@ -2,10 +2,9 @@
  *  Middleware 
  */
 
-var wlogger = require("../utils/logger.js");
-var Moviequotes = require("../models/moviequotes");
-
-var middlewareObj = {};
+const wlogger = require("../utils/logger.js");
+const Moviequotes = require("../models/moviequotes");
+const middlewareObj = {};
 
 // Checks if user is logged in 
 function isLoggedIn(req, res, next) {

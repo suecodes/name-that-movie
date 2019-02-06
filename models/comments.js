@@ -1,6 +1,10 @@
-var mongoose = require("mongoose");
+/**
+ *  Model - Comments 
+ */
 
-var commentsSchema = new mongoose.Schema({
+const mongoose = require("mongoose");
+
+const commentsSchema = new mongoose.Schema({
     commenttext: String,
     author: {
         id: {
