@@ -26,17 +26,17 @@ const APP_NAME = "Name That Movie";
 const APP_EMAIL = "namethatmovieteam@gmail.com";
 const RANDOM_QUIZ_SIZE = 4;
 
-const wlogger = require("../utils/logger.js");
-const express = require('express');
-const router = express.Router();
-const Moviequotes = require("../models/moviequotes");
+var wlogger = require("../utils/logger.js");
+var express = require('express');
+var router = express.Router();
+var Moviequotes = require("../models/moviequotes");
 
-const passport = require("passport");
-const User = require("../models/users");
+var passport = require("passport");
+var User = require("../models/users");
 
 // Reset password libraries - tokens
-const async = require('async');
-const crypto = require('crypto');
+var async = require('async');
+var crypto = require('crypto');
 
 /* ------------------- */
 /* Landing Page Routes */
@@ -112,7 +112,6 @@ router.get("/privacypolicy", function (req, res) {
 router.post("/login", function (req, res, next) {
 	passport.authenticate("local", function (err, user, info) {
 		if (err) {
-			console.log(err);
 			wlogger.info(err);
 			return next(err);
 		}
@@ -225,6 +224,7 @@ router.get("/resetpassword/:token", function (req, res) {
 	});
 });
 
+
 // POST - Reset password
 router.post('/resetpassword/:token', function (req, res, next) {
 	async.waterfall([
@@ -242,11 +242,14 @@ router.post('/resetpassword/:token', function (req, res, next) {
 				}
 				if (req.body.password === req.body.confirm) {
 					// Hash password in db
-					user.password = user.generateHash(req.body.password);
+					//user.password = req.body.password;
 					user.resetPasswordToken = undefined;
 					user.resetPasswordExpires = undefined;
 
 					user.save(function (err) {
+						if (err) {
+							wlogger.error(err);
+						}
 						req.login(user, function (err) {
 							if (err) {
 								return next(err);
@@ -254,7 +257,6 @@ router.post('/resetpassword/:token', function (req, res, next) {
 							done(null, user);
 						});
 					});
-					//});
 				} else {
 					wlogger.info("Passwords do not match.");
 					req.flash("error", "Passwords do not match.");

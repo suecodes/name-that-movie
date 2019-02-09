@@ -3,8 +3,6 @@
  */
 
 const mongoose = require("mongoose");
-const Moviequotes = require("../models/moviequotes");
-const Moviecomments = require("../models/comments");
 
 const commentsSchema = new mongoose.Schema({
     commenttext: String,
