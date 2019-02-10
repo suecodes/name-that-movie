@@ -3,18 +3,21 @@
  *  Pre-populate db with moviequotes 
  */
 
-var mongoose = require("mongoose");
-var Moviequotes = require("./models/moviequotes");
-var Moviecomments = require("./models/comments");
+const Moviequotes = require("./models/moviequotes");
+const Moviecomments = require("./models/comments");
 
-var filldata = [{
+// Add default user id for starter data
+const USERID = "";
+const USERNAME = "";
+
+const filldata = [{
         moviename: "The Wizard of Oz",
         moviequote: "Pay no attention to that man behind the curtain!",
         screenwriter: "L. Frank Baum",
         year: "1939",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -23,8 +26,8 @@ var filldata = [{
         screenwriter: "Aline Brosh McKenna",
         year: "2006",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -33,8 +36,8 @@ var filldata = [{
         screenwriter: "Ted Sears, Richard Creedon, Otto Englander, Dick Rickard, Earl Hurd, Merrill De Maris, Dorothy Ann Blank, Webb Smith",
         year: "1937",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -43,8 +46,8 @@ var filldata = [{
         screenwriter: "George Lucas",
         year: "1977",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -53,8 +56,8 @@ var filldata = [{
         screenwriter: "Tate Taylor",
         year: "1977",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -63,8 +66,8 @@ var filldata = [{
         screenwriter: "Nora Ephron",
         year: "1989",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -73,8 +76,8 @@ var filldata = [{
         screenwriter: "Randall Wallace",
         year: "1995",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -83,8 +86,8 @@ var filldata = [{
         screenwriter: "Stirling Silliphant",
         year: "1967",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -103,8 +106,8 @@ var filldata = [{
         screenwriter: "James L. Brooks, Mark Andrus",
         year: "1997",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -113,8 +116,8 @@ var filldata = [{
         screenwriter: "Martin Scorsese, Nicholas Pileggi",
         year: "1990",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -123,8 +126,8 @@ var filldata = [{
         screenwriter: "Phil Alden Robinson",
         year: "1989",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -133,8 +136,8 @@ var filldata = [{
         screenwriter: "Andrew Stanton",
         year: "2003",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -143,8 +146,8 @@ var filldata = [{
         screenwriter: "James Cameron",
         year: "1997",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -153,8 +156,8 @@ var filldata = [{
         screenwriter: "Francis Ford Coppola‎, ‎Mario Puzo",
         year: "1974",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -163,8 +166,8 @@ var filldata = [{
         screenwriter: "Robert Zemeckis‎, ‎Bob Gale",
         year: "1995",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -173,8 +176,8 @@ var filldata = [{
         screenwriter: "John Milius, Harry Julian Fink, Chuck Reisner Jr., R. M. Fink",
         year: "1971",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -183,8 +186,8 @@ var filldata = [{
         screenwriter: "Tom Schulman",
         year: "1989",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     },
     {
@@ -193,13 +196,15 @@ var filldata = [{
         screenwriter: "William Broyles Jr.‎, ‎Al Reinert",
         year: "1995",
         author: {
-            id: "5c477d155b6b3734b7f271e4",
-            username: "edward"
+            id: USERID,
+            username: USERNAME
         }
     }
 ];
 
-function fillDB() {
+// Blow away all data in db
+function clearDB() {
+
     // remove all moviequotes
     Moviequotes.remove({}, function (err) {
         if (err) {
@@ -215,6 +220,13 @@ function fillDB() {
         }
         console.log("Removed movie comments");
     });
+}
+
+
+// Fill database with default quote set
+function fillDB() {
+
+    clearDB();
 
     // add a few movie quotes
     filldata.forEach(function (fill) {

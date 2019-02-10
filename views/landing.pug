@@ -1,34 +1,38 @@
 include partials/landingheader
 
 block content
-
 	//- movie details 
-	div(class="flexcontainer")
-		div(class="flexitemvertical")
-			div(class="moviequotelarge" id="moviequote") "#{result[quiz].moviequote}"
+	if result.length !== 0
+		div(class="flexcontainer")
+			div(class="flexitemvertical")
+				div(class="moviequotelarge" id="moviequote") "#{result[quiz].moviequote}"
 
-	div(class="flexcontainer")
-		div(class="flexitem movie-name-year" id="movie-name" style="display: none;") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
+		div(class="flexcontainer")
+			div(class="flexitem movie-name-year" id="movie-name" style="display: none;") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
 
-	//- display information to user 
-	div(class="flexcontainer" id="message-block" style="visibility: hidden;")
-		div(class="flexitem")
-			h4(id="usermessage" class="ui white quizmessage") 
+		//- display information to user 
+		div(class="flexcontainer" id="message-block" style="visibility: hidden;")
+			div(class="flexitem")
+				h4(id="usermessage" class="ui white quizmessage") 
 
-	//- multiple choice buttons
-	div(class="flexstretch" id="userinput" style="display: block;")
-		div(class="flexitem moviename ui inverted button white") #{result[0].moviename}
-		div(class="flexitem moviename ui inverted button white") #{result[1].moviename}
-		div(class="flexitem moviename ui inverted button white") #{result[2].moviename}
-		div(class="flexitem moviename ui inverted button white") #{result[3].moviename}
+		//- multiple choice buttons
+		div(class="flexstretch" id="userinput" style="display: block;")
+			div(class="flexitem moviename ui inverted button white") #{result[0].moviename}
+			div(class="flexitem moviename ui inverted button white") #{result[1].moviename}
+			div(class="flexitem moviename ui inverted button white") #{result[2].moviename}
+			div(class="flexitem moviename ui inverted button white") #{result[3].moviename}
 
-	//- Next move
-	div(class="flexcontainer" id="right-answer-block" style="display: none;")
-		a(href="/" class="flexitem ui button green flexbutton") Guess Another
-		a(href="/moviequotes" class="flexitem ui button green flexbutton") View Movie Quotes
+		//- Next move
+		div(class="flexcontainer" id="right-answer-block" style="display: none;")
+			a(href="/" class="flexitem ui button green flexbutton") Guess Another
+			a(href="/moviequotes" class="flexitem ui button green flexbutton") View Movie Quotes
 
-	//- hidden field to capture user input
-	input(id="user-guess" type="hidden" value=result[quiz].moviename)
+		//- hidden field to capture user input
+		input(id="user-guess" type="hidden" value=result[quiz].moviename)
+	else
+		div(class="flexcontainer")
+			div(class="flexitemvertical") 
+				div(class="moviequotelarge" id="moviequote") Welcome to Name That Movie
     
 //- Add js script files  
 script(src="/javascripts/landing.js" type="text/javascript")

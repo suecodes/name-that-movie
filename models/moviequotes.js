@@ -24,10 +24,10 @@ const moviequotesSchema = new mongoose.Schema({
 });
 
 // Add indexing for search
-// moviequotesSchema.index({
-//     moviename: "text",
-//     moviequote: "text",
-//     screenwriter: "text"
-// });
+moviequotesSchema.index({
+    moviename: "text",
+    moviequote: "text",
+    screenwriter: "text"
+});
 
 module.exports = mongoose.model("Moviequotes", moviequotesSchema);

@@ -54,10 +54,12 @@ router.get("/", function (req, res, next) {
 			wlogger.error(err);
 		} else {
 			// Render page and return result
+			console.log("Total found: " + result.length);
+
 			res.render('landing', {
 				title: APP_NAME,
 				result: result,
-				quiz: Math.floor(Math.random() * RANDOM_QUIZ_SIZE),
+				quiz: result.length === 0 ? 0 : Math.floor(Math.random() * RANDOM_QUIZ_SIZE),
 				currentuser: req.user
 			});
 		}
@@ -310,8 +312,6 @@ router.post("/searchresult", function (req, res) {
 		}
 	}, function (err, searchResult) {
 		if (err) {
-			wlogger(req.body.searchcriteria);
-			wlogger.error(err);
 			res.redirect("/moviequotes");
 		} else {
 			res.render("moviequotes/search", {

@@ -1,18 +1,19 @@
 include partials/header
 include partials/menu
 
-div(class="flexcontainer")
-	//- Quote and movie name
-	div(class="flexitemvertical")
-		div
-			div(class="errormessage")= error.status + " - " + message 
-		div(class="spacer")
-			div(class="moviequotemedium default-grey") "Toto, I've got a feeling we're not in Kansas anymore."
-			div(id="movie-name" class="movie-name-year default-grey") The Wizard of Oz, 1939 - L. Frank Baum
+block content
+	div(class="flexcontainer")
+		//- Quote and movie name
+		div(class="flexitemvertical")
+			div
+				div(class="errormessage")= error.status + " - " + message 
+			div(class="spacer")
+				div(class="moviequotemedium default-grey") "Toto, I've got a feeling we're not in Kansas anymore."
+				div(id="movie-name" class="movie-name-year default-grey") The Wizard of Oz, 1939 - L. Frank Baum
 
-		div(class="spacer")
-			p Oops! Something went wrong. What would you like to do?
-			a(href="/" class="ui primary button") There's no place like home
-			a(href="mailto:namethatmovieteam@gmail.com" class="ui primary button") Tell the Wizard
+			div(class="spacer")
+				p Oops! Something went wrong. What would you like to do?
+				a(href="/" class="ui primary button") There's no place like home
+				a(href="mailto:namethatmovieteam@gmail.com" class="ui primary button") Tell the Wizard
 
-		pre #{error.stack}
+			pre #{error.stack}

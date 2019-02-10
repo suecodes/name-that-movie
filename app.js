@@ -32,12 +32,20 @@ const movieCommentsRouter = require("./routes/comments");
 // Fill the database - comment out if you do not want to refresh db with data
 //var fillDB = require("./filler");
 //fillDB();
+//clearDB();
 
 const app = express();
 
 // DB setup
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/namethatmovie", {
+const env = process.env.NODE_ENV || "development";
+const config = require('./mongoconfig')[env];
+const localUrl = "mongodb://" + config.host + "/" + config.database;
+const envUrl = process.env[config.use_env_variable];
+
+const DATABASEURL = envUrl ? envUrl : localUrl;
+
+mongoose.connect(DATABASEURL, {
 	useNewUrlParser: true
 });
 
