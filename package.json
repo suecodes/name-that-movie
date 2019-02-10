@@ -15,7 +15,6 @@
     "dotenv": "^6.2.0",
     "express": "~4.16.0",
     "express-session": "^1.15.6",
-    "gulp": "^4.0.0",
     "gulp-help": "github:chmontgomery/gulp-help#gulp4",
     "http-errors": "~1.6.2",
     "lodash": "^4.17.11",
@@ -50,5 +49,7 @@
     "url": "https://github.com/suecodes/name-that-movie/issues"
   },
   "homepage": "https://github.com/suecodes/name-that-movie#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
