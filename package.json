@@ -35,5 +35,17 @@
   },
   "engines": {
     "node": "11.5.0"
-  }
+  },
+  "description": "Web app to display a collection of movie quotes. This application will display the quote, name of the movie, year movie made and the writer(s) who wrote the movie screenplay. Users can register an account to add their own favorite movie quotes and enter comments on any quote.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suecodes/name-that-movie.git"
+  },
+  "author": "Susan Edens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suecodes/name-that-movie/issues"
+  },
+  "homepage": "https://github.com/suecodes/name-that-movie#readme"
 }
