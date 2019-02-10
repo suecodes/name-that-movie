@@ -32,5 +32,8 @@
     "winston": "^3.1.0",
     "winston-transport": "^4.3.0",
     "xoauth2": "^1.2.0"
+  },
+  "engines": {
+    "node": "11.5.0"
   }
 }
