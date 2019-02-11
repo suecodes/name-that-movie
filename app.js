@@ -45,9 +45,7 @@ const envUrl = process.env[config.use_env_variable];
 
 wlogger.info("Config: " + config.use_env_variable);
 
-//const DATABASEURL = envUrl ? envUrl : localUrl;
-//const DATABASEURL = "mongodb+srv://namethatmovieadmin:fYJJCq3KZQyrezc@cluster0-bslmn.mongodb.net/test?";
-const DATABASEURL = "mongodb://namethatmovieadmin:fYJJCq3KZQyrezc@cluster0-shard-00-00-bslmn.mongodb.net:27017,cluster0-shard-00-01-bslmn.mongodb.net:27017,cluster0-shard-00-02-bslmn.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true";
+const DATABASEURL = envUrl ? envUrl : localUrl;
 
 mongoose.connect(DATABASEURL, {
 	useNewUrlParser: true
