@@ -46,9 +46,13 @@ const envUrl = process.env[config.use_env_variable];
 //const DATABASEURL = envUrl ? envUrl : localUrl;
 const DATABASEURL = "mongodb+srv://namethatmovieadmin:fYJJCq3KZQyrezc@cluster0-bslmn.mongodb.net/test?";
 
+wlogger.info("Preparing to connect to db: " + DATABASEURL);
+
 mongoose.connect(DATABASEURL, {
 	useNewUrlParser: true
 });
+
+wlogger.info("Database connected ...");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
