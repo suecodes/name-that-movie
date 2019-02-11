@@ -36,12 +36,16 @@ const movieCommentsRouter = require("./routes/comments");
 
 const app = express();
 
+wlogger.info("Setup ...");
+
 // DB setup
 const mongoose = require("mongoose");
 const env = process.env.NODE_ENV || "development";
 const config = require('./mongoconfig')[env];
 const localUrl = "mongodb://" + config.host + "/" + config.database;
 const envUrl = process.env[config.use_env_variable];
+
+wlogger.info("Config: " + config.use_env_variable);
 
 //const DATABASEURL = envUrl ? envUrl : localUrl;
 const DATABASEURL = "mongodb+srv://namethatmovieadmin:fYJJCq3KZQyrezc@cluster0-bslmn.mongodb.net/test?";
