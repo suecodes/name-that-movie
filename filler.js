@@ -7,8 +7,8 @@ const Moviequotes = require("./models/moviequotes");
 const Moviecomments = require("./models/comments");
 
 // Add default user id for starter data
-const USERID = "";
-const USERNAME = "";
+const USERID = "Susan";
+const USERNAME = "5c617094b317e20004d8b962";
 
 const filldata = [{
         moviename: "The Wizard of Oz",

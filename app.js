@@ -30,9 +30,9 @@ const movieCommentsRouter = require("./routes/comments");
 //var usersRouter = require('./routes/users');	// future functionality - user profile
 
 // Fill the database - comment out if you do not want to refresh db with data
-//var fillDB = require("./filler");
-//fillDB();
-//clearDB();
+const fillDB = require("./filler");
+fillDB();
+clearDB();
 
 const app = express();
 
