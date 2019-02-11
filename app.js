@@ -32,7 +32,6 @@ const movieCommentsRouter = require("./routes/comments");
 // Fill the database - comment out if you do not want to refresh db with data
 const fillDB = require("./filler");
 fillDB();
-clearDB();
 
 const app = express();
 

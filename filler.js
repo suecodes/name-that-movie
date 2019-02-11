@@ -7,8 +7,8 @@ const Moviequotes = require("./models/moviequotes");
 const Moviecomments = require("./models/comments");
 
 // Add default user id for starter data
-const USERID = "Susan";
-const USERNAME = "5c617094b317e20004d8b962";
+const USERNAME = "Susan";
+const USERID = "5c617094b317e20004d8b962";
 
 const filldata = [{
         moviename: "The Wizard of Oz",
@@ -202,8 +202,13 @@ const filldata = [{
     }
 ];
 
-// Blow away all data in db
-function clearDB() {
+
+
+
+// Fill database with default quote set
+function fillDB() {
+
+    // Blow away all data in db
 
     // remove all moviequotes
     Moviequotes.remove({}, function (err) {
@@ -220,13 +225,6 @@ function clearDB() {
         }
         console.log("Removed movie comments");
     });
-}
-
-
-// Fill database with default quote set
-function fillDB() {
-
-    clearDB();
 
     // add a few movie quotes
     filldata.forEach(function (fill) {
