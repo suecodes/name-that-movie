@@ -43,7 +43,8 @@ const config = require('./mongoconfig')[env];
 const localUrl = "mongodb://" + config.host + "/" + config.database;
 const envUrl = process.env[config.use_env_variable];
 
-const DATABASEURL = envUrl ? envUrl : localUrl;
+//const DATABASEURL = envUrl ? envUrl : localUrl;
+const DATABASEURL = "mongodb+srv://namethatmovieadmin:fYJJCq3KZQyrezc@cluster0-bslmn.mongodb.net/test?";
 
 mongoose.connect(DATABASEURL, {
 	useNewUrlParser: true
