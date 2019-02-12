@@ -9,18 +9,10 @@
 
 	.formcontainer {
 		display: relative;
-		margin-left: 5em;
-		margin-right: 5em;
-		padding-top: 3vh;
-		justify-content: center;
-	}
-
-	.smallformcontainer {
-		display: relative;
 		margin-left: auto;
 		margin-right: auto;
 		padding-top: 3vh;
-		width: 80%;
+		width: 90%;
 		justify-content: center;
 	}
 
@@ -82,10 +74,6 @@
 		width: 95%;
 	}
 
-	.icon-next {
-		display: block;
-	}
-
 	/* Hamburger menu */
 	.menuItem {
 		float: left;
@@ -128,18 +116,10 @@
 
 	.formcontainer {
 		display: relative;
-		margin-left: 5em;
-		margin-right: 5em;
-		padding-top: 3vh;
-		justify-content: center;
-	}
-
-	.smallformcontainer {
-		display: relative;
 		margin-left: auto;
 		margin-right: auto;
 		padding-top: 3vh;
-		width: 80%;
+		width: 90%;
 		justify-content: center;
 	}
 
@@ -168,18 +148,10 @@
 
 	.formcontainer {
 		display: relative;
-		margin-left: 5em;
-		margin-right: 5em;
-		padding-top: 3vh;
-		justify-content: center;
-	}
-
-	.smallformcontainer {
-		display: relative;
 		margin-left: auto;
 		margin-right: auto;
 		padding-top: 3vh;
-		width: 80%;
+		width: 90%;
 		justify-content: center;
 	}
 
