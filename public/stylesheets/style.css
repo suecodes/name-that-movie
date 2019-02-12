@@ -29,11 +29,11 @@
 /* ---------------- */
 /* Site wide styles */
 /* ---------------- */
-/* body {
+body {
   margin: 0;
   padding: 0px;
   height: 100%;
-} */
+}
 
 .titleheader {
   height: 40px;
@@ -159,21 +159,6 @@
   text-align: center;
 }
 
-.flexcolumns {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  grid-column-gap: 10px;
-}
-
-.nonflex {
-  display: relative;
-  margin-left: 2em;
-  margin-right: 2em;
-  text-align: center;
-}
-
 .flexstretch {
   display: flex;
   margin-left: 2em;
@@ -182,31 +167,11 @@
   align-items: stretch;
 }
 
-.nonflex div {
-  width: 220px;
-}
-
-.flexrows {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-}
-
 .flexitem {
   flex: 1;
   text-align: center;
   margin: 0;
   padding: 5px;
-}
-
-.flexitemvertical {
-  flex: 1;
-  text-align: center;
-  vertical-align: middle;
-  margin: 0;
-  height: 350px;
-  align-items: stretch;
 }
 
 #moviequote {

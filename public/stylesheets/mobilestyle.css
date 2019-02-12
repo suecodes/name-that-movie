@@ -24,19 +24,24 @@
 	/* Landing - mobile */
 	/* ---------------- */
 
+	.flexcontainer {
+		display: flex;
+		margin: 0;
+		text-align: center;
+	}
+
 	.flexstretch {
 		display: flex;
+		margin-left: 2em;
+		margin-right: 2em;
 		text-align: center;
 		align-items: stretch;
 		flex-direction: column;
 	}
 
 	.flexitem {
-		width: 220px;
-	}
-
-	.flexitemvertical {
-		height: 300px;
+		width: 100%;
+		margin: 10px;
 	}
 
 	.movie-container {
@@ -121,6 +126,7 @@
 		padding-top: 3vh;
 		width: 90%;
 		justify-content: center;
+
 	}
 
 	.formfield {

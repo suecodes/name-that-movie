@@ -67,10 +67,10 @@ function checkQuoteLength() {
 
     if (quote) {
         if (quote.textContent.length > MAX_CHAR_LENGTH) {
-            if (quote.className === "flexitem moviequotelarge") {
-                quote.className = "flexitem moviequotemedium";
+            if (quote.className === "moviequotelarge") {
+                quote.className = "moviequotemedium";
             } else {
-                quote.className = "flexitem moviequotelarge";
+                quote.className = "moviequotelarge ";
             }
         }
     }
@@ -81,7 +81,7 @@ function checkQuoteLength() {
  */
 function displayAnswer() {
     moviename.style.color = COLOR_DARKESTGREY;
-    moviename.style.display = "block";
+    moviename.style.visibility = "visible";
     userInputBlock.style.display = "none";
     answerBlock.style.display = "block";
     wrongBlock.style.visibility = "visible";
@@ -93,7 +93,7 @@ function displayAnswer() {
  */
 function displayWrongAnswer() {
     moviename.style.color = COLOR_PRIMARYRED;
-    moviename.style.display = "none";
+    moviename.style.visibility = "hidden";
     userInputBlock.style.display = "block";
     answerBlock.style.display = "none";
     wrongBlock.style.visibility = "visible";
