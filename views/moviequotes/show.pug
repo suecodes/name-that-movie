@@ -2,25 +2,26 @@ include ../partials/header
 include ../partials/menu
 
 block content
-
     div(class="formcontainer")
-        //- back/delete/edit buttons
         div(class="leftrightfloatblock")
             span(class="leftfloat")
-                a(href="/moviequotes" class="ui green left floated link") 
-                    i(class="hand point left outline large icon") 
-                    div(class="icon-next") Back 
             span(class="rightfloat")
                 form(class="ui form" action="/searchresult" method="POST")
                     div(class="ui mini icon input")
                         a(href="/search")
                         input(type="text" name="searchcriteria" placeholder="Search")
                         i(class="inverted search icon green link")
-                    div(class="icon-next")
-                        form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
-                            if currentuser && moviequotes.author.id.equals(currentuser._id)
-                                button(class="ui green right floated mini button") Delete
-                                a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
+        //- back/delete/edit buttons
+        div(class="leftrightfloatblock")
+            div(class="leftfloat")
+                a(href="/moviequotes" class="ui green left floated link") 
+                    i(class="hand point left outline large icon") 
+                    div(class="icon-next") Back 
+            div(class="rightfloat")
+                form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
+                    if currentuser && moviequotes.author.id.equals(currentuser._id)
+                        button(class="ui green right floated mini button") Delete
+                        a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
         div(class="horizontal-line")
         //- Main content
         div(class="showfield")

@@ -8,22 +8,24 @@ block content
 		});
 	div(class="formcontainer")
 		div(class="leftrightfloatblock")
-			span(class="leftfloat")
+			div(class="leftfloat")
+			div(class="rightfloat")
+				form(class="ui form" action="/searchresult" method="POST")
+					div(class="ui mini icon input")
+						a(href="/search")
+						input(type="text" name="searchcriteria" placeholder="Search")
+						i(class="inverted search icon green link")
+		div(class="leftrightfloatblock")
+			div(class="leftfloat")
 				div(class="ui simple dropdown")
 					div(class="text") Sort By	
 					i(class="dropdown icon")
 					div(class="menu")
 						a(class="item" href="/moviequotes/sort?value=moviename") Movie Name
 							a(class="item" href="/moviequotes/sort?value=year") Movie Year
-			span(class="rightfloat")
-				form(class="ui form" action="/searchresult" method="POST")
-					div(class="ui mini icon input")
-						a(href="/search")
-						input(type="text" name="searchcriteria" placeholder="Search")
-						i(class="inverted search icon green link")
-					div(class="icon-next")
-						if currentuser
-							a(href="/moviequotes/new" class="ui green mini button right floated") New Movie Quote
+			div(class="rightfloat")
+				if currentuser
+					a(href="/moviequotes/new" class="ui green mini button right floated") New Movie Quote
 		//- Grid example 
 		div(class="gridcontainer")
 			//- Loop 

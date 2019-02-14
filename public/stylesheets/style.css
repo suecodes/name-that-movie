@@ -56,6 +56,7 @@
 .leftrightfloatblock {
   display: flex;
   justify-content: space-between;
+  margin: 5px 0;
 }
 
 .leftfloat {
@@ -279,6 +280,7 @@
   grid-auto-flow: dense;
   place-items: stretch stretch;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .griditem {
