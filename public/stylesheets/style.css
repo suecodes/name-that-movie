@@ -126,8 +126,8 @@
   font-size: 16px;
   line-height: 27px;
   font-weight: 70;
-  padding: 20px 0;
-  margin-bottom: 50px;
+  padding: 15px 0;
+  margin-bottom: 5px;
 }
 
 .landingicons {
@@ -196,6 +196,14 @@
   /*background-image: url("https://images.unsplash.com/photo-1507990178188-0118b242deda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1391&q=80");
   transition: all 0.3s ease;
   -webkit-transform: translate3d(0, 0, 0);*/
+}
+
+.logo {
+  font-size: 1.0em;
+}
+
+.logo a:hover {
+  color: var(--white) !important;
 }
 
 .block {
@@ -271,6 +279,10 @@
   grid-auto-flow: dense;
   place-items: stretch stretch;
   justify-content: space-between;
+}
+
+.griditem {
+  margin-bottom: 10px;
 }
 
 .quoteitem {
@@ -380,7 +392,7 @@
   display: block;
   color: var(--white);
   text-align: center;
-  padding: 14px 16px;
+  padding: 8px 16px;
 }
 
 .topMenu .menuItem {
@@ -393,10 +405,10 @@
 }
 
 /* Add an active class to highlight the current page */
-.active {
+/* .active {
   background-color: var(--lightestpink);
   color: white;
-}
+} */
 
 /* Hide the link that should open and close the topnav on small screens */
 .topMenu .menuIcon {
