@@ -36,28 +36,41 @@ block content
         div(class="submitblock")
             i(class="user icon green")
             div(class="icon-next green link")  Submitted by #{moviequotes.author.username}
-        div(class="horizontal-line")
+        //- div(class="horizontal-line")
         //- Comments]
         div(class="ui comments")
             h3(class="ui dividing default-grey") Comments
-            each comment in moviequotes.comments
-                div(class="comment")
-                    div(class="content")
-                        a(class="author default-grey link") #{comment.author.username}
-                        div(class="metadata")
-                            span(class="date" id="createdDate") #{formatDate(comment.dateCreated)}
-                        div(class="text") #{comment.commenttext}
-                        div(class="field")
-                            form(class="delete-form" action="/moviequotes/" + moviequotes.id + "/comments/" + comment.id + "?_method=DELETE" method="POST")
-                                if currentuser && comment.author.id.equals(currentuser._id)
-                                    button(id="buttonhidden" type="submit" value="Delete Comment" title="Delete Comment")
-                                        i(class="window close green large icon") 
-                                        div(class="icon-next link") Delete Comment 
+            if moviequotes.comments.length === 0
+                if currentuser
+                    p Add a new comment.
+                else
+                    p No comments yet. #[a(href="/login" class="link green") Sign in] to add a comment.
+            else
+                each comment in moviequotes.comments
+                    div(class="comment")
+                        div(class="content")
+                            div(class="flexcomments")
+                                div(class="item")
+                                    img(src="/images/icons8-user-photo-50.png")
+                                div(class="item")
+                                    a(class="author default-grey link") #{comment.author.username}
+                                div(class="item")
+                                    div(class="date metadata" id="createdDate") #{formatDate(comment.dateCreated)}
+                            div(class="commentfield") #{comment.commenttext}
+                            div(class="deleteblock")
+                                form(class="delete-form" action="/moviequotes/" + moviequotes.id + "/comments/" + comment.id + "?_method=DELETE" method="POST")
+                                    if currentuser && comment.author.id.equals(currentuser._id)
+                                        button(id="buttonhidden" type="submit" value="Delete Comment" title="Delete Comment")
+                                            i(class="window close green large icon") 
+                                            div(class="icon-next link") Delete Comment 
+                            div(class="horizontal-line")
+                            div(class="commentfield")
             form(class="ui form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")
                 if currentuser
                     div(class="field")
                         input(type="hidden" name="moviequoteid" value=moviequotes._id)
-                        textarea(rows="2" name="moviecomment")
+                        textarea(rows="3" name="moviecomment")
                     div(class="field")
-                        input(class="ui green mini button right floated" type="submit" value="Add Comment")
+                        input(class="ui green mini button right floated" type="submit" value="Post Comment")
+                    
 include ../partials/footer

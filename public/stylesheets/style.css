@@ -180,7 +180,6 @@
   padding: 5px;
 }
 
-
 /* -------------------------------------------------------- */
 /* Landing / login / register / forgot password page styles */
 /* -------------------------------------------------------- */
@@ -312,11 +311,12 @@
 /* show page styles */
 /* ---------------- */
 .itemMovieQuote {
-  grid-row: span 3;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .movie-screenwriter {
@@ -329,10 +329,10 @@
   display: flex;
   height: 100%;
   width: 100%;
-  margin: 10px;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 15px 0;
 }
 
 #buttonhidden {
@@ -345,6 +345,35 @@
 .submitblock {
   padding-bottom: 10px;
 }
+
+.flexcomments {
+  display: grid;
+  grid-template-columns: 50px 60px auto;
+  grid-gap: 10px;
+  margin-top: 15px;
+  justify-content: left;
+  vertical-align: bottom;
+}
+
+
+.commentfield {
+  margin: 15px 0;
+  color: var(--darkgrey);
+}
+
+.deleteblock {
+  margin: 10px 0;
+}
+
+.text {
+  margin-bottom: 15px;
+}
+
+/* .flexcomments>* {
+  flex: 1;
+  margin-bottom: 20px;
+  border: 1px solid red;
+} */
 
 /* ------------------ */
 /* Search page styles */
