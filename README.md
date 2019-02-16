@@ -4,7 +4,15 @@ This application will display the quote, name of the movie, year movie made and 
 
 ## Live link: coming soon
 
-## Test site link available: send me a DM on Twitter (@runhappylife) if you want to view
+## Test site link available: send me a DM on Twitter (@runhappylife) if you would like a preview
+
+## Screenshots
+
+- Landing Page
+![Landing Page](private/name-that-movie-landingpage.png)
+
+- Movie Quote Collection Page
+![Movie Quote Collection page](private/name-that-movie-moviequotecollection.png)
 
 ## Technology used:
 - express.js 
