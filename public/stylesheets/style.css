@@ -147,7 +147,7 @@
 }
 
 .moviequotemedium {
-  font: 3.2em 'Habibi', serif;
+  font: 2.8em 'Habibi', serif;
   line-height: 1.2em;
 }
 
@@ -276,7 +276,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: auto;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-auto-flow: dense;
   place-items: stretch stretch;
   justify-content: space-between;
@@ -291,6 +291,8 @@
   border-color: var(--darkgrey);
   border-top-style: solid;
   border-width: 1px;
+  position: relative;
+  padding-bottom: 50px;
 }
 
 .movie-year {
@@ -304,9 +306,10 @@
 
 .commentblock {
   display: flex;
-  justify-content: flex-end;
   padding: 5px;
-  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /* ---------------- */
