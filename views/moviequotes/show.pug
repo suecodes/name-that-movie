@@ -26,7 +26,7 @@ block content
         //- Main content
         div(class="showfield")
             div(class="itemMovieQuote") 
-                div(class="moviequotemedium default-grey") "#{moviequotes.moviequote}"
+                div(class="moviequotelarge default-grey") "#{moviequotes.moviequote}"
         div(class="showfield")
             i(class="video icon grey")
             div(class="icon-next movie-name-year default-grey") #{moviequotes.moviename}, #{moviequotes.year}
@@ -36,7 +36,7 @@ block content
         div(class="submitblock")
             i(class="user icon green")
             div(class="icon-next green link")  Submitted by #{moviequotes.author.username}
-        //- div(class="horizontal-line")
+        div(class="horizontal-line")
         //- Comments]
         div(class="ui comments")
             h3(class="ui dividing default-grey") Comments
@@ -57,14 +57,12 @@ block content
                                 div(class="item")
                                     div(class="date metadata" id="createdDate") #{formatDate(comment.dateCreated)}
                             div(class="commentfield") #{comment.commenttext}
-                            div(class="deleteblock")
-                                form(class="delete-form" action="/moviequotes/" + moviequotes.id + "/comments/" + comment.id + "?_method=DELETE" method="POST")
-                                    if currentuser && comment.author.id.equals(currentuser._id)
-                                        button(id="buttonhidden" type="submit" value="Delete Comment" title="Delete Comment")
-                                            i(class="window close green large icon") 
-                                            div(class="icon-next link") Delete Comment 
-                            div(class="horizontal-line")
-                            div(class="commentfield")
+                            form(class="delete-form" action="/moviequotes/" + moviequotes.id + "/comments/" + comment.id + "?_method=DELETE" method="POST")
+                                if currentuser && comment.author.id.equals(currentuser._id)
+                                    button(id="buttonhidden" type="submit" value="Delete Comment" title="Delete Comment")
+                                        //-i(class="window close green large icon") 
+                                        div(class="link") Delete Comment 
+                    div(class="horizontal-line")
             form(class="ui form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")
                 if currentuser
                     div(class="field")

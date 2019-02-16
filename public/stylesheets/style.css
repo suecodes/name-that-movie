@@ -47,6 +47,7 @@
   border-color: var(--darkgrey);
   border-top-style: solid;
   border-width: 1px;
+  margin: 20px 0;
 }
 
 .icon-next {
@@ -305,6 +306,7 @@
   display: flex;
   justify-content: flex-end;
   padding: 5px;
+  align-self: flex-end;
 }
 
 /* ---------------- */
@@ -315,8 +317,8 @@
   justify-content: space-evenly;
   text-align: center;
   margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .movie-screenwriter {
@@ -355,14 +357,9 @@
   vertical-align: bottom;
 }
 
-
 .commentfield {
   margin: 15px 0;
   color: var(--darkgrey);
-}
-
-.deleteblock {
-  margin: 10px 0;
 }
 
 .text {

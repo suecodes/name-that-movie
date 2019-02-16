@@ -4,6 +4,8 @@ This application will display the quote, name of the movie, year movie made and 
 
 ## Live link: coming soon
 
+## Test site link available: send me a DM on Twitter (@runhappylife) if you want to view
+
 ## Technology used:
 - express.js 
 - node.js
