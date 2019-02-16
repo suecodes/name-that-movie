@@ -9,10 +9,10 @@ This application will display the quote, name of the movie, year movie made and 
 ## Screenshots
 
 - Landing Page
-![Landing Page](private/name-that-movie-landingpage.png)
+![Landing Page](public/images/name-that-movie-landingpage.png)
 
 - Movie Quote Collection Page
-![Movie Quote Collection page](private/name-that-movie-moviequotecollection.png)
+![Movie Quote Collection page](public/images/name-that-movie-moviequotecollection.png)
 
 ## Technology used:
 - express.js 
