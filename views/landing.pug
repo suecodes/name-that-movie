@@ -1,6 +1,7 @@
 include partials/landingheader
 
 block content
+
 	//- movie details 
 	if result.length !== 0
 		div(class="flexstretch")
@@ -16,10 +17,10 @@ block content
 
 		//- multiple choice buttons
 		div(class="flexstretch" id="userinput" style="display: block;")
-			div(class="flexitem moviename ui inverted button white") #{result[0].moviename}
-			div(class="flexitem moviename ui inverted button white") #{result[1].moviename}
-			div(class="flexitem moviename ui inverted button white") #{result[2].moviename}
-			div(class="flexitem moviename ui inverted button white") #{result[3].moviename}
+			button(class="flexitem moviename ui inverted button white") #{result[0].moviename}
+			button(class="flexitem moviename ui inverted button white") #{result[1].moviename}
+			button(class="flexitem moviename ui inverted button white") #{result[2].moviename}
+			button(class="flexitem moviename ui inverted button white") #{result[3].moviename}
 
 		//- Next move
 		div(class="flexstretch" id="right-answer-block" style="display: none;")
@@ -32,6 +33,10 @@ block content
 		div(class="flexcontainer")
 			div(class="flexitem") 
 				div(class="moviequotelarge" id="moviequote") Welcome to Name That Movie
+
+	a(href="/moviequotes")
+		div(class="skipquiz") [Skip the quiz and show me the movie quotes collection 
+			i(class="arrow alternate circle right grey large icon") ]
 
 	div(class="block")
 		div(class="formcontainer")

@@ -20,7 +20,7 @@ const COLOR_PRIMARYRED = "#7B241C";
 const COLOR_WHITE = "#ffffff";
 const COLOR_DARKESTGREY = "#1B2631";
 const COLOR_GREENISH = "#45B39D";
-const MAX_CHAR_LENGTH = 60;
+const MAX_CHAR_LENGTH = 50;
 const FAIL_MESSAGE = "Wrong! Try again.";
 const SUCCESS_MESSAGE = "Correct! What do you want to do next?";
 
@@ -63,14 +63,15 @@ function setupAnswers() {
  *  quote from falling below the fold
  */
 function checkQuoteLength() {
+
     let quote = document.getElementById("moviequote");
 
     if (quote) {
         if (quote.textContent.length > MAX_CHAR_LENGTH) {
-            if (quote.className === "moviequotelarge") {
-                quote.className = "moviequotemedium";
+            if (quote.className === "flexitem moviequotelarge") {
+                quote.className = "flexitem moviequotemedium";
             } else {
-                quote.className = "moviequotelarge ";
+                quote.className = "flexitem moviequotelarge ";
             }
         }
     }

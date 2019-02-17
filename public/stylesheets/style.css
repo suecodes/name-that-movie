@@ -147,7 +147,7 @@
 }
 
 .moviequotemedium {
-  font: 2.8em 'Habibi', serif;
+  font: 3.5em 'Habibi', serif;
   line-height: 1.2em;
 }
 
@@ -193,7 +193,7 @@
   background-color: var(--pinkred); */
   display: block;
   width: 100%;
-  background-color: var(--pinkred);
+  background-color: var(--lightgrey);
   /*background-image: url("https://images.unsplash.com/photo-1507990178188-0118b242deda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1391&q=80");
   transition: all 0.3s ease;
   -webkit-transform: translate3d(0, 0, 0);*/
@@ -201,6 +201,10 @@
 
 .logo {
   font-size: 1.0em;
+  color: var(--white);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .logo a:hover {
@@ -237,12 +241,22 @@
   padding: 5px;
 }
 
+.skipquiz {
+  margin: 40px 0;
+  color: var(--darkgrey);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 #moviequote {
   margin-top: 50px;
   color: var(--white);
   display: inline-block;
   vertical-align: middle;
   height: 200px;
+  -webkit-backface-visibility: hidden;
 }
 
 #usermessage {
@@ -310,6 +324,11 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.floatcomment {
+  position: absolute;
+  right: 0;
 }
 
 /* ---------------- */
