@@ -1,13 +1,13 @@
 //- Hamburger menu 
-div(class="topMenu" id="topMenuNav")
+nav(class="topMenu" id="topMenuNav")
 	a(href="/") 
 		img(src="/images/icons8-clapperboard-whitetrans-50.png" width="25" height="25")
 		div(class="icon-next logo")  Name That Movie
 	if !currentuser
-		a(href="/register" class="menuItem")
-			h5 Sign Up
 		a(href="/login" class="menuItem")
 			h5 Sign In
+		a(href="/register" class="menuItem")
+			h5 Sign Up
 	else 
 		a(href="/logout" class="menuItem")
 			h5 Log Out
