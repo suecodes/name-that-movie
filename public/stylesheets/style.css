@@ -3,27 +3,27 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  --darkestgrey: #1B2631;
-  --darkgrey: #4D5656;
-  --grey: #717D7E;
-  --lightgrey: #AAB7B8;
-  --lightestgrey: #EAEDED;
-  --lightestpink: #F9EBEA;
-  --lightpink: #F2D7D5;
-  --softpink: #E6B0AA;
-  --pink: #E6B0AA;
-  --darkpink: #D98880;
-  --darkestpink: #CD6155;
-  --pinkred: #C0392B;
-  --reddish: #A93226;
-  --deepred: #922B21;
-  --darkestred: #641E16;
-  --primaryred: #7B241C;
-  --palestgreen: #E8F6F3;
-  --palegreen: #A2D9CE;
-  --greenish: #45B39D;
-  --darkgreen: #138D75;
-  --darkestgreen: #0E6655;
+  --darkestgrey: #1b2631;
+  --darkgrey: #4d5656;
+  --grey: #717d7e;
+  --lightgrey: #aab7b8;
+  --lightestgrey: #eaeded;
+  --lightestpink: #f9ebea;
+  --lightpink: #f2d7d5;
+  --softpink: #e6b0aa;
+  --pink: #e6b0aa;
+  --darkpink: #d98880;
+  --darkestpink: #cd6155;
+  --pinkred: #c0392b;
+  --reddish: #a93226;
+  --deepred: #922b21;
+  --darkestred: #641e16;
+  --primaryred: #7b241c;
+  --palestgreen: #e8f6f3;
+  --palegreen: #a2d9ce;
+  --greenish: #45b39d;
+  --darkgreen: #138d75;
+  --darkestgreen: #0e6655;
 }
 
 /* ---------------- */
@@ -91,7 +91,7 @@
 }
 
 .quizmessage {
-  font: 1.2em 'Open Sans', serif;
+  font: 1.2em "Open Sans", serif;
   color: var(--white);
   padding: 5px;
 }
@@ -141,19 +141,23 @@
   text-align: center;
 }
 
+.movienameserif {
+  font-size: 12pt;
+}
+
 .moviequotesmall {
-  font: 2.7em 'Habibi', serif;
+  font: 1.8em "Habibi", serif;
   line-height: 1.2em;
   padding: 5px;
 }
 
 .moviequotemedium {
-  font: 3.7em 'Habibi', serif;
+  font: 3em "Habibi", serif;
   line-height: 1.2em;
 }
 
 .moviequotelarge {
-  font: 5em 'Habibi', serif;
+  font: 5em "Habibi", serif;
   line-height: 1.2em;
 }
 
@@ -268,8 +272,6 @@
   line-height: 1.2em;
 }
 
-
-
 /* ----------------------------------------------------- */
 /* Movie quotes - new/show/search page styles */
 /* ----------------------------------------------------- */
@@ -370,13 +372,19 @@
   padding-bottom: 10px;
 }
 
+/* .flexcomments>* {
+  flex: 1;
+  margin-bottom: 20px;
+  border: 1px solid red;
+} */
+
 .flexcomments {
   display: grid;
   grid-template-columns: 50px 60px auto;
   grid-gap: 10px;
   margin-top: 15px;
   justify-content: left;
-  vertical-align: bottom;
+  align-items: end;
 }
 
 .commentfield {
@@ -388,22 +396,14 @@
   margin-bottom: 15px;
 }
 
-/* .flexcomments>* {
-  flex: 1;
-  margin-bottom: 20px;
-  border: 1px solid red;
-} */
-
 /* ------------------ */
 /* Search page styles */
 /* ------------------ */
-;
-
 .resultfield {
   display: flex;
   height: 100%;
   width: 100%;
-  margin: 10px 0;
+  margin: 5px 0;
   align-items: left;
 }
 

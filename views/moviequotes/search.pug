@@ -31,9 +31,9 @@ block content
 					each moviequote in moviequotes
 						div(class="resultfield")
 							a(href="/moviequotes/" + moviequote._id class="link")
-								h5 #{moviequote.moviename}
-						div(class="resultfield")
-							h5 "#{moviequote.moviequote}"
+								h5(class="movienameserif") #{moviequote.moviename}
+						div(class="resultfield ")
+							h5(class="moviequotesmall") "#{moviequote.moviequote}"
 						div(class="resultfield")
 							p #{moviequote.year}
 						div(class="resultfield")
