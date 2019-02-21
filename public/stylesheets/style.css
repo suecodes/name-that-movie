@@ -78,6 +78,7 @@
   display: flex;
   padding: 5px;
   background-color: var(--pinkred);
+  color: var(--white);
   justify-content: center;
   vertical-align: middle;
 }
@@ -86,8 +87,13 @@
   display: flex;
   padding: 5px;
   background-color: var(--palegreen);
+  color: var(--darkgrey);
   justify-content: center;
-  vertical-align: middle;
+  vertical-align: bottom;
+}
+
+.messagebutton {
+  margin: 0 20px;
 }
 
 .quizmessage {
