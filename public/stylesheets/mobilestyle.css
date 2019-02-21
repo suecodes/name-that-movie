@@ -2,185 +2,193 @@
 /* Extra small devices (phones, 600px and down) */
 /* -------------------------------------------------------------- */
 @media only screen and (max-width: 600px) {
+  /* ---------------------- */
+  /* Form controls - mobile */
+  /* ---------------------- */
 
-	/* ---------------------- */
-	/* Form controls - mobile */
-	/* ---------------------- */
+  .formcontainer {
+    display: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3vh;
+    width: 90%;
+    justify-content: center;
+  }
 
-	.formcontainer {
-		display: relative;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 3vh;
-		width: 90%;
-		justify-content: center;
-	}
+  .formfield {
+    padding: 3px;
+  }
 
-	.formfield {
-		padding: 3px;
-	}
+  /* ---------------- */
+  /* Landing - mobile */
+  /* ---------------- */
 
-	/* ---------------- */
-	/* Landing - mobile */
-	/* ---------------- */
+  .flexcontainer {
+    display: flex;
+    margin: 0;
+    text-align: center;
+  }
 
-	.flexcontainer {
-		display: flex;
-		margin: 0;
-		text-align: center;
-	}
+  .flexstretch {
+    display: flex;
+    margin-left: 2em;
+    margin-right: 2em;
+    text-align: center;
+    align-items: stretch;
+    flex-direction: column;
+  }
 
-	.flexstretch {
-		display: flex;
-		margin-left: 2em;
-		margin-right: 2em;
-		text-align: center;
-		align-items: stretch;
-		flex-direction: column;
-	}
+  .flexitem {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-	.flexitem {
-		width: 100%;
-		margin: 10px 0;
-	}
+  .movie-container {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
 
-	.movie-container {
-		margin-left: 5em;
-		margin-right: 5em;
-	}
+  /* Quote text sizes */
+  .moviequotesmall {
+    font: 1.2em "Habibi", serif;
+    line-height: 1.4em;
+  }
 
-	/* Quote text sizes */
-	.moviequotesmall {
-		font: 1.2em 'Habibi', serif;
-		line-height: 1.4em;
-	}
+  .moviequotemedium {
+    font: 1.8em "Habibi", serif;
+    line-height: 1.3em;
+  }
 
-	.moviequotemedium {
-		font: 1.8em 'Habibi', serif;
-		line-height: 1.3em;
-	}
+  .moviequotelarge {
+    font: 2.5em "Habibi", serif;
+    line-height: 1.2em;
+  }
 
-	.moviequotelarge {
-		font: 2.5em 'Habibi', serif;
-		line-height: 1.2em;
-	}
+  .movie-name-year {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
 
-	.movie-name-year {
-		font-size: 1.0em;
-		line-height: 1.2em;
-	}
+  /* show */
+  .showfield {
+    margin: 3px 0;
+  }
 
-	/* show */
-	.showfield {
-		margin: 3px 0;
-	}
+  .resultfield {
+    width: 95%;
+  }
 
-	.resultfield {
-		width: 95%;
-	}
+  /* Hamburger menu */
+  .menuItem {
+    float: left;
+  }
 
-	/* Hamburger menu */
-	.menuItem {
-		float: left;
-	}
+  .topMenu a:not(:first-child) {
+    display: none;
+  }
 
-	.topMenu a:not(:first-child) {
-		display: none;
-	}
+  .topMenu a.menuIcon {
+    float: right;
+    display: block;
+  }
 
-	.topMenu a.menuIcon {
-		float: right;
-		display: block;
-	}
+  .topMenu.responsive {
+    position: relative;
+  }
 
-	.topMenu.responsive {
-		position: relative;
-	}
+  .topMenu.responsive a.menuIcon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
-	.topMenu.responsive a.menuIcon {
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-
-	.topMenu.responsive a {
-		float: none;
-		display: block;
-		text-align: left;
-	}
+  .topMenu.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
 /* ------------------------------------------------------------------------- */
 /* Small devices (portrait tablets and large phones, e.g. iPad 600px and up) */
 /* ------------------------------------------------------------------------- */
 @media only screen and (max-width: 768px) {
+  /* -------------- */
+  /* Form controls  */
+  /* -------------- */
 
-	/* -------------- */
-	/* Form controls  */
-	/* -------------- */
+  .formcontainer {
+    display: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3vh;
+    width: 90%;
+    justify-content: center;
+  }
 
-	.formcontainer {
-		display: relative;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 3vh;
-		width: 90%;
-		justify-content: center;
+  .authenticatecontainer {
+    display: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3vh;
+    width: 90%;
+    padding-top: 3vh;
+    justify-content: center;
+  }
 
-	}
+  .formfield {
+    padding: 3px;
+  }
 
-	.formfield {
-		padding: 3px;
-	}
+  /* ---------------- */
+  /* Landing - mobile */
+  /* ---------------- */
 
-	/* ---------------- */
-	/* Landing - mobile */
-	/* ---------------- */
-
-	.movie-name-year {
-		font-size: 1.5em;
-		line-height: 1.2em;
-	}
+  .movie-name-year {
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
 }
 
 /* -------------------------------------------------------------- */
 /* Medium devices (landscape tablets, e.g. iPad Pro 768px and up) */
 /* -------------------------------------------------------------- */
 @media only screen and (min-width: 768px) {
+  /* -------------- */
+  /* Form controls  */
+  /* -------------- */
 
-	/* -------------- */
-	/* Form controls  */
-	/* -------------- */
+  .formcontainer {
+    display: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3vh;
+    width: 90%;
+    justify-content: center;
+  }
 
-	.formcontainer {
-		display: relative;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 3vh;
-		width: 90%;
-		justify-content: center;
-	}
+  .formfield {
+    padding: 3px;
+  }
 
-	.formfield {
-		padding: 3px;
-	}
+  /* ---------------- */
+  /* Landing - mobile */
+  /* ---------------- */
 
-	/* ---------------- */
-	/* Landing - mobile */
-	/* ---------------- */
-
-	.movie-name-year {
-		font-size: 2.0em;
-		line-height: 1.2em;
-	}
+  .movie-name-year {
+    font-size: 2em;
+    line-height: 1.2em;
+  }
 }
 
 /* -------------------------------------------------------------- */
 /* Large devices (laptops/desktops, 992px and up) */
 /* -------------------------------------------------------------- */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+}
 
 /* --------------------------------------------------------------- */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* --------------------------------------------------------------- */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+}

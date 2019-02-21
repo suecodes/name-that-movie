@@ -178,7 +178,13 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 3vh;
-  width: 50%;
+  justify-content: center;
+}
+
+.authenticatecontainer {
+  display: relative;
+  margin: 0 250px;
+  padding-top: 3vh;
   justify-content: center;
 }
 
