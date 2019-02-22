@@ -21,7 +21,6 @@ const Moviequotes = require("../models/moviequotes");
 const Moviecomments = require("../models/comments");
 const methodOverride = require("method-override");
 const formatDate = require("../public/javascripts/formatDate");
-const middleware = require("../middleware");
 
 const APP_NAME = "Name That Movie";
 

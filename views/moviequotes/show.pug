@@ -47,8 +47,8 @@ block content
                     p No comments yet. #[a(href="/login" class="link green") Sign in] to add a comment.
             else
                 each comment in moviequotes.comments
-                    div(class="comment")
-                        div(class="content")
+                    div(class="")
+                        div(class="")
                             div(class="flexcomments")
                                 div(class="item")
                                     img(src="/images/icons8-user-photo-50.png")
@@ -60,7 +60,6 @@ block content
                             form(class="delete-form" action="/moviequotes/" + moviequotes.id + "/comments/" + comment.id + "?_method=DELETE" method="POST")
                                 if currentuser && comment.author.id.equals(currentuser._id)
                                     button(id="buttonhidden" type="submit" value="Delete Comment" title="Delete Comment")
-                                        //-i(class="window close green large icon") 
                                         div(class="link") Delete Comment 
                     div(class="horizontal-line")
             form(class="ui form" action="/moviequotes/" + moviequotes._id + "/comments" method="POST")

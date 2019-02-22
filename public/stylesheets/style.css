@@ -47,7 +47,8 @@
   border-color: var(--darkgrey);
   border-top-style: solid;
   border-width: 1px;
-  margin: 20px 0;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .icon-next {
@@ -378,6 +379,7 @@
   background: none;
   margin: 0;
   left: 0;
+  padding: 0;
 }
 
 .submitblock {
