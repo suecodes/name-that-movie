@@ -19,11 +19,14 @@
   --deepred: #922b21;
   --darkestred: #641e16;
   --primaryred: #7b241c;
-  --palestgreen: #e8f6f3;
-  --palegreen: #a2d9ce;
-  --greenish: #45b39d;
-  --darkgreen: #138d75;
-  --darkestgreen: #0e6655;
+
+  /* Blues */
+  --paleblue: #caddea;
+  --lightblue: #b0cce0;
+  --blue: #629ac2;
+  --primaryblue: #2d78ad;
+  --deepblue: #1c4b6c;
+  --darkblue: #112d41;
 }
 
 /* ---------------- */
@@ -40,7 +43,7 @@
 }
 
 .link {
-  color: var(--darkgreen) !important;
+  color: var(--primaryblue) !important;
 }
 
 .horizontal-line {
@@ -87,7 +90,7 @@
 .successmessagebox {
   display: flex;
   padding: 5px;
-  background-color: var(--palegreen);
+  background-color: var(--lightblue);
   color: var(--darkgrey);
   justify-content: center;
   vertical-align: bottom;
@@ -113,7 +116,7 @@
   font-size: 40px;
   line-height: 20px;
   font-weight: 150;
-  color: var(--darkgreen);
+  color: var(--primaryblue);
   margin-top: 20px;
 }
 
@@ -211,7 +214,7 @@
   background-color: var(--pinkred); */
   display: block;
   width: 100%;
-  background-color: var(--lightgrey);
+  background-color: var(--lightblue);
   /*background-image: url("https://images.unsplash.com/photo-1507990178188-0118b242deda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1391&q=80");
   transition: all 0.3s ease;
   -webkit-transform: translate3d(0, 0, 0);*/
@@ -330,7 +333,7 @@
 
 .moreinfo {
   float: right;
-  color: var(--darkgreen);
+  color: var(--primaryblue);
 }
 
 .commentblock {
@@ -426,7 +429,7 @@
 /* -------------------------- */
 
 .footerui {
-  background-color: var(--palestgreen);
+  background-color: var(--lightblue);
   position: relative;
   bottom: 0;
   width: 100%;
@@ -440,13 +443,13 @@
   padding: 14px 16px;
 }
 
-/* ----------------
+/* -----------------
 /* menu
 /* -----------------
 
 /* Add a background color to the top navigation */
 .topMenu {
-  background-color: var(--greenish);
+  background-color: var(--blue);
   overflow: hidden;
 }
 
@@ -465,7 +468,7 @@
 
 /* Change the color of links on hover */
 .topMenu a:hover {
-  color: var(--darkestgreen);
+  color: var(--primaryblue);
 }
 
 /* Add an active class to highlight the current page */

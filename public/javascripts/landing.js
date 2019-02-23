@@ -13,13 +13,16 @@ const moviename = document.getElementById("movie-name");
 const movieanswer = document.querySelectorAll(".moviename");
 const menu = document.getElementById("topMenuNav");
 const message = document.getElementById("usermessage");
+const buttonicon = document.querySelectorAll(".buttonicon");
 
 // Not immutable values
-const COLOR_DARKGREEN = "#138D75";
+const COLOR_PRIMARYBLUE = "#2d78ad";
+const COLOR_BLUE = "#629ac2;";
+const COLOR_PINKISHRED = "#c0392b";
 const COLOR_PRIMARYRED = "#7B241C";
 const COLOR_WHITE = "#ffffff";
 const COLOR_DARKESTGREY = "#1B2631";
-const COLOR_GREENISH = "#45B39D";
+
 const MAX_CHAR_LENGTH = 60;
 const FAIL_MESSAGE = "Wrong! Try again.";
 const SUCCESS_MESSAGE = "Correct! What do you want to do next?";
@@ -42,8 +45,10 @@ function setupAnswers() {
   for (let i = 0; i < movieanswer.length; i++) {
     // attach click event to each button
     movieanswer[i].addEventListener("click", function() {
-      // change button color so user knows it was clicked (eliminated)
-      this.style.backgroundColor = COLOR_GREENISH;
+      // change button color and fade it out so user knows it was clicked (eliminated)
+      this.style.backgroundColor = COLOR_PINKISHRED;
+      this.style.color = COLOR_WHITE;
+      $(this).animate({ opacity: 0 }, 1000);
 
       // capture movie name clicked and movie name answer
       let movieanswer = this.textContent.toLowerCase();
@@ -77,7 +82,7 @@ function checkQuoteLength() {
  * Correct answer display
  */
 function displayAnswer() {
-  moviename.style.color = COLOR_DARKESTGREY;
+  moviename.style.color = COLOR_PRIMARYBLUE;
   moviename.style.visibility = "visible";
   userInputBlock.style.display = "none";
   answerBlock.style.display = "block";
