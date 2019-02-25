@@ -17,15 +17,21 @@ block content
 
 		//- multiple choice buttons
 		div(class="flexstretch" id="userinput" style="display: block;")
-			button(class="flexitem moviename ui inverted button white") #{result[0].moviename}
-			button(class="flexitem moviename ui inverted button white") #{result[1].moviename}
-			button(class="flexitem moviename ui inverted button white") #{result[2].moviename}
-			button(class="flexitem moviename ui inverted button white") #{result[3].moviename}
+			//- button(class="flexitem moviename ui inverted button white testsuc") #{result[0].moviename}
+			//- button(class="flexitem moviename ui inverted button white testsuc") #{result[1].moviename}
+			//- button(class="flexitem moviename ui inverted button white testsuc") #{result[2].moviename}
+			//- button(class="flexitem moviename ui inverted button white testsuc") #{result[3].moviename}
+			button(class="flexitem quizbutton moviename") #{result[0].moviename}
+			button(class="flexitem quizbutton moviename") #{result[1].moviename}
+			button(class="flexitem quizbutton moviename") #{result[2].moviename}
+			button(class="flexitem quizbutton moviename") #{result[3].moviename}
 
 		//- Next move
 		div(class="flexstretch" id="right-answer-block" style="display: none;")
-			a(href="/" class="flexitem ui button blue flexbutton") Guess Another
-			a(href="/moviequotes" class="flexitem ui button blue flexbutton") View Movie Quotes
+			a(href="/")
+				button(class="flexitem bluebutton") Guess Another
+			a(href="/moviequotes")
+				button(class="flexitem bluebutton") View Movie Quotes	
 
 		//- hidden field to capture user input
 		input(id="user-guess" type="hidden" value=result[quiz].moviename)
