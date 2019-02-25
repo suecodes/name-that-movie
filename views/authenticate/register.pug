@@ -5,7 +5,7 @@ block content
 	div(class="authenticatecontainer")
 		form(class="ui form" action="/register" method="POST")
 			div(class="titleheader") 
-				div(class="ui large header green right floated") Sign Up
+				div(class="ui large header blue right floated") Sign Up
 			div(class="horizontal-line")
 			div(class="spacetop")
 			div(class="two fields")
@@ -25,7 +25,7 @@ block content
 				div(class="ui pointing below label") Password * 
 				input(type="password" name="password" minlength="8" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required)
 			div(class="formfield")
-				p By clicking the Agree and Sign Up button, you agree to the Name That Movie #[a(href="/termsofservice" class="link green") Terms of Service] and #[a(href="/privacypolicy" class="link green") Privacy Policy].
-			div(class="formfield")
-				button(class="ui green mini button right floated") Agree and Sign Up
+				p By clicking the Agree and Sign Up button, you agree to the Name That Movie #[a(href="/termsofservice" class="link blue") Terms of Service] and #[a(href="/privacypolicy" class="link blue") Privacy Policy].
+			div(class="formfield floatright")
+				button(class="bluebuttonsmall") Agree and Sign Up
 script(src="/javascripts/landing.js" type="text/javascript")

@@ -284,7 +284,19 @@
   height: 37px;
   font-family: "Open Sans";
   font-weight: bold;
-  padding: 0 20px;
+  padding: 0 15px;
+}
+
+.bluebuttonsmall {
+  background-color: var(--primaryblue);
+  color: var(--white);
+  border: 0;
+  border-radius: 5px;
+  height: 30px;
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-size: 8pt;
+  padding: 0 15px;
 }
 
 .bluebutton:hover {
@@ -375,7 +387,7 @@
   width: 100%;
 }
 
-.floatcomment {
+.floatright {
   position: absolute;
   right: 0;
 }
