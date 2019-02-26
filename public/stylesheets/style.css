@@ -300,7 +300,7 @@
 
 .quizbutton:hover {
   background-color: var(--white);
-  color: var(--darkgrey);
+  color: var(--deepblue);
 }
 
 .bluebutton {
@@ -329,7 +329,7 @@
   font-family: "Open Sans";
   font-weight: bold;
   font-size: 8pt;
-  padding: 0 15px;
+  padding: 10px 15px;
 }
 
 .bluebutton:hover {
@@ -430,6 +430,11 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.floatcomment{
+  position: absolute;
+  right: 0; 
 }
 
 .floatright {

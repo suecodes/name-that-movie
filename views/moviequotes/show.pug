@@ -11,6 +11,7 @@ block content
                         a(href="/search")
                         input(type="text" name="searchcriteria" placeholder="Search")
                         i(class="inverted search icon link")
+                    div(class="spacer")
         //- back/delete/edit buttons
         div(class="leftrightfloatblock")
             div(class="leftfloat")
@@ -68,6 +69,6 @@ block content
                         input(type="hidden" name="moviequoteid" value=moviequotes._id)
                         textarea(rows="3" name="moviecomment")
                     div(class="field")
-                        input(class="bluebuttonsmall rightfloat" type="submit" value="Post Comment")
+                        button(class="bluebuttonsmall floatright" type="submit" value="Post Comment") Post Comment
                     
 include ../partials/footer

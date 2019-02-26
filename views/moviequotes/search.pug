@@ -2,21 +2,24 @@ include ../partials/header
 include ../partials/menu
 
 block content
-	div(class="ui container movie-container")
+	div(class="formcontainer")
 		div(class="leftrightfloatblock")
-			span(class="leftfloat")
+			div(class="leftfloat")
+			div(class="rightfloat")
+				//- Search box
+				form(class="ui form" action="/searchresult" method="POST")
+					div(class="ui mini icon input")
+						a(href="/search")
+						input(type="text" name="searchcriteria" placeholder="Search")
+						i(class="inverted search icon blue link")
+		div(class="leftrightfloatblock")
+			div(class="leftfloat")
 				a(href="javascript:history.back()" class="ui blue left floated link")
 					i(class="hand point left outline large icon")
 					div(class="icon-next") Back
-			span(class="rightfloat")
-				form(class="ui form" action="/searchresult" method="POST")
-					div(class="icon-next")
-						div(class="ui mini icon input")
-							a(href="/search")
-							input(type="text" name="searchcriteria" placeholder="Search")
-							i(class="inverted search icon blue link")
-						if currentuser
-							a(href="/moviequotes/new" class="ui blue mini button right floated") New Movie Quote
+			div(class="rightfloat")
+				if currentuser
+					a(href="/moviequotes/new" class="bluebuttonsmall floatright") New Movie Quote
 		div(class="horizontal-line")
 			div(class="spacetop")
 				i(class="angle right large icon")

@@ -16,6 +16,7 @@ block content
 						a(href="/search")
 						input(type="text" name="searchcriteria" placeholder="Search")
 						i(class="inverted search icon blue link")
+					div(class="spacer")
 		div(class="leftrightfloatblock")
 			div(class="leftfloat")
 				//- Sort by dropdown
@@ -28,7 +29,7 @@ block content
 			div(class="rightfloat")
 				//- Add new movie quote only if user is logged in
 				if currentuser
-					a(href="/moviequotes/new" class="ui blue mini button right floated") New Movie Quote
+					a(href="/moviequotes/new" class="bluebuttonsmall rightfloat") New Movie Quote
 		//- Display each quote in collection 
 		div(class="gridcontainer")
 			each moviequote in moviequotes
