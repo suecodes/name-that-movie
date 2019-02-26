@@ -92,7 +92,7 @@
 .errormessagebox {
   display: flex;
   padding: 5px;
-  background-color: var(--pinkred);
+  background-color: var(--lightblue);
   color: var(--white);
   justify-content: center;
   vertical-align: middle;
@@ -105,6 +105,10 @@
   color: var(--darkgrey);
   justify-content: center;
   vertical-align: bottom;
+}
+
+.message {
+  padding: 4px;
 }
 
 .messagebutton {
@@ -332,6 +336,18 @@
   padding: 10px 15px;
 }
 
+.redbuttonsmall {
+  background-color: var(--primaryred);
+  color: var(--white);
+  border: 0;
+  border-radius: 5px;
+  height: 30px;
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-size: 8pt;
+  padding: 10px 15px;
+}
+
 .bluebutton:hover {
   background-color: var(--deepblue);
   color: var(--white);
@@ -432,9 +448,9 @@
   width: 100%;
 }
 
-.floatcomment{
+.floatcomment {
   position: absolute;
-  right: 0; 
+  right: 0;
 }
 
 .floatright {
@@ -558,6 +574,7 @@
 
 .topMenu .menuItem {
   float: right;
+  padding: 12px;
 }
 
 /* Change the color of links on hover */
