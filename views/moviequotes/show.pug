@@ -10,18 +10,18 @@ block content
                     div(class="ui mini icon input")
                         a(href="/search")
                         input(type="text" name="searchcriteria" placeholder="Search")
-                        i(class="inverted search icon green link")
+                        i(class="inverted search icon link")
         //- back/delete/edit buttons
         div(class="leftrightfloatblock")
             div(class="leftfloat")
-                a(href="/moviequotes" class="ui green left floated link") 
+                a(href="/moviequotes" class="leftfloat link") 
                     i(class="hand point left outline large icon") 
                     div(class="icon-next") Back 
             div(class="rightfloat")
                 form(class="delete-form" action="/moviequotes/" + moviequotes.id + "?_method=DELETE" method="POST")
                     if currentuser && moviequotes.author.id.equals(currentuser._id)
-                        button(class="ui green right floated mini button") Delete
-                        a(href="/moviequotes/" + moviequotes.id + "/edit" class="ui green mini right floated button") Edit
+                        button(class="bluebuttonsmall rightfloat") Delete
+                        a(href="/moviequotes/" + moviequotes.id + "/edit" class="bluebuttonsmall rightfloat") Edit
         div(class="horizontal-line")
         //- Main content
         div(class="showfield")
@@ -34,8 +34,8 @@ block content
             i(class="pencil alternate icon default-grey") 
             div(class="icon-next movie-screenwriter default-grey") #{moviequotes.screenwriter}
         div(class="submitblock")
-            i(class="user icon green")
-            div(class="icon-next green link")  Submitted by #{moviequotes.author.username}
+            i(class="user icon")
+            div(class="icon-next link")  Submitted by #{moviequotes.author.username}
         div(class="horizontal-line")
         //- Comments]
         div(class="ui comments")
@@ -44,7 +44,7 @@ block content
                 if currentuser
                     p Add a new comment.
                 else
-                    p No comments yet. #[a(href="/login" class="link green") Sign in] to add a comment.
+                    p No comments yet. #[a(href="/login" class="link") Sign in] to add a comment.
             else
                 each comment in moviequotes.comments
                     div(class="")
@@ -68,6 +68,6 @@ block content
                         input(type="hidden" name="moviequoteid" value=moviequotes._id)
                         textarea(rows="3" name="moviecomment")
                     div(class="field")
-                        input(class="ui green mini button right floated" type="submit" value="Post Comment")
+                        input(class="bluebuttonsmall rightfloat" type="submit" value="Post Comment")
                     
 include ../partials/footer

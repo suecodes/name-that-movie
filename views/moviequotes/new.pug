@@ -42,10 +42,10 @@ block content
     div(class="formcontainer")
         form(class="ui form" action="/moviequotes" method="POST")
             div(class="titleheader") 
-                a(href="javascript:history.back()" class="ui green left floated link") 
+                a(href="javascript:history.back()" class="leftfloat link") 
                     i(class="hand point left outline large icon") 
                     div(class="icon-next") Back 
-                div(class="ui large header green right floated") New Movie Quote
+                div(class="headerlarge floatright") New Movie Quote
             div(class="horizontal-line")
             div(class="spacetop")
             div(class="two fields")
@@ -63,7 +63,6 @@ block content
             div(class="field")
                 div(class="ui pointing below label") Enter the screenwriters name (separate with comma if multiple) *
                 input(type="text" name="screenwriter" required)
-            input(class="ui green mini button right floated" type="submit")
-            //-button(class="ui green mini button right floated") Submit
+            input(class="bluebutton rightfloat" type="submit")
 
 include ../partials/footer

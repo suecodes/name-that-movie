@@ -17,11 +17,9 @@ const buttonicon = document.querySelectorAll(".buttonicon");
 
 // Not immutable values
 const COLOR_PRIMARYBLUE = "#2d78ad";
-const COLOR_BLUE = "#629ac2;";
 const COLOR_PINKISHRED = "#c0392b";
 const COLOR_PRIMARYRED = "#7B241C";
 const COLOR_WHITE = "#ffffff";
-const COLOR_DARKESTGREY = "#1B2631";
 
 const MAX_CHAR_LENGTH = 60;
 const FAIL_MESSAGE = "Wrong! Try again.";
@@ -43,8 +41,10 @@ function init() {
  */
 function setupAnswers() {
   for (let i = 0; i < movieanswer.length; i++) {
+
     // attach click event to each button
     movieanswer[i].addEventListener("click", function() {
+      
       // change button color and fade it out so user knows it was clicked (eliminated)
       this.style.backgroundColor = COLOR_PINKISHRED;
       this.style.color = COLOR_WHITE;

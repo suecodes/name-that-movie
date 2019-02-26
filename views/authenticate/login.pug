@@ -5,7 +5,7 @@ block content
 	div(class="authenticatecontainer")
 		form(class="ui form" action="/login" method="POST")
 			div(class="titleheader") 
-				div(class="ui large header blue right floated") Log In
+				div(class="headerlarge floatright") Log In
 			div(class="horizontal-line")
 			div(class="spacetop")
 			div(class="formfield")
@@ -14,9 +14,11 @@ block content
 			div(class="formfield")
 				div(class="ui pointing below label") Password * 
 				input(type="password" name="password" required)
-			div(class="formfield")
-				a(href="/forgotpassword" class="ui link") Forgot password
-			div(class="formfield floatright")
-				a(href="/register" class="ui link") No account? Sign Up
-				button(class="bluebuttonsmall") Log In
+			div(class="leftrightfloatblock")
+				a(href="/forgotpassword" class="link") Forgot password
+				div(class="floatright")
+					button(class="bluebuttonsmall" tabindex="0" role="button") Log In
+			a(href="/register" class="skipquiz") [No account? Sign Up 
+				i(class="arrow alternate circle right large icon") ]
+				
 script(src="/javascripts/landing.js" type="text/javascript")

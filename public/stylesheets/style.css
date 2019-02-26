@@ -1,6 +1,7 @@
 /* Master css stylesheet */
 
 :root {
+  --focusgrey: #e5eef5;
   --white: #ffffff;
   --black: #000000;
   --darkestgrey: #1b2631;
@@ -44,6 +45,16 @@
 
 .link {
   color: var(--primaryblue) !important;
+}
+
+.menuItem.link {
+  color: var(--white) !important;
+}
+
+/* For accessibility */
+.link:focus {
+  outline: none;
+  border: 1px dashed var(--focusgrey);
 }
 
 .horizontal-line {
@@ -179,6 +190,16 @@
   margin-top: 10px;
 }
 
+.headerlarge {
+  font-size: 1.71428571em;
+  padding: 0 0;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: 1.28571429em;
+  text-transform: none;
+  color: var(--primaryblue);
+}
+
 /* -------------- */
 /* Form controls  */
 /* -------------- */
@@ -271,6 +292,12 @@
   padding: 0 20px;
 }
 
+/* For accessibility */
+.quizbutton:focus {
+  outline: none;
+  border: 1px dashed var(--focusgrey);
+}
+
 .quizbutton:hover {
   background-color: var(--white);
   color: var(--darkgrey);
@@ -284,7 +311,13 @@
   height: 37px;
   font-family: "Open Sans";
   font-weight: bold;
-  padding: 0 15px;
+  padding: 8px 15px;
+}
+
+/* For accessibility */
+.bluebutton:focus {
+  outline: none;
+  border: 1px dashed var(--focusgrey);
 }
 
 .bluebuttonsmall {
@@ -304,13 +337,25 @@
   color: var(--white);
 }
 
+/* For accessibility */
+.bluebuttonsmall:focus {
+  outline: none;
+  border: 1px dashed var(--focusgrey);
+}
+
 .skipquiz {
+  display: block;
   margin: 40px 0;
   color: var(--darkgrey);
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-align: center;
+}
+
+.skipquiz:focus {
+  outline: none;
+  border: 1px dashed var(--focusgrey);
 }
 
 #moviequote {
@@ -388,8 +433,9 @@
 }
 
 .floatright {
-  position: absolute;
-  right: 0;
+  /* position: absolute;
+  right: 0; */
+  float: right;
 }
 
 /* ---------------- */
@@ -514,11 +560,10 @@
   color: var(--primaryblue);
 }
 
-/* Add an active class to highlight the current page */
-/* .active {
-  background-color: var(--lightestpink);
-  color: white;
-} */
+.topMenu a:focus {
+  outline: none;
+  border: 1px dashed var(--focusgrey);
+}
 
 /* Hide the link that should open and close the topnav on small screens */
 .topMenu .menuIcon {

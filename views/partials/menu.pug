@@ -1,17 +1,17 @@
 //- Hamburger menu 
 nav(class="topMenu" id="topMenuNav")
-	a(href="/") 
+	a(href="/" class="link") 
 		img(src="/images/icons8-clapperboard-whitetrans-50.png" width="25" height="25")
 		div(class="icon-next logo")  Name That Movie
 	if !currentuser
-		a(href="/login" class="menuItem")
-			h5 Sign In
-		a(href="/register" class="menuItem")
+		a(href="/register" class="menuItem link")
 			h5 Sign Up
+		a(href="/login" class="menuItem link")
+			h5 Sign In
 	else 
-		a(href="/logout" class="menuItem")
+		a(href="/logout" class="menuItem link")
 			h5 Log Out
-		a(href="#" class="menuItem")
+		a(href="#" class="menuItem link")
 			h5 Signed in as #{currentuser.firstname} #{currentuser.lastname} 
 	a(href="javascript:void(0);" class="menuIcon" onclick="openCloseMenu();")
 		i(class="fa fa-bars")

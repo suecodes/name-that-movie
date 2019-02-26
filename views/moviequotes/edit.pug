@@ -42,10 +42,10 @@ block content
 
     div(class="formcontainer")
         div(class="titleheader") 
-            a(href="/moviequotes" class="ui green left floated link") 
+            a(href="/moviequotes" class="link leftfloat") 
                 i(class="hand point left outline large icon") 
                 div(class="icon-next") Back 
-            div(class="ui large header green right floated") Edit Movie Quote
+            div(class="headerlarge floatright") Edit Movie Quote
         div(class="horizontal-line")
         form(class="ui form" action="/moviequotes/" + moviequotes.id + "?_method=PUT" method="POST")
             div(class="spacetop")
@@ -63,6 +63,6 @@ block content
             div(class="formfield")
                 div(class="ui pointing below label") Enter the screenwriters name (separate with comma if multiple) *
                 input(type="text" name="screenwriter" required value=moviequotes.screenwriter) 
-            input(class="ui green mini button right floated" type="submit")
+            input(class="bluebuttonsmall floatright" type="submit")
 
 include ../partials/footer
