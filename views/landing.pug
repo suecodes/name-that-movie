@@ -4,35 +4,26 @@ block content
 
 	//- movie details 
 	if result.length !== 0
-		div(class="flexstretch")
-			div(class="flexitem moviequotelarge" id="moviequote") "#{result[quiz].moviequote}"
 
-		div(class="flexcontainer" )
-			div(class="flexitem movie-name-year" id="movie-name" style="visibility: hidden;") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
-
-		//- display information to user 
-		div(class="flexcontainer" id="message-block" style="visibility: hidden;")
-			div(class="flexitem")
-				h4(id="usermessage" class="ui white quizmessage") 
-
-		//- multiple choice buttons
-		div(class="flexstretch" id="userinput" style="display: block;")
-			//- button(class="flexitem moviename ui inverted button white testsuc") #{result[0].moviename}
-			//- button(class="flexitem moviename ui inverted button white testsuc") #{result[1].moviename}
-			//- button(class="flexitem moviename ui inverted button white testsuc") #{result[2].moviename}
-			//- button(class="flexitem moviename ui inverted button white testsuc") #{result[3].moviename}
-			button(class="flexitem quizbutton moviename") #{result[0].moviename}
-			button(class="flexitem quizbutton moviename") #{result[1].moviename}
-			button(class="flexitem quizbutton moviename") #{result[2].moviename}
-			button(class="flexitem quizbutton moviename") #{result[3].moviename}
-
-		//- Next move
-		div(class="flexstretch" id="right-answer-block" style="display: none;")
-			a(class="flexitem bluebutton" href="/") Guess Another
-			a(class="flexitem bluebutton" href="/moviequotes") View Movie Quotes	
-				
-		//- hidden field to capture user input
-		input(id="user-guess" type="hidden" value=result[quiz].moviename)
+		div(class="gridcolumn")
+			div(class="item") 
+				div(class="flexitem moviequotelarge" id="movie-quote") "#{result[quiz].moviequote}"
+			div(class="item") 
+				div(class="flexitem movie-name-year" id="movienameyear" style="display: none;") #{result[quiz].moviename}, #{result[quiz].year} - #{result[quiz].screenwriter}
+			div(class="item") 
+				div(class="flexstretch" id="userinput" style="display: block;")
+					button(class="flexitem quizbutton moviename") #{result[0].moviename}
+					button(class="flexitem quizbutton moviename") #{result[1].moviename}
+					button(class="flexitem quizbutton moviename") #{result[2].moviename}
+					button(class="flexitem quizbutton moviename") #{result[3].moviename}
+			div(class="item")
+				div(id="right-answer-block" style="display: none;")
+					a(class="bluebutton" href="/") Guess Another
+					a(class="bluebutton" href="/moviequotes") View Movie Quotes
+			div(class="item" id="message-block" style="display: none;")
+				h4(id="usermessage" class="white") 
+			div(class="item" style="visibility: hidden")
+				input(id="user-guess" type="hidden" value=result[quiz].moviename)
 	else
 		div(class="flexcontainer")
 			div(class="flexitem") 
@@ -40,7 +31,7 @@ block content
 
 	div(class="flexcontainer")
 		div(class="flexitem")
-			a(href="/moviequotes" class="skipquiz") [Skip the quiz and show me the movie quotes collection 
+			a(href="/moviequotes" class="skipquiz") [Skip the quiz 
 				i(class="arrow alternate circle right grey large icon") ]
 
 	div(class="block")

@@ -8,8 +8,8 @@
 const userMovieInput = document.getElementById("user-guess");
 const userInputBlock = document.getElementById("userinput");
 const answerBlock = document.getElementById("right-answer-block");
-const wrongBlock = document.getElementById("message-block");
-const moviename = document.getElementById("movie-name");
+const messageBlock = document.getElementById("message-block");
+const movienameyear = document.getElementById("movienameyear");
 const movieanswer = document.querySelectorAll(".moviename");
 const menu = document.getElementById("topMenuNav");
 const message = document.getElementById("usermessage");
@@ -41,10 +41,8 @@ function init() {
  */
 function setupAnswers() {
   for (let i = 0; i < movieanswer.length; i++) {
-
     // attach click event to each button
     movieanswer[i].addEventListener("click", function() {
-      
       // change button color and fade it out so user knows it was clicked (eliminated)
       this.style.backgroundColor = COLOR_PINKISHRED;
       this.style.color = COLOR_WHITE;
@@ -65,7 +63,7 @@ function setupAnswers() {
  *  quote from falling below the fold
  */
 function checkQuoteLength() {
-  let quote = document.getElementById("moviequote");
+  let quote = document.getElementById("movie-quote");
 
   if (quote) {
     if (quote.textContent.length > MAX_CHAR_LENGTH) {
@@ -82,11 +80,11 @@ function checkQuoteLength() {
  * Correct answer display
  */
 function displayAnswer() {
-  moviename.style.color = COLOR_PRIMARYBLUE;
-  moviename.style.visibility = "visible";
+  movienameyear.style.color = COLOR_PRIMARYBLUE;
+  movienameyear.style.display = "block";
   userInputBlock.style.display = "none";
   answerBlock.style.display = "block";
-  wrongBlock.style.visibility = "visible";
+  messageBlock.style.display = "block";
   message.textContent = SUCCESS_MESSAGE;
 }
 
@@ -94,11 +92,11 @@ function displayAnswer() {
  * Wrong answer display
  */
 function displayWrongAnswer() {
-  moviename.style.color = COLOR_PRIMARYRED;
-  moviename.style.visibility = "hidden";
+  movienameyear.style.color = COLOR_PRIMARYRED;
+  movienameyear.style.display = "none";
   userInputBlock.style.display = "block";
   answerBlock.style.display = "none";
-  wrongBlock.style.visibility = "visible";
+  messageBlock.style.display = "block";
   message.textContent = FAIL_MESSAGE;
 }
 
@@ -107,7 +105,7 @@ function displayWrongAnswer() {
  */
 function guessAgain() {
   userInputBlock.style.display = "block";
-  wrongBlock.style.visibility = "hidden";
+  messageBlock.style.display = "none";
 }
 
 /**

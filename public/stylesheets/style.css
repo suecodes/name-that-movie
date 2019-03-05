@@ -146,7 +146,7 @@
 
 .blurbheader {
   font-size: 30px;
-  line-height: 20px;
+  line-height: 32px;
   font-weight: 150;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .moviequotelarge {
-  font: 5em "Habibi", serif;
+  font: 4.5em "Habibi", serif;
   line-height: 1.2em;
 }
 
@@ -236,8 +236,8 @@
   width: 100%;
   background-size: cover;
   background-position: center;
-  background-color: var(--pinkred); */
-  display: block;
+  background-color: var(--pinkred); 
+  display: block; */
   width: 100%;
   background-color: var(--lightblue);
   /*background-image: url("https://images.unsplash.com/photo-1507990178188-0118b242deda?ixlib=rb-1.2.1&auto=format&fit=crop&w=1391&q=80");
@@ -293,7 +293,7 @@
   height: 37px;
   font-family: "Open Sans";
   font-weight: bold;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 /* For accessibility */
@@ -316,6 +316,7 @@
   font-family: "Open Sans";
   font-weight: bold;
   padding: 8px 15px;
+  margin: 5px;
 }
 
 /* For accessibility */
@@ -361,7 +362,7 @@
 
 .skipquiz {
   display: block;
-  margin: 40px 0;
+  margin: 10px 0;
   color: var(--darkgrey);
   font-size: 0.7rem;
   letter-spacing: 0.2em;
@@ -374,17 +375,19 @@
   border: 1px dashed var(--focusgrey);
 }
 
-#moviequote {
+#movie-quote {
   margin-top: 50px;
   color: var(--white);
   display: inline-block;
   vertical-align: middle;
-  height: 175px;
   -webkit-backface-visibility: hidden;
 }
 
 #usermessage {
-  height: 50px;
+  margin: 0px 10px;
+  font: 1.2em "Open Sans", serif;
+  color: var(--white);
+  padding: 5px;
 }
 
 .movie-name-year {
@@ -421,6 +424,17 @@
 
 .griditem {
   margin-bottom: 10px;
+}
+
+.gridcolumn {
+  display: grid;
+  grid-template-columns: 100%;
+  text-align: center;
+}
+
+.item {
+  padding: 5px;
+  border: 1px solid red;
 }
 
 .quoteitem {
